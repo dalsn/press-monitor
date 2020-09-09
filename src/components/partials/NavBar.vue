@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-transpurple h-auto md:h-auto pt-4 pb-8 px-5 md:px-10 lg:px-16  overflow-x-hidden"
+    class="bg-transpurple h-auto md:h-auto pt-4  lg:pb-4 px-5 md:px-10 lg:px-16  overflow-x-hidden"
   >
     <div class=" lg:flex justify-between items-center">
       <div class="w-full top-menu flex justify-between items-center">

@@ -17,7 +17,8 @@ module.exports = {
         transpurple: "#070241",
         transgray100: "#959EAD",
         transgray200: "#747479",
-        transgray300: "#8D9AA9"
+        transgray300: "#8D9AA9",
+        hero: "#F5F5F6"
       },
       letterSpacing: {
         23: "0.014375rem"
