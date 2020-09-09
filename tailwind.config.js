@@ -14,8 +14,10 @@ module.exports = {
         51: "3.20571875rem"
       },
       colors: {
-        eatizgreen: "#005450",
-        eatizlightgrey: "#999999"
+        transpurple: "#070241",
+        transgray100: "#959EAD",
+        transgray200: "#747479",
+        transgray300: "#8D9AA9"
       },
       letterSpacing: {
         23: "0.014375rem"
