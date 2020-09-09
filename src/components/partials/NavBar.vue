@@ -48,7 +48,7 @@
       <div
         :class="{
           'w-full fixed md:pl-20 flex justify-center items-center md:pr-20':
-            isNavOpen === true
+            isNavOpen === false
         }"
         class="nav-links mt-5 lg:mt-0 block lg:flex flex-grow lg:items-center lg:w-auto font-sans text-white "
       >
