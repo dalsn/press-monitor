@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-transpurple h-auto md:h-auto pt-4 pb-4 px-5 md:px-10 lg:px-16  overflow-x-hidden"
+    class="bg-transpurple h-auto md:h-auto pt-4 pb-8 px-5 md:px-10 lg:px-16  overflow-x-hidden"
   >
     <div class=" lg:flex justify-between items-center">
       <div class="w-full top-menu flex justify-between items-center">
@@ -46,39 +46,36 @@
         />
       </div>
       <div
-        :class="{
-          'w-full fixed md:pl-20 flex justify-center items-center md:pr-20':
-            isNavOpen === false
-        }"
-        class="nav-links mt-5 lg:mt-0 block lg:flex flex-grow lg:items-center lg:w-auto font-sans text-white "
+        :class="isNavOpen ? 'w-full' : 'w-0 h-full fixed'"
+        class="nav-links w-full mt-5 lg:mt-0  lg:flex flex-grow lg:items-center lg:w-auto font-sans text-white "
       >
         <router-link
           to="/"
-          class="links block lg:w-32 lg:inline-block mb-3 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
+          class="links block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           Pick a state
         </router-link>
         <router-link
           to="/"
-          class="block lg:w-32 lg:inline-block mb-3 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
+          class="block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           Cases
         </router-link>
         <router-link
           to="/"
-          class=" block lg:w-32 lg:inline-block mb-3 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
+          class=" block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           Cause List
         </router-link>
         <router-link
           to="/"
-          class=" block lg:w-32 lg:inline-block mb-3 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
+          class=" block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           Resources
         </router-link>
         <router-link
           to="/"
-          class="block lg:w-32 lg:inline-block mb-3 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
+          class="block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           About
         </router-link>
