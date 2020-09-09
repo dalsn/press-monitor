@@ -46,7 +46,7 @@
         />
       </div>
       <div
-        :class="isNavOpen ? 'w-full' : 'w-0 h-full fixed'"
+        :class="isNavOpen ? 'block' : 'hidden'"
         class="nav-links w-full mt-5 lg:mt-0  lg:flex flex-grow lg:items-center lg:w-auto font-sans text-white "
       >
         <router-link
