@@ -93,7 +93,7 @@
         alt=""
       />
     </div>
-    <div class="pb-12 h-auto bg-white  pt-69 pl-74 pr-78">
+    <div class="pb-12 h-auto bg-white  pt-69 pl-74 pr-78s  pr-12">
       <div class="grid grid-cols-12 gap-5">
         <div
           class="card-left pb-62 h-auto shadow-2xl border rounded-lg pt-41 pl-45 pr-45 col-span-4 flex flex-col items-center"
