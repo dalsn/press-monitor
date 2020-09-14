@@ -6,6 +6,9 @@ module.exports = {
         serif: ["Inter", "sans-serif"],
         sans: ["Roboto", "sans"]
       },
+      fontWeight: {
+        transsemibold: '600',
+      },
       fontSize: {
         9: "0.5625rem",
         12: "1.18rem",
@@ -29,7 +32,22 @@ module.exports = {
         25: "25px",
         26: "26px",
         28: "28px",
+        58: "58px",
         88: "88px"
+      },
+      spacing: {
+        trans16: "16px",
+        17: "17.5px",
+        22: "22px",
+        29: "29px",
+        35: "35px",
+        trans32: "32px",
+        59: "59px",
+        66: "66px",
+        88: "88px",
+      },
+      borderRadius:{
+        searchbutton: "5px",
       }
     }
   },

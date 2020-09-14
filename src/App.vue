@@ -1,6 +1,6 @@
 <template>
   <main id="app" class="app">
-    <NavBar class="sticky top-0" />
+    <NavBar class="sticky top-0 z-50" />
     <div>
       <router-view />
     </div>
