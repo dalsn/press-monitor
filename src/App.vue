@@ -17,6 +17,6 @@ export default {
 <style lang="scss">
 @import "assets/main";
 main {
-  height: 200vh;
+  //height: 200vh;
 }
 </style>

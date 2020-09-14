@@ -1,29 +1,34 @@
 <template>
-  <header
-    class="bg-hero relative font-serif pt-59 md:pb-12 pl-16 overflow-y-hidden"
-  >
-    <div class="text pt-5 md:pt-8 lg:pt-5 text-center md:text-left ">
-      <h1
-        class="font-bold leading-loose md:leading-58 text-transpurple text-2xl md:text-5xl"
-      >
-        Find Information on
-      </h1>
-      <h1
-        class="font-bold leading-loose md:leading-58 text-transpurple text-2xl md:text-5xl"
-      >
-        Corruption Cases in Nigeria
-      </h1>
-      <p class="text-17 leading-28  text-transgray200 pt-5">
-        This is a central database to find details of ongoing and decided
-        corruption
-      </p>
-      <p class="text-17 leading-28 text-transgray200">
-        cases in the country with simplified infographics.
-      </p>
-    </div>
-    <div class="form-group h-88 rounded-lg mt-66 w-7/12">
-      <form class="h-full flex grids grid-cols-12 bg-white rounded-lg" action="">
-          <label for="search-text" class=" flex w-6/12 items-center  pl-22 pr-5 pt-29 pb-29  border-r ">
+  <header class="h-auto font-serif ">
+    <div class="pb-12 bg-hero relative overflow-y-hidden pt-59  pl-16">
+      <div class="text pt-5 md:pt-8 lg:pt-5 text-center md:text-left ">
+        <h1
+          class="font-bold leading-loose md:leading-58 text-transpurple text-2xl md:text-5xl"
+        >
+          Find Information on
+        </h1>
+        <h1
+          class="font-bold leading-loose md:leading-58 text-transpurple text-2xl md:text-5xl"
+        >
+          Corruption Cases in Nigeria
+        </h1>
+        <p class="text-17 leading-28  text-transgray200 pt-5">
+          This is a central database to find details of ongoing and decided
+          corruption
+        </p>
+        <p class="text-17 leading-28 text-transgray200">
+          cases in the country with simplified infographics.
+        </p>
+      </div>
+      <div class="form-group h-88 rounded-lg mt-66 w-7/12">
+        <form
+          class="h-full flex grids grid-cols-12 bg-white rounded-lg"
+          action=""
+        >
+          <label
+            for="search-text"
+            class=" flex w-6/12 items-center  pl-22 pr-5 pt-29 pb-29  border-r "
+          >
             <svg
               width="25"
               height="26"
@@ -47,7 +52,10 @@
               placeholder="Search by case name, crime etc"
             />
           </label>
-          <label for="search-dropdown" class="flex items-center  w-4/12 pl-6 pr-8 ">
+          <label
+            for="search-dropdown"
+            class="flex items-center  w-4/12 pl-6 pr-8 "
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -69,33 +77,166 @@
               <option value="">Adamawa</option>
             </select>
           </label>
-         <div class="w-3/12 pt-5 pb-5 px-4">
-           <button type="submit" class=" text-white rounded-searchbutton bg-transpurple leading-24 focus:outline-none text-xl font-transsemibold w-full h-full">Search</button>
-         </div>
-      </form>
+          <div class="w-3/12 pt-5 pb-5 px-4">
+            <button
+              type="submit"
+              class=" text-white rounded-searchbutton bg-transpurple leading-24 focus:outline-none text-xl font-transsemibold w-full h-full"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+      </div>
+      <img
+        class="absolute right-0 top-0 mt-4"
+        src="../assets/svg/heroill.svg"
+        alt=""
+      />
     </div>
-    <svg width="609" height="461" class="absolute right-0 top-0 mt-4" viewBox="0 0 609 461" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="-83" width="1075" height="1075">
-        <path d="M537.223 991.178L1074.18 454.223L537.223 -82.7326L0.267327 454.223L537.223 991.178Z" fill="white"/>
-      </mask>
-      <g mask="url(#mask0)">
-        <path d="M891.074 503.807C891.074 503.807 931.588 226.196 650.483 119.311" stroke="#36CFFF" stroke-width="48.7898" stroke-linecap="round"/>
-        <path d="M177.775 404.593C177.775 404.593 132.423 681.455 411.62 793.23" stroke="#45D9BE" stroke-width="35.707" stroke-linecap="round"/>
-        <path d="M195.621 405.9C194.249 415.664 185.221 422.467 175.456 421.095C165.692 419.722 158.889 410.694 160.261 400.93C161.634 391.166 170.662 384.363 180.426 385.735C190.19 387.107 196.993 396.135 195.621 405.9Z" fill="black" fill-opacity="0.16"/>
-        <path d="M586.085 96.1507C586.085 96.1507 309.224 50.798 197.449 329.995" stroke="#48484C" stroke-width="35.707" stroke-linecap="round"/>
-        <path d="M584.779 113.996C575.014 112.624 568.211 103.596 569.584 93.8317C570.956 84.0674 579.984 77.2644 589.748 78.6367C599.512 80.0089 606.316 89.0369 604.943 98.8012C603.571 108.565 594.543 115.368 584.779 113.996Z" fill="black" fill-opacity="0.16"/>
-        <path d="M290.804 317.013C290.804 317.013 186.089 491.347 338.356 653.09" stroke="#612DF7" stroke-width="35.707" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M303.252 304.414C296.279 297.442 284.975 297.442 278.003 304.414C271.031 311.386 271.031 322.691 278.003 329.663C284.975 336.635 296.279 336.635 303.252 329.663C310.224 322.691 310.224 311.386 303.252 304.414Z" fill="black" fill-opacity="0.16"/>
-        <path d="M674.433 207.804C674.433 207.804 500.099 103.089 338.356 255.356" stroke="#36CFFF" stroke-width="35.707" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M783.642 591.433C783.642 591.433 888.357 417.099 736.09 255.356" stroke="#612DF7" stroke-width="48.7898" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M740.913 481.174C740.913 481.174 725.439 621.559 584.184 654.17" stroke="#612DF7" stroke-width="48.7898" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M334.222 427.773C334.222 427.773 349.696 287.388 490.951 254.776" stroke="#48484C" stroke-width="35.707" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M495.501 272.159C505.109 269.941 511.099 260.354 508.881 250.747C506.663 241.139 497.076 235.149 487.469 237.367C477.861 239.585 471.871 249.172 474.089 258.779C476.307 268.387 485.894 274.377 495.501 272.159Z" fill="black" fill-opacity="0.16"/>
-        <path d="M564.27 250.632C564.27 250.632 704.655 266.106 737.267 407.361" stroke="#92909E" stroke-width="48.7898" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M507.187 657.627C507.187 657.627 367.095 639.717 336.952 497.903" stroke="#36CFFF" stroke-width="48.7898" stroke-linecap="round" stroke-linejoin="round"/>
-      </g>
-    </svg>
+    <div class="pb-12 h-auto bg-white  pt-69 pl-74 pr-78">
+      <div class="grid grid-cols-12 gap-5">
+        <div
+          class="card-left pb-62 h-auto shadow-2xl border rounded-lg pt-41 pl-45 pr-45 col-span-4 flex flex-col items-center"
+        >
+          <h1 class="text-lg text-transpurple font-bold leading-25 mb-25">
+            Total Court Cases
+          </h1>
 
+          <img class="mb-644" src="../assets/svg/staticon.svg" alt="" />
+
+          <div class="statistics text-stat">
+            <div
+              class="stat grid grid-cols-3 justify-between row-gap-2 items-center"
+            >
+              <div class="title  leading-17 text-transpurple">Fraud</div>
+              <div class="number justify-self-center text-transgray400">
+                724
+              </div>
+              <svg
+                width="107"
+                height="5"
+                viewBox="0 0 107 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.712646"
+                  y="1.43283"
+                  width="106"
+                  height="2.80597"
+                  rx="1.40299"
+                  fill="#E7E6EF"
+                />
+                <rect
+                  x="0.712646"
+                  y="0.731354"
+                  width="90"
+                  height="4.20896"
+                  rx="2.10448"
+                  fill="#8676FF"
+                />
+              </svg>
+
+              <div class="title  leading-17 text-transpurple">
+                Cybercrime/fraud
+              </div>
+              <div class="number text-transgray400 justify-self-center">
+                370
+              </div>
+              <svg
+                width="107"
+                height="5"
+                viewBox="0 0 107 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.712646"
+                  y="1.05972"
+                  width="106"
+                  height="2.80597"
+                  rx="1.40298"
+                  fill="#E7E6EF"
+                />
+                <rect
+                  x="0.712646"
+                  y="0.358215"
+                  width="46"
+                  height="4"
+                  rx="2"
+                  fill="#FFBA69"
+                />
+              </svg>
+
+              <div class="title  leading-17 text-transpurple">
+                Money laundering
+              </div>
+              <div class="number text-transgray400 justify-self-center">
+                151
+              </div>
+              <svg
+                width="107"
+                height="5"
+                viewBox="0 0 107 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.712646"
+                  y="1.05969"
+                  width="106"
+                  height="2.80597"
+                  rx="1.40298"
+                  fill="#E7E6EF"
+                />
+                <rect
+                  x="0.712646"
+                  y="0.358215"
+                  width="20"
+                  height="4"
+                  rx="2"
+                  fill="#27AE60"
+                />
+              </svg>
+
+              <div class="title  leading-17 text-transpurple">
+                Illegal oil dealing
+              </div>
+              <div class="number text-transgray400 justify-self-center">
+                116
+              </div>
+              <svg
+                width="107"
+                height="5"
+                viewBox="0 0 107 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="0.712646"
+                  y="1.05969"
+                  width="106"
+                  height="2.80597"
+                  rx="1.40298"
+                  fill="#E7E6EF"
+                />
+                <rect
+                  x="0.712646"
+                  y="0.358215"
+                  width="13"
+                  height="4"
+                  rx="2"
+                  fill="#56CCF2"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="chart col-span-8 border shadow-xl rounded-lg">
+          <img class="pt-8 pl-5" src="../assets/svg/herochart.svg" alt="" />
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
