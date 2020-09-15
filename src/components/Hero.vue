@@ -88,7 +88,7 @@
         </form>
       </div>
       <img
-        class="absolute right-0 top-0 mt-4"
+        class="absolute md:w-4/12 lg:w-auto right-0 top-0 mt-4"
         src="../assets/svg/heroill.svg"
         alt=""
       />
