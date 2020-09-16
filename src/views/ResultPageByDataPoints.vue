@@ -1,9 +1,9 @@
 <template>
   <section class="bg-hero font-serif">
-    <header
-      class="pb-12 bg-white relative overflow-y-hidden pt-37  pl-16 pr-12"
-    >
-      <div class="text pt-5 md:pt-8 lg:pt-5 text-center md:text-center  ">
+    <header class=" bg-white relative overflow-y-hidden pt-37  ">
+      <div
+        class="text pl-16 pr-12 pt-5 md:pt-8 lg:pt-5 text-center md:text-center  "
+      >
         <h1
           class="font-bold leading-loose md:leading-58 text-transpurple text-2xl md:text-5xl"
         >
@@ -18,7 +18,7 @@
         </p>
       </div>
       <div
-        class="form-group w-full mx-auto flex inline-flex justify-center items-center mt-12"
+        class="form-group w-full mx-auto flex inline-flex justify-center items-center mt-16 mb-8"
       >
         <div
           v-for="dropdownMenu in dropdownParameters"
@@ -64,6 +64,16 @@
           </div>
         </div>
       </div>
+      <div class="entry-points pt-8 pb-8 w-full bg-entrypoint h-40">
+        <div
+          v-show="activeParamenter === 'location'"
+          class="state-wrapper flex pl-pillspacing pr-16"
+        >
+          <StatePill class="mr-4" v-for="(state, i) in mockState" :key="i">{{
+            state
+          }}</StatePill>
+        </div>
+      </div>
     </header>
 
     <h1
@@ -87,12 +97,14 @@
 import TableTitle from "@/components/UIElements/TableTitle";
 import TableSummary from "@/components/UIElements/TableSummary";
 import CaseTable from "@/components/UIElements/CaseTable";
+import StatePill from "@/components/UIElements/StatePill";
 export default {
   name: "ResultPageByDataPoints",
-  components: { CaseTable, TableSummary, TableTitle },
+  components: { StatePill, CaseTable, TableSummary, TableTitle },
   data: () => {
     return {
       activeParamenter: "location",
+      mockState: ["Lagos", "Kogi", "Ekiti", "Abia"],
       dropdownParameters: [
         {
           id: "location",

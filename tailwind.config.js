@@ -23,6 +23,8 @@ module.exports = {
         51: "3.20571875rem"
       },
       colors: {
+        pill: "#42404D",
+        entrypoint: "#62616B",
         transblack: "#131523",
         transpurple: "#070241",
         transpurple100: "#383874",
@@ -44,6 +46,7 @@ module.exports = {
         23: "0.014375rem"
       },
       lineHeight: {
+        15: "15px",
         17: "17px",
         19: "19px",
         20: "20px",
@@ -63,6 +66,7 @@ module.exports = {
         14: "14px",
         trans16: "16px",
         tagspacingy: "",
+        pillspacing: "17rem",
         17: "17.5px",
         21: "21px",
         22: "22px",

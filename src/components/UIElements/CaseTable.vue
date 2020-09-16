@@ -1,6 +1,6 @@
 <template>
   <section class="pr-5 font-serif">
-    <table class="table-auto w-full">
+    <table class="table-fixed w-full">
       <thead>
         <tr
           class="text-left border-b text-sm font-normal text-transgray700 leading-20"
