@@ -67,6 +67,7 @@ module.exports = {
         trans16: "16px",
         tagspacingy: "",
         pillspacing: "17rem",
+        pillright: "17rem",
         17: "17.5px",
         21: "21px",
         22: "22px",

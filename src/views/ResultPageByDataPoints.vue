@@ -64,14 +64,65 @@
           </div>
         </div>
       </div>
-      <div class="entry-points pt-8 pb-8 w-full bg-entrypoint h-40">
+      <div class="entry-points pt-8 pb-8 w-full bg-entrypoint h-auto">
         <div
           v-show="activeParamenter === 'location'"
-          class="state-wrapper flex pl-pillspacing pr-16"
+          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
         >
-          <StatePill class="mr-4" v-for="(state, i) in mockState" :key="i">{{
-            state
-          }}</StatePill>
+          <StatePill
+            class="mr-4 mb-5"
+            v-for="(state, i) in mockState"
+            :key="i"
+            >{{ state }}</StatePill
+          >
+        </div>
+
+        <div
+          v-show="activeParamenter === 'entity'"
+          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
+        >
+          <StatePill
+            class="mr-4 mb-5"
+            v-for="(court, i) in mockCourt"
+            :key="i"
+            >{{ court }}</StatePill
+          >
+        </div>
+
+        <div
+          v-show="activeParamenter === 'persona'"
+          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
+        >
+          <StatePill
+            class="mr-4 mb-5"
+            v-for="(judge, i) in mockJudge"
+            :key="i"
+            >{{ judge }}</StatePill
+          >
+        </div>
+
+        <div
+          v-show="activeParamenter === 'crime'"
+          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
+        >
+          <StatePill
+            class="mr-4 mb-5"
+            v-for="(crime, i) in mockCrime"
+            :key="i"
+            >{{ crime }}</StatePill
+          >
+        </div>
+
+        <div
+          v-show="activeParamenter === 'enforcement'"
+          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
+        >
+          <StatePill
+            class="mr-4 mb-5"
+            v-for="(agency, i) in mockAgency"
+            :key="i"
+            >{{ agency }}</StatePill
+          >
         </div>
       </div>
     </header>
@@ -105,6 +156,18 @@ export default {
     return {
       activeParamenter: "location",
       mockState: ["Lagos", "Kogi", "Ekiti", "Abia"],
+      mockCourt: [
+        "Federal High Court, Awka, Anambra",
+        "Federal High Court, Abuja, FCT",
+        "Federal High Court, Barnawa Kaduna"
+      ],
+      mockJudge: [
+        "Hon. Justice I.B. Gafai",
+        "Hon. Justice U. Abiola",
+        "Hon. Justice M.A Olayinka"
+      ],
+      mockCrime: ["Money Laundering", "Fraud", "Bribery"],
+      mockAgency: ["ICPC", "EFCC"],
       dropdownParameters: [
         {
           id: "location",
