@@ -3,7 +3,7 @@
     <header
       class="pb-12 bg-white relative overflow-y-hidden pt-37  pl-16 pr-12"
     >
-      <div class="text pt-5 md:pt-8 lg:pt-5 text-center md:text-center ">
+      <div class="text pt-5 md:pt-8 lg:pt-5 text-center md:text-center  ">
         <h1
           class="font-bold leading-loose md:leading-58 text-transpurple text-2xl md:text-5xl"
         >
@@ -17,7 +17,53 @@
           cases in the country with simplified infographics.
         </p>
       </div>
-      <div class="form-group"></div>
+      <div
+        class="form-group w-full mx-auto flex inline-flex justify-center items-center mt-12"
+      >
+        <div
+          v-for="dropdownMenu in dropdownParameters"
+          :key="dropdownMenu.id"
+          @click="activeParamenter = dropdownMenu.id"
+          :class="{
+            'opacity-50': activeParamenter !== dropdownMenu.id,
+            '': dropdownMenu.id === 'crime',
+            'w-32': dropdownMenu.id === 'entity'
+          }"
+          class="location self-start  text-transpurple cursor-pointer "
+        >
+          <h1
+            :class="{
+              'border-transpurple': activeParamenter === dropdownMenu.id,
+              'pl-10': dropdownMenu.id !== 'location'
+            }"
+            class="text-base  pb-2 mb-4 font-medium leading-19 transgray900 border-b"
+          >
+            {{ dropdownMenu.title }}
+          </h1>
+          <div
+            :class="{
+              'pl-10': dropdownMenu.id !== 'location'
+            }"
+            class="state inline-flex items-center pr-10"
+          >
+            <h1 class="text-lg  font-normal leading-22 mr-2">
+              {{ dropdownMenu.dropMenu }}
+            </h1>
+            <svg
+              width="13"
+              height="8"
+              viewBox="0 0 13 8"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.66016 7.19531C5.90625 7.44141 6.31641 7.44141 6.5625 7.19531L11.8945 1.89062C12.1406 1.61719 12.1406 1.20703 11.8945 0.960938L11.2656 0.332031C11.0195 0.0859375 10.6094 0.0859375 10.3359 0.332031L6.125 4.54297L1.88672 0.332031C1.61328 0.0859375 1.20312 0.0859375 0.957031 0.332031L0.328125 0.960938C0.0820312 1.20703 0.0820312 1.61719 0.328125 1.89062L5.66016 7.19531Z"
+                fill="#070241"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
     </header>
 
     <h1
@@ -46,6 +92,34 @@ export default {
   components: { CaseTable, TableSummary, TableTitle },
   data: () => {
     return {
+      activeParamenter: "location",
+      dropdownParameters: [
+        {
+          id: "location",
+          title: "Location",
+          dropMenu: "Select State"
+        },
+        {
+          id: "entity",
+          title: "Entity",
+          dropMenu: "Court"
+        },
+        {
+          id: "persona",
+          title: "Persona",
+          dropMenu: "Judges"
+        },
+        {
+          id: "crime",
+          title: "Crime",
+          dropMenu: "Select type"
+        },
+        {
+          id: "enforcement",
+          title: "Enforcement",
+          dropMenu: "Agency"
+        }
+      ],
       columns: [
         "Accused Person/Defendent",
         "Alleged Offence",

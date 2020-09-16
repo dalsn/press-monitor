@@ -34,6 +34,7 @@ module.exports = {
         transgray600: "#9190A6",
         transgray700: "#5A607F",
         transgray800: "#A9ACB8",
+        transgray900: "#DCDCE3",
         transgreen100: "#C4F8E2",
         transgreen200: "#06A561",
 
