@@ -8,7 +8,8 @@ module.exports = {
         sans: ["Roboto", "sans"]
       },
       fontWeight: {
-        transsemibold: "600"
+        transsemibold: "600",
+        transmedium: "500"
       },
       fontSize: {
         stat: "12px",
@@ -32,6 +33,10 @@ module.exports = {
         transgray500: "#6F6D82",
         transgray600: "#9190A6",
         transgray700: "#5A607F",
+        transgray800: "#A9ACB8",
+        transgreen100: "#C4F8E2",
+        transgreen200: "#06A561",
+
         hero: "#F5F5F6"
       },
       letterSpacing: {
@@ -40,6 +45,7 @@ module.exports = {
       lineHeight: {
         17: "17px",
         19: "19px",
+        20: "20px",
         22: "22px",
         24: "24px",
         25: "25px",
@@ -52,8 +58,10 @@ module.exports = {
         100: "100%"
       },
       spacing: {
+        sortbutton: "22rem",
         14: "14px",
         trans16: "16px",
+        tagspacingy: "",
         17: "17.5px",
         21: "21px",
         22: "22px",

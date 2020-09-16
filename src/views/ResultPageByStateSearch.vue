@@ -145,9 +145,270 @@
         </div>
       </div>
     </header>
-    <main class="bg-hero h-auto pl-16 pr-107">
-      <div class="pt-44  pb-44 stat-wrapper">
-        <StatBox></StatBox>
+    <main class="bg-hero h-auto pl-16 pr-107 pb-10">
+      <div class="pt-44  grid grid-cols-3 gap-8 pb-44 stat-wrapper">
+        <StatBox>
+          <template v-slot:header>
+            <p class="text-15 leading-22 text-transgray700 pb-28 ">
+              Total Cases
+            </p>
+            <h1 class="text-transblack text-22 font-transsemibold leading-31">
+              348
+            </h1>
+          </template>
+          <template v-slot:svg>
+            <svg
+              width="168"
+              height="91"
+              viewBox="0 0 168 91"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0)">
+                <rect x="0.75" y="0.5" width="166.5" height="90" fill="white" />
+                <rect
+                  x="1.875"
+                  y="62.375"
+                  width="23.625"
+                  height="28.125"
+                  rx="4.5"
+                  fill="#D9E4FF"
+                />
+                <rect
+                  x="30"
+                  y="45.5"
+                  width="23.625"
+                  height="45"
+                  rx="4.5"
+                  fill="#D9E4FF"
+                />
+                <rect
+                  x="58.125"
+                  y="16.25"
+                  width="23.625"
+                  height="74.25"
+                  rx="4.5"
+                  fill="#1E5EFF"
+                />
+                <rect
+                  x="86.25"
+                  y="35.375"
+                  width="23.625"
+                  height="55.125"
+                  rx="4.5"
+                  fill="#D9E4FF"
+                />
+                <rect
+                  x="114.375"
+                  y="26.375"
+                  width="23.625"
+                  height="64.125"
+                  rx="4.5"
+                  fill="#D9E4FF"
+                />
+                <rect
+                  x="142.5"
+                  y="45.5"
+                  width="23.625"
+                  height="45"
+                  rx="4.5"
+                  fill="#D9E4FF"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect
+                    width="166.5"
+                    height="90"
+                    fill="white"
+                    transform="translate(0.75 0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </template>
+        </StatBox>
+        <StatBox>
+          <template v-slot:header>
+            <p class="text-15 leading-22 text-transgray700 pb-28 ">
+              Total decided cases
+            </p>
+            <h1 class="text-transblack text-22 font-transsemibold leading-31">
+              200
+            </h1>
+          </template>
+          <template v-slot:svg>
+            <svg
+              width="167"
+              height="91"
+              viewBox="0 0 167 91"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0)">
+                <rect x="0.25" y="0.5" width="166.5" height="90" fill="white" />
+                <rect
+                  x="1.375"
+                  y="62.375"
+                  width="23.625"
+                  height="28.125"
+                  rx="4.5"
+                  fill="#C4F8E2"
+                />
+                <rect
+                  x="85.75"
+                  y="45.5"
+                  width="23.625"
+                  height="45"
+                  rx="4.5"
+                  fill="#C4F8E2"
+                />
+                <rect
+                  x="113.875"
+                  y="16.25"
+                  width="23.625"
+                  height="74.25"
+                  rx="4.5"
+                  fill="#1FD286"
+                />
+                <rect
+                  x="29.4999"
+                  y="35.375"
+                  width="23.625"
+                  height="55.125"
+                  rx="4.5"
+                  fill="#C4F8E2"
+                />
+                <rect
+                  x="57.625"
+                  y="26.375"
+                  width="23.625"
+                  height="64.125"
+                  rx="4.5"
+                  fill="#C4F8E2"
+                />
+                <rect
+                  x="142"
+                  y="45.5"
+                  width="23.625"
+                  height="45"
+                  rx="4.5"
+                  fill="#C4F8E2"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect
+                    width="166.5"
+                    height="90"
+                    fill="white"
+                    transform="translate(0.25 0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </template>
+        </StatBox>
+        <StatBox>
+          <template v-slot:header>
+            <p class="text-15 leading-22 text-transgray700 pb-28 ">
+              Total cases on trial
+            </p>
+            <h1 class="text-transblack text-22 font-transsemibold leading-31">
+              148
+            </h1>
+          </template>
+          <template v-slot:svg>
+            <svg
+              width="167"
+              height="91"
+              viewBox="0 0 167 91"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0)">
+                <rect
+                  x="0.375"
+                  y="0.5"
+                  width="166.5"
+                  height="90"
+                  fill="white"
+                />
+                <rect
+                  x="1.49994"
+                  y="62.375"
+                  width="23.625"
+                  height="28.125"
+                  rx="4.5"
+                  fill="#FFF4C9"
+                />
+                <rect
+                  x="114"
+                  y="45.5"
+                  width="23.625"
+                  height="45"
+                  rx="4.5"
+                  fill="#FFF4C9"
+                />
+                <rect
+                  x="85.875"
+                  y="16.25"
+                  width="23.625"
+                  height="74.25"
+                  rx="4.5"
+                  fill="#FFC700"
+                />
+                <rect
+                  x="142.125"
+                  y="35.375"
+                  width="23.625"
+                  height="55.125"
+                  rx="4.5"
+                  fill="#FFF4C9"
+                />
+                <rect
+                  x="57.75"
+                  y="26.375"
+                  width="23.625"
+                  height="64.125"
+                  rx="4.5"
+                  fill="#FFF4C9"
+                />
+                <rect
+                  x="29.6249"
+                  y="45.5"
+                  width="23.625"
+                  height="45"
+                  rx="4.5"
+                  fill="#FFF4C9"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect
+                    width="166.5"
+                    height="90"
+                    fill="white"
+                    transform="translate(0.375 0.5)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </template>
+        </StatBox>
+      </div>
+      <div class="sort-button w-10/12 flexs grid grid-cols-4 gap-5">
+        <SortButton class="w-auto">Crime type</SortButton>
+        <SortButton class="w-auto">Judge</SortButton>
+        <SortButton class="w-">Court</SortButton>
+        <SortButton class="w-">Date</SortButton>
+      </div>
+      <div
+        class="table-section shadow border rounded mt-5 bg-white pt-5 pl-5 pb-10"
+      >
+        <TableTitle>Lagos Cases</TableTitle>
+        <TableSummary class="mt-2"></TableSummary>
+        <CaseTable :columns="columns" class="mt-8"></CaseTable>
       </div>
     </main>
   </section>
@@ -155,9 +416,25 @@
 
 <script>
 import StatBox from "@/components/UIElements/StatBox";
+import SortButton from "@/components/UIElements/SortButton";
+import TableTitle from "@/components/UIElements/TableTitle";
+import TableSummary from "@/components/UIElements/TableSummary";
+import CaseTable from "@/components/UIElements/CaseTable";
 export default {
   name: "ResultPageByStateSearch",
-  components: { StatBox }
+  components: { CaseTable, TableSummary, TableTitle, SortButton, StatBox },
+  data: () => {
+    return {
+      columns: [
+        "Accused Person/Defendent",
+        "Alleged Offence",
+        "Presiding Judge",
+        "Court",
+        "Agency",
+        "Date of sittings"
+      ]
+    };
+  }
 };
 </script>
 
