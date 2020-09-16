@@ -34,7 +34,7 @@
           <h1
             :class="{
               'border-transpurple': activeParamenter === dropdownMenu.id,
-              'pl-10': dropdownMenu.id !== 'location'
+              'pl-10s': dropdownMenu.id !== 'location'
             }"
             class="text-base  pb-2 mb-4 font-medium leading-19 transgray900 border-b"
           >
@@ -42,7 +42,7 @@
           </h1>
           <div
             :class="{
-              'pl-10': dropdownMenu.id !== 'location'
+              'pl-10s': dropdownMenu.id !== 'location'
             }"
             class="state inline-flex items-center pr-10"
           >
