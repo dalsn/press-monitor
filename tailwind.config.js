@@ -23,6 +23,9 @@ module.exports = {
         51: "3.20571875rem"
       },
       colors: {
+        fraud: "#D36760",
+        bribery: "#606CD3",
+        ml: "#DA9714",
         pill: "#42404D",
         entrypoint: "#62616B",
         transblack: "#131523",

@@ -72,6 +72,7 @@
           <StatePill
             class="mr-4 mb-5"
             v-for="(state, i) in mockState"
+            @click="addToSelectedTag(state)"
             :key="i"
             >{{ state }}</StatePill
           >
@@ -83,6 +84,7 @@
         >
           <StatePill
             class="mr-4 mb-5"
+            @click="() => console.log('working')"
             v-for="(court, i) in mockCourt"
             :key="i"
             >{{ court }}</StatePill
@@ -139,22 +141,75 @@
       >
         <TableTitle>Lagos Cases</TableTitle>
         <TableSummary class="mt-2"></TableSummary>
-        <CaseTable :columns="columns" class="mt-8"></CaseTable>
+        <!--        <CaseTable :columns="columns" class="mt-8"></CaseTable>-->
+        <section class="pr-5 font-serif w-full mt-8">
+          <table class="table-auto w-full">
+            <thead>
+              <tr
+                class="text-left border-b text-sm font-normal text-transgray700 leading-20"
+              >
+                <th class="w-auto pb-5">Accused Person/Defendent</th>
+                <th class="w-auto pb-5">Alleged Offence</th>
+                <th class="w-auto pb-5">Presiding Judge</th>
+                <th class="w-auto pb-5">Court</th>
+                <th class="w-auto  pb-5">Agency</th>
+                <th class="w-auto pb-5">Date of sitting</th>
+                <!--                <th v-for="column in columns" :key="column" class="w-auto pb-5">-->
+                <!--                  {{ column }}-->
+                <!--                </th>-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="data in gridData"
+                :key="data.key"
+                class="border-b text-left text-base text-transpurple"
+              >
+                <td class="w-auto pt-3 pb-5">{{ data.accused }}</td>
+                <td class="w-auto  pt-3 pb-5 flex flex-col">
+                  <OffenceTag
+                    :class="{
+                      'bg-fraud': data.offense === 'Fraud',
+                      'bg-bribery': data.offense === 'Bribery',
+                      'bg-ml': data.offense === 'Money Laundering'
+                    }"
+                    class="rounded self-start"
+                    >{{ data.offense }}</OffenceTag
+                  ><span>{{ data.amount }}</span>
+                </td>
+                <td class="w-auto pt-3 pb-5">{{ data.presidingJudge }}</td>
+                <td class=" pt-3 pb-5 ">
+                  {{ data.court }}
+                </td>
+                <td class=" pt-3 w-10 mr-5 pb-5">{{ data.agency }}</td>
+                <td class="w-autos pt-3 pb-5">{{ data.date }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </div>
-    </main></section
-></template>
+    </main>
+  </section></template
+>
 
 <script>
 import TableTitle from "@/components/UIElements/TableTitle";
 import TableSummary from "@/components/UIElements/TableSummary";
-import CaseTable from "@/components/UIElements/CaseTable";
+
 import StatePill from "@/components/UIElements/StatePill";
+import OffenceTag from "@/components/UIElements/OffenceTag";
+import tableData from "@/data/mockData";
 export default {
   name: "ResultPageByDataPoints",
-  components: { StatePill, CaseTable, TableSummary, TableTitle },
+  created() {
+    this.gridData = tableData;
+  },
+  components: { OffenceTag, StatePill, TableSummary, TableTitle },
   data: () => {
     return {
       activeParamenter: "location",
+      selectedCategory: [],
+      gridData: [],
       mockState: ["Lagos", "Kogi", "Ekiti", "Abia"],
       mockCourt: [
         "Federal High Court, Awka, Anambra",
@@ -204,6 +259,11 @@ export default {
         "Date of sittings"
       ]
     };
+  },
+  methods: {
+    addToSelectedTag: state => {
+      console.log(state);
+    }
   }
 };
 </script>

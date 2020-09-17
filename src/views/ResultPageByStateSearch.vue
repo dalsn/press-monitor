@@ -398,17 +398,71 @@
         </StatBox>
       </div>
       <div class="sort-button w-10/12 flexs grid grid-cols-4 gap-5">
-        <SortButton class="w-auto">Crime type</SortButton>
-        <SortButton class="w-auto">Judge</SortButton>
-        <SortButton class="w-">Court</SortButton>
-        <SortButton class="w-">Date</SortButton>
+        <SortButton v-for="keys in sortKeys" :key="keys.id" class="w-auto">
+          <span @click="filterQuery = keys.id">{{ keys.name }}</span>
+        </SortButton>
+        <!--        <SortButton @click="filterQuery = 'judge'" class="w-auto"-->
+        <!--          >Judge</SortButton-->
+        <!--        >-->
+        <!--        <SortButton @click="filterQuery = 'court'" class="w-">Court</SortButton>-->
+        <!--        <SortButton @click="filterQuery = 'date'" class="w-">Date</SortButton>-->
       </div>
       <div
         class="table-section shadow border rounded mt-5 bg-white pt-5 pl-5 pb-10"
       >
         <TableTitle>Lagos Cases</TableTitle>
         <TableSummary class="mt-2"></TableSummary>
-        <CaseTable :columns="columns" class="mt-8"></CaseTable>
+        <!--        <CaseTable-->
+        <!--          :columns="columns"-->
+        <!--          :filter-key="filterQuery"-->
+        <!--          :data="gridData"-->
+        <!--          class="mt-8"-->
+        <!--        ></CaseTable>-->
+        <section class="pr-5 font-serif w-full mt-8">
+          <table class="table-auto w-full">
+            <thead>
+              <tr
+                class="text-left border-b text-sm font-normal text-transgray700 leading-20"
+              >
+                <th class="w-auto pb-5">Accused Person/Defendent</th>
+                <th class="w-auto pb-5">Alleged Offence</th>
+                <th class="w-auto pb-5">Presiding Judge</th>
+                <th class="w-auto pb-5">Court</th>
+                <th class="w-auto  pb-5">Agency</th>
+                <th class="w-auto pb-5">Date of sitting</th>
+                <!--                <th v-for="column in columns" :key="column" class="w-auto pb-5">-->
+                <!--                  {{ column }}-->
+                <!--                </th>-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="data in filteredData"
+                :key="data.key"
+                class="border-b text-left text-base text-transpurple"
+              >
+                <td class="w-auto pt-3 pb-5">{{ data.accused }}</td>
+                <td class="w-auto  pt-3 pb-5 flex flex-col">
+                  <OffenceTag
+                    :class="{
+                      'bg-fraud': data.offense === 'Fraud',
+                      'bg-bribery': data.offense === 'Bribery',
+                      'bg-ml': data.offense === 'Money Laundering'
+                    }"
+                    class="rounded self-start"
+                    >{{ data.offense }}</OffenceTag
+                  ><span>{{ data.amount }}</span>
+                </td>
+                <td class="w-auto pt-3 pb-5">{{ data.presidingJudge }}</td>
+                <td class=" pt-3 pb-5 ">
+                  {{ data.court }}
+                </td>
+                <td class=" pt-3 w-10 mr-5 pb-5">{{ data.agency }}</td>
+                <td class="w-autos pt-3 pb-5">{{ data.date }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </div>
     </main>
   </section>
@@ -419,12 +473,24 @@ import StatBox from "@/components/UIElements/StatBox";
 import SortButton from "@/components/UIElements/SortButton";
 import TableTitle from "@/components/UIElements/TableTitle";
 import TableSummary from "@/components/UIElements/TableSummary";
-import CaseTable from "@/components/UIElements/CaseTable";
+
+import tableData from "@/data/mockData";
+import OffenceTag from "@/components/UIElements/OffenceTag";
 export default {
   name: "ResultPageByStateSearch",
-  components: { CaseTable, TableSummary, TableTitle, SortButton, StatBox },
+  created() {
+    this.gridData = tableData;
+  },
+  components: {
+    OffenceTag,
+    TableSummary,
+    TableTitle,
+    SortButton,
+    StatBox
+  },
   data: () => {
     return {
+      filterQuery: "type",
       columns: [
         "Accused Person/Defendent",
         "Alleged Offence",
@@ -432,8 +498,51 @@ export default {
         "Court",
         "Agency",
         "Date of sittings"
+      ],
+      gridData: [],
+      sortKeys: [
+        {
+          id: "type",
+          name: "Crime type"
+        },
+        {
+          id: "presidingJudge",
+          name: "Judge"
+        },
+        {
+          id: "court",
+          name: "Court"
+        },
+        {
+          id: "date",
+          name: "Date"
+        }
       ]
     };
+  },
+  watch: {
+    filterQuery: function(newQuery) {
+      this.filterQuery = newQuery;
+    }
+  },
+  methods: {
+    pressed(key) {
+      this.filterQuery = key;
+    }
+  },
+  computed: {
+    filteredData: function() {
+      let filterKey = this.filterQuery;
+      let data = this.gridData;
+      if (filterKey) {
+        data.sort((a, b) => {
+          a = a[filterKey];
+          b = b[filterKey];
+          return a === b ? 0 : a > b ? 1 : -1;
+        });
+      }
+      return data;
+    }
   }
 };
 </script>
