@@ -70,11 +70,11 @@
           class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
         >
           <StatePill
-            class="mr-4 mb-5"
+            :class="{ 'bg-pill': !selectedLocationCategory.includes(state) }"
+            class="mr-4  bg-selected rounded-full mb-5"
             v-for="(state, i) in mockState"
-            @click="addToSelectedTag(state)"
             :key="i"
-            >{{ state }}</StatePill
+            ><span @click="addToLocation(state)">{{ state }}</span></StatePill
           >
         </div>
 
@@ -83,12 +83,14 @@
           class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
         >
           <StatePill
-            class="mr-4 mb-5"
+            :class="{ 'bg-pill': !selectedEntityCategory.includes(court) }"
+            class="mr-4  bg-selected rounded-full mb-5"
             @click="() => console.log('working')"
             v-for="(court, i) in mockCourt"
             :key="i"
-            >{{ court }}</StatePill
           >
+            <span @click="addToEntity(court)">{{ court }}</span>
+          </StatePill>
         </div>
 
         <div
@@ -96,11 +98,13 @@
           class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
         >
           <StatePill
-            class="mr-4 mb-5"
+            :class="{ 'bg-pill': !selectedPersonaCategory.includes(judge) }"
+            class="mr-4  bg-selected rounded-full mb-5"
             v-for="(judge, i) in mockJudge"
             :key="i"
-            >{{ judge }}</StatePill
           >
+            <span @click="addToPersona(judge)">{{ judge }}</span>
+          </StatePill>
         </div>
 
         <div
@@ -108,11 +112,13 @@
           class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
         >
           <StatePill
-            class="mr-4 mb-5"
+            :class="{ 'bg-pill': !selectedCrimeCategory.includes(crime) }"
+            class="mr-4  bg-selected rounded-full mb-5"
             v-for="(crime, i) in mockCrime"
             :key="i"
-            >{{ crime }}</StatePill
           >
+            <span @click="addToCrime(crime)">{{ crime }}</span>
+          </StatePill>
         </div>
 
         <div
@@ -120,11 +126,203 @@
           class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
         >
           <StatePill
-            class="mr-4 mb-5"
+            :class="{ 'bg-pill': !selectedAgencyCategory.includes(agency) }"
+            class="mr-4  bg-selected rounded-full mb-5"
             v-for="(agency, i) in mockAgency"
             :key="i"
-            >{{ agency }}</StatePill
           >
+            <span @click="addToAgency(agency)">{{ agency }}</span>
+          </StatePill>
+        </div>
+      </div>
+      <div
+        v-show="activeParamenter === 'location'"
+        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
+      >
+        <div
+          v-show="selectedLocationCategory.length > 0"
+          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
+        >
+          <span class="text-sm opacity-50"> Select Category:</span>
+          <div
+            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
+          >
+            <StatePill
+              class="mr-4  bg-pill rounded-full mb-5"
+              v-for="(state, i) in selectedLocationCategory"
+              :key="i"
+              ><span class="mr-2">{{ state }}</span>
+              <span
+                @click="removeItemFromSelectedCategory('location', state)"
+                class="bg-entrypoint rounded-full"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
+                    fill="white"
+                  />
+                </svg> </span
+            ></StatePill>
+          </div>
+        </div>
+      </div>
+      <div
+        v-show="activeParamenter === 'entity'"
+        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
+      >
+        <div
+          v-show="selectedEntityCategory.length > 0"
+          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
+        >
+          <span class="text-sm opacity-50"> Select Category:</span>
+          <div
+            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
+          >
+            <StatePill
+              class="mr-4  bg-pill rounded-full mb-5"
+              v-for="(state, i) in selectedEntityCategory"
+              :key="i"
+              ><span class="mr-2">{{ state }}</span>
+              <span
+                @click="removeItemFromSelectedCategory('entity', state)"
+                class="bg-entrypoint rounded-full"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
+                    fill="white"
+                  />
+                </svg> </span
+            ></StatePill>
+          </div>
+        </div>
+      </div>
+      <div
+        v-show="activeParamenter === 'persona'"
+        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
+      >
+        <div
+          v-show="selectedPersonaCategory.length > 0"
+          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
+        >
+          <span class="text-sm opacity-50"> Select Category:</span>
+          <div
+            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
+          >
+            <StatePill
+              class="mr-4  bg-pill rounded-full mb-5"
+              v-for="(state, i) in selectedPersonaCategory"
+              :key="i"
+              ><span class="mr-2">{{ state }}</span>
+              <span
+                @click="removeItemFromSelectedCategory('persona', state)"
+                class="bg-entrypoint rounded-full"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
+                    fill="white"
+                  />
+                </svg> </span
+            ></StatePill>
+          </div>
+        </div>
+      </div>
+      <div
+        v-show="activeParamenter === 'crime'"
+        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
+      >
+        <div
+          v-show="selectedCrimeCategory.length > 0"
+          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
+        >
+          <span class="text-sm opacity-50"> Select Category:</span>
+          <div
+            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
+          >
+            <StatePill
+              class="mr-4  bg-pill rounded-full mb-5"
+              v-for="(state, i) in selectedCrimeCategory"
+              :key="i"
+              ><span class="mr-2">{{ state }}</span>
+              <span
+                @click="removeItemFromSelectedCategory('crime', state)"
+                class="bg-entrypoint rounded-full"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
+                    fill="white"
+                  />
+                </svg> </span
+            ></StatePill>
+          </div>
+        </div>
+      </div>
+      <div
+        v-show="activeParamenter === 'enforcement'"
+        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
+      >
+        <div
+          v-show="selectedAgencyCategory.length > 0"
+          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
+        >
+          <span class="text-sm opacity-50"> Select Category:</span>
+          <div
+            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
+          >
+            <StatePill
+              class="mr-4  bg-pill rounded-full mb-5"
+              v-for="(state, i) in selectedAgencyCategory"
+              :key="i"
+              ><span class="mr-2">{{ state }}</span>
+              <span
+                @click="removeItemFromSelectedCategory('agency', state)"
+                class="bg-entrypoint rounded-full"
+                ><svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 15 15"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
+                    fill="white"
+                  />
+                </svg> </span
+            ></StatePill>
+          </div>
         </div>
       </div>
     </header>
@@ -142,73 +340,33 @@
         <TableTitle>Lagos Cases</TableTitle>
         <TableSummary class="mt-2"></TableSummary>
         <!--        <CaseTable :columns="columns" class="mt-8"></CaseTable>-->
-        <section class="pr-5 font-serif w-full mt-8">
-          <table class="table-auto w-full">
-            <thead>
-              <tr
-                class="text-left border-b text-sm font-normal text-transgray700 leading-20"
-              >
-                <th class="w-auto pb-5">Accused Person/Defendent</th>
-                <th class="w-auto pb-5">Alleged Offence</th>
-                <th class="w-auto pb-5">Presiding Judge</th>
-                <th class="w-auto pb-5">Court</th>
-                <th class="w-auto  pb-5">Agency</th>
-                <th class="w-auto pb-5">Date of sitting</th>
-                <!--                <th v-for="column in columns" :key="column" class="w-auto pb-5">-->
-                <!--                  {{ column }}-->
-                <!--                </th>-->
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                v-for="data in gridData"
-                :key="data.key"
-                class="border-b text-left text-base text-transpurple"
-              >
-                <td class="w-auto pt-3 pb-5">{{ data.accused }}</td>
-                <td class="w-auto  pt-3 pb-5 flex flex-col">
-                  <OffenceTag
-                    :class="{
-                      'bg-fraud': data.offense === 'Fraud',
-                      'bg-bribery': data.offense === 'Bribery',
-                      'bg-ml': data.offense === 'Money Laundering'
-                    }"
-                    class="rounded self-start"
-                    >{{ data.offense }}</OffenceTag
-                  ><span>{{ data.amount }}</span>
-                </td>
-                <td class="w-auto pt-3 pb-5">{{ data.presidingJudge }}</td>
-                <td class=" pt-3 pb-5 ">
-                  {{ data.court }}
-                </td>
-                <td class=" pt-3 w-10 mr-5 pb-5">{{ data.agency }}</td>
-                <td class="w-autos pt-3 pb-5">{{ data.date }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
+        <CasesTable :filtered-data="filteredData" />
       </div>
-    </main>
-  </section></template
->
+    </main></section
+></template>
 
 <script>
 import TableTitle from "@/components/UIElements/TableTitle";
 import TableSummary from "@/components/UIElements/TableSummary";
 
 import StatePill from "@/components/UIElements/StatePill";
-import OffenceTag from "@/components/UIElements/OffenceTag";
+
 import tableData from "@/data/mockData";
+import CasesTable from "@/components/UIElements/CasesTable";
 export default {
   name: "ResultPageByDataPoints",
   created() {
     this.gridData = tableData;
   },
-  components: { OffenceTag, StatePill, TableSummary, TableTitle },
+  components: { CasesTable, StatePill, TableSummary, TableTitle },
   data: () => {
     return {
       activeParamenter: "location",
-      selectedCategory: [],
+      selectedLocationCategory: [],
+      selectedEntityCategory: [],
+      selectedPersonaCategory: [],
+      selectedCrimeCategory: [],
+      selectedAgencyCategory: [],
       gridData: [],
       mockState: ["Lagos", "Kogi", "Ekiti", "Abia"],
       mockCourt: [
@@ -261,8 +419,71 @@ export default {
     };
   },
   methods: {
-    addToSelectedTag: state => {
-      console.log(state);
+    addToLocation(value) {
+      !this.selectedLocationCategory.includes(value)
+        ? this.selectedLocationCategory.push(value)
+        : "";
+    },
+    addToEntity(value) {
+      !this.selectedEntityCategory.includes(value)
+        ? this.selectedEntityCategory.push(value)
+        : "";
+    },
+    addToPersona(value) {
+      !this.selectedPersonaCategory.includes(value)
+        ? this.selectedPersonaCategory.push(value)
+        : "";
+    },
+    addToCrime(value) {
+      !this.selectedCrimeCategory.includes(value)
+        ? this.selectedCrimeCategory.push(value)
+        : "";
+    },
+    addToAgency(value) {
+      !this.selectedAgencyCategory.includes(value)
+        ? this.selectedAgencyCategory.push(value)
+        : "";
+    },
+    removeItemFromSelectedCategory(type, value) {
+      if (type === "location") {
+        const indexToRemove = this.selectedLocationCategory.indexOf(value);
+        console.log(indexToRemove);
+        this.selectedLocationCategory.splice(indexToRemove, 1);
+      }
+      if (type === "entity") {
+        const indexToRemove = this.selectedEntityCategory.indexOf(value);
+        console.log(indexToRemove);
+        this.selectedEntityCategory.splice(indexToRemove, 1);
+      }
+      if (type === "persona") {
+        const indexToRemove = this.selectedPersonaCategory.indexOf(value);
+        console.log(indexToRemove);
+        this.selectedPersonaCategory.splice(indexToRemove, 1);
+      }
+      if (type === "crime") {
+        const indexToRemove = this.selectedCrimeCategory.indexOf(value);
+        console.log(indexToRemove);
+        this.selectedCrimeCategory.splice(indexToRemove, 1);
+      }
+      if (type === "agency") {
+        const indexToRemove = this.selectedAgencyCategory.indexOf(value);
+        console.log(indexToRemove);
+        this.selectedAgencyCategory.splice(indexToRemove, 1);
+      }
+    }
+  },
+  computed: {
+    filteredData: function() {
+      let filterKey = this.filterQuery;
+      let data = this.gridData;
+      if (filterKey) {
+        data.sort((a, b) => {
+          a = a[filterKey];
+          b = b[filterKey];
+          return a === b ? 0 : a > b ? 1 : -1;
+        });
+      }
+      return data;
     }
   }
 };
