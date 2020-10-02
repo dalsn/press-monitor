@@ -43,6 +43,7 @@ module.exports = {
         transgray900: "#DCDCE3",
         transgreen100: "#C4F8E2",
         transgreen200: "#06A561",
+        transpink: "#FFD1B8",
 
         hero: "#F5F5F6"
       },
@@ -94,6 +95,8 @@ module.exports = {
         78: "78px",
         88: "88px",
         91: "91px",
+        98: "98px",
+        105: "105px",
         107: "107px"
       },
       borderRadius: {
