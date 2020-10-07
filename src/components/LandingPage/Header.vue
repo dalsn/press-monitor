@@ -1,6 +1,6 @@
 <template>
   <section class="bg-hero font-serif">
-    <header class=" bg-white relative overflow-y-hidden pt-98 pb-105   ">
+    <header class=" bg-white relative overflow-y-hidden pt-98 pb-105">
       <div
         class="text pl-16 pr-12 pt-5 md:pt-8 lg:pt-5 text-center md:text-center  "
       >

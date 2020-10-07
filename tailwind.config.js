@@ -20,13 +20,24 @@ module.exports = {
         16: "6.9897px",
         17: "1.0625rem",
         21: "21.2371px",
-        51: "3.20571875rem"
+        lscheading: "22.4033px",
+        23: "22.4033px",
+        25: "25px",
+        28: "28px",
+        30: "30px",
+        31: "31px",
+        48: "48px",
+        51: "3.20571875rem",
+        72: "72px",
+        91: "91.56px",
+        106: "106px"
       },
       colors: {
         selected: "#786CFF",
         fraud: "#D36760",
         bribery: "#606CD3",
         ml: "#DA9714",
+        statvalue: "#1F1C44",
         pill: "#42404D",
         entrypoint: "#62616B",
         transblack: "#131523",
@@ -43,7 +54,10 @@ module.exports = {
         transgray900: "#DCDCE3",
         transgreen100: "#C4F8E2",
         transgreen200: "#06A561",
-        transpink: "#FFD1B8",
+        transpink: "#FFF3EC",
+        cardtext: "#5F4747",
+        transgray: "#48475F",
+        transblue: "#EEFFE6",
 
         hero: "#F5F5F6"
       },
@@ -62,8 +76,13 @@ module.exports = {
         28: "28px",
         31: "31px",
         34: "34px",
+        38: "38px",
         58: "58px",
+        73: "73px",
         88: "88px",
+        110: "110px",
+        111: "111px",
+        128: "128.28px",
         100: "100%"
       },
       spacing: {
@@ -99,8 +118,12 @@ module.exports = {
         105: "105px",
         107: "107px"
       },
+      borderWidth: {
+        lsc: "3px"
+      },
       borderRadius: {
-        searchbutton: "5px"
+        searchbutton: "5px",
+        6: "6px"
       }
     }
   },
