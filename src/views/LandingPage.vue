@@ -8,6 +8,8 @@
     <Statistics />
     <Sector />
     <Stages />
+    <PrivateSector />
+    <PublicSector />
   </section>
 </template>
 
@@ -20,9 +22,13 @@ import CourtCases from "../components/LandingPage/CourtCases";
 import Statistics from "../components/LandingPage/Statistics";
 import Sector from "../components/LandingPage/Sector";
 import Stages from "../components/LandingPage/Stages";
+import PrivateSector from "../components/LandingPage/PrivateSector";
+import PublicSector from "../components/LandingPage/PublicSector";
 export default {
   name: "LandingPage",
   components: {
+    PublicSector,
+    PrivateSector,
     Stages,
     Sector,
     Statistics,
