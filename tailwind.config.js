@@ -20,18 +20,34 @@ module.exports = {
         16: "6.9897px",
         17: "1.0625rem",
         21: "21.2371px",
-        51: "3.20571875rem"
+        lscheading: "22.4033px",
+        23: "22.4033px",
+        25: "25px",
+        28: "28px",
+        30: "30px",
+        31: "31px",
+        37: "37px",
+        44: "44px",
+        48: "48px",
+        51: "3.20571875rem",
+        72: "72px",
+        91: "91.56px",
+        106: "106px",
+        126: "126px",
+        148: "148.29px"
       },
       colors: {
         selected: "#786CFF",
         fraud: "#D36760",
         bribery: "#606CD3",
         ml: "#DA9714",
+        statvalue: "#1F1C44",
         pill: "#42404D",
         entrypoint: "#62616B",
         transblack: "#131523",
         transpurple: "#070241",
         transpurple100: "#383874",
+        transpurple200: "#252431",
         transgray100: "#959EAD",
         transgray200: "#747479",
         transgray300: "#8D9AA9",
@@ -43,7 +59,20 @@ module.exports = {
         transgray900: "#DCDCE3",
         transgreen100: "#C4F8E2",
         transgreen200: "#06A561",
-
+        transgreen300: "#33FF85",
+        transpink: "#FFF3EC",
+        cardtext: "#5F4747",
+        transgray: "#48475F",
+        transblue: "#EEFFE6",
+        case: "#1C3644",
+        statorange: "#FF9292",
+        2: "#79AFFF",
+        737: "#FFB992",
+        43: "#FF4747",
+        18: "#3A973E",
+        16: "#3A5F97",
+        37: "#FF8B49",
+        stages: "#F8FDFF",
         hero: "#F5F5F6"
       },
       letterSpacing: {
@@ -61,8 +90,15 @@ module.exports = {
         28: "28px",
         31: "31px",
         34: "34px",
+        38: "38px",
+        45: "45px",
         58: "58px",
+        73: "73px",
         88: "88px",
+        110: "110px",
+        111: "111px",
+        128: "128.28px",
+        179: "130px",
         100: "100%"
       },
       spacing: {
@@ -94,10 +130,16 @@ module.exports = {
         78: "78px",
         88: "88px",
         91: "91px",
+        98: "98px",
+        105: "105px",
         107: "107px"
       },
+      borderWidth: {
+        lsc: "3px"
+      },
       borderRadius: {
-        searchbutton: "5px"
+        searchbutton: "5px",
+        6: "6px"
       }
     }
   },
