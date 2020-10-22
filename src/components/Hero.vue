@@ -232,8 +232,16 @@
             </div>
           </div>
         </div>
-        <div class="chart col-span-8 border shadow-xl rounded-lg">
-          <img class="pt-8 pl-5" src="../assets/svg/herochart.svg" alt="" />
+        <div
+          class="chart col-span-8 border shadow-xl rounded-lg pl-10 pr-10 pt-5"
+        >
+          <span class="text-sm leading-25 text-transpurple font-semibold pb-5 "
+            >Case by state</span
+          >
+          <!--          <img class="pt-8 pl-5" src="../assets/svg/herochart.svg" alt="" />-->
+          <div class="chart-wrapper mt-5">
+            <bar-chart :chartdata="chartdata" :options="options"></bar-chart>
+          </div>
         </div>
       </div>
     </div>
@@ -241,8 +249,75 @@
 </template>
 
 <script>
+import BarChart from "./Charts/BarChart";
 export default {
-  name: "Hero"
+  name: "Hero",
+  data() {
+    return {
+      chartdata: {
+        labels: ["Abuja", "Lagos", "Rivers", "Oyo", "Kaduna", "Enugu"],
+        datasets: [
+          {
+            label: "Data One",
+            backgroundColor: [
+              "#070241",
+              "#58B72B",
+              "#F2994A",
+              "#66C9E8",
+              "#35D3B7",
+              "#BCC924"
+            ],
+            pointBackgroundColor: "white",
+            borderWidth: 1,
+            pointBorderColor: "#249EBF",
+            data: [200, 280, 170, 210, 190, 160]
+          }
+        ]
+      },
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              },
+              gridLines: {
+                display: true
+              }
+            }
+          ],
+          xAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              },
+              gridLines: {
+                display: false
+              }
+            }
+          ]
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: true,
+          mode: "single",
+          callbacks: {
+            label: function(tooltipItems) {
+              return "$" + tooltipItems.yLabel;
+            }
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        height: 200
+      }
+    };
+  },
+  components: {
+    BarChart
+  }
 };
 </script>
 
