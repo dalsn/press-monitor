@@ -15,11 +15,11 @@
         >
       </LandingStatCard>
       <div class="dotsvg">
-        <img
-          class="svg top-0"
-          src="../../assets/images/blackdot.png"
-          alt="Black dots"
-        />
+        <!--        <img-->
+        <!--          class="svg top-0"-->
+        <!--          src="../../assets/images/blackdot.png"-->
+        <!--          alt="Black dots"-->
+        <!--        />-->
       </div>
       <div class="dotsvg"></div>
     </div>
@@ -53,8 +53,8 @@ section {
     top: 0;
     right: 0;
   }
-  .dotsvg {
-    background: url("../../assets/images/blackdot.png") no-repeat center;
-  }
+  //.dotsvg {
+  //  background: url("../../assets/images/blackdot.png") no-repeat center;
+  //}
 }
 </style>
