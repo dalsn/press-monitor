@@ -51,7 +51,10 @@ export default {
           xAxes: [
             {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontSize: 30,
+                fontColor: "#FFFFFF",
+                fontFamily: "Inter"
               },
               gridLines: {
                 display: false

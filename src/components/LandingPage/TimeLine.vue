@@ -48,7 +48,10 @@ export default {
           yAxes: [
             {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontSize: 20,
+                fontColor: "#070241",
+                fontWeight: 500
               },
               gridLines: {
                 display: true
@@ -59,7 +62,10 @@ export default {
           xAxes: [
             {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontSize: 20,
+                fontColor: "#070241",
+                fontWeight: 500
               },
               gridLines: {
                 display: false

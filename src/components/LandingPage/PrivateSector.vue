@@ -35,14 +35,14 @@ export default {
           {
             label: "Data One",
             backgroundColor: [
-              "#1E6CE0",
-              "#1E6CE0",
-              "#1E6CE0",
-              "#1E6CE0",
-              "#1E6CE0",
-              "#1E6CE0",
-              "#1E6CE0",
-              "#1E6CE0"
+              "#E01E1E",
+              "#E01E1E",
+              "#E01E1E",
+              "#E01E1E",
+              "#E01E1E",
+              "#E01E1E",
+              "#E01E1E",
+              "#E01E1E"
             ],
             pointBackgroundColor: "white",
             borderWidth: 1,
@@ -56,12 +56,15 @@ export default {
           yAxes: [
             {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                fontSize: 26,
+                fontColor: "#252431"
               },
               gridLines: {
                 display: false
               },
-              barPercentage: 0.9
+              barPercentage: 4.5,
+              categoryPercentage: 0.2
             }
           ],
           xAxes: [
@@ -72,6 +75,9 @@ export default {
               },
               gridLines: {
                 display: false
+              },
+              scaleLabel: {
+                fontSize: 20
               }
             }
           ]
