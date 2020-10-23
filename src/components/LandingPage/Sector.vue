@@ -44,7 +44,8 @@ export default {
               },
               gridLines: {
                 display: false
-              }
+              },
+              display: false
             }
           ],
           xAxes: [

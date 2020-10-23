@@ -1,5 +1,5 @@
 <template>
-  <section class="font-serif w-full bg-transblue pl-16 pt-12 pb-10">
+  <section class="font-serif w-full bg-transblue pl-16 pt-12 pb-10 pr-16">
     <h1 class="text-transpurple font-bold text-48 text-center leading-73">
       Corruption in the public sector
     </h1>
@@ -60,7 +60,8 @@ export default {
               },
               gridLines: {
                 display: false
-              }
+              },
+              barPercentage: 0.9
             }
           ],
           xAxes: [
@@ -83,7 +84,7 @@ export default {
           mode: "single",
           callbacks: {
             label: function(tooltipItems) {
-              return tooltipItems.yLabel;
+              return tooltipItems.xLabel;
             }
           }
         },

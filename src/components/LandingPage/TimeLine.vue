@@ -52,7 +52,8 @@ export default {
               },
               gridLines: {
                 display: true
-              }
+              },
+              display: false
             }
           ],
           xAxes: [
@@ -80,8 +81,7 @@ export default {
         },
         responsive: true,
         maintainAspectRatio: false,
-        height: 200,
-        backgroundColor: "red"
+        height: 200
       }
     };
   },
