@@ -1,6 +1,6 @@
 <template>
   <header class="h-auto font-serif ">
-    <div class="md:pb-12 md:pt-59 md:px-12 bg-hero relative overflow-y-hidden">
+    <div class="md:pb-12 md:pt-59 md:px-8 lg:px-12 bg-hero relative overflow-y-hidden">
       <div class="text p-3 pt-10 md:pt-8 lg:pt-5 text-left">
         <h1
           class="font-bold md:leading-58 text-transpurple text-2xl md:text-5xl"
@@ -13,10 +13,10 @@
           corruption cases in the country with <br class="hidden md:block"> simplified infographics.
         </p>
       </div>
-      <div class="form-group md:w-3/5 xl:w-1/2 h-50 rounded-lg mt-10 md:mt-66 p-3">
+      <div class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66 p-3">
         <form action="">
           <div class="h-full flex bg-white rounded-lg">
-            <label for="search-text" class="flex w-1/2 items-center border-r ml-2">
+            <label for="search-text" class="flex w-1/2 items-center border-r ml-2 md:px-5 md:py-4">
               <div class="svg-container w-2 p-2">
                 <svg viewBox="0 0 24 24" class="svg-content" preserveAspectRatio="xMinYMin meet">
                   <path
@@ -44,7 +44,7 @@
                 <option value="">Adamawa</option>
               </select>
             </label>
-            <div class="hidden md:flex">
+            <div class="hidden md:flex md:w-4/12 md:p-4 xl:w-3/12 xl:py-5 xl:px-4">
               <button type="submit" class=" text-white rounded-searchbutton bg-transpurple leading-24 focus:outline-none text-xl font-transsemibold w-full h-full">
                 Search
               </button>
@@ -58,160 +58,8 @@
         </form>
       </div>
       <!-- <div class="svg-container"> -->
-        <img class="absolute md:w-2/5 right-0 bottom-0" src="../assets/svg/heroill.svg" alt=""/>
+        <img class="hidden md:block absolute md:w-2/5 right-0 bottom-0" src="../assets/svg/heroill.svg" alt=""/>
       <!-- </div> -->
-    </div>
-    <div class="pb-12 h-auto bg-white  pt-69 pl-74 pr-78s  pr-12">
-      <div class="grid grid-cols-12 gap-5">
-        <div
-          class="card-left pb-62 h-auto shadow-2xl border rounded-lg pt-41 pl-45 pr-45 col-span-4 flex flex-col items-center"
-        >
-          <h1 class="text-lg text-transpurple font-bold leading-25 mb-25">
-            Total Court Cases
-          </h1>
-
-          <img class="mb-644" src="../assets/svg/staticon.svg" alt="" />
-
-          <div class="statistics text-stat">
-            <div
-              class="stat grid grid-cols-3 justify-between row-gap-2 items-center"
-            >
-              <div class="title  leading-17 text-transpurple">Fraud</div>
-              <div class="number justify-self-center text-transgray400">
-                724
-              </div>
-              <svg
-                width="107"
-                height="5"
-                viewBox="0 0 107 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.712646"
-                  y="1.43283"
-                  width="106"
-                  height="2.80597"
-                  rx="1.40299"
-                  fill="#E7E6EF"
-                />
-                <rect
-                  x="0.712646"
-                  y="0.731354"
-                  width="90"
-                  height="4.20896"
-                  rx="2.10448"
-                  fill="#8676FF"
-                />
-              </svg>
-
-              <div class="title  leading-17 text-transpurple">
-                Cybercrime/fraud
-              </div>
-              <div class="number text-transgray400 justify-self-center">
-                370
-              </div>
-              <svg
-                width="107"
-                height="5"
-                viewBox="0 0 107 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.712646"
-                  y="1.05972"
-                  width="106"
-                  height="2.80597"
-                  rx="1.40298"
-                  fill="#E7E6EF"
-                />
-                <rect
-                  x="0.712646"
-                  y="0.358215"
-                  width="46"
-                  height="4"
-                  rx="2"
-                  fill="#FFBA69"
-                />
-              </svg>
-
-              <div class="title  leading-17 text-transpurple">
-                Money laundering
-              </div>
-              <div class="number text-transgray400 justify-self-center">
-                151
-              </div>
-              <svg
-                width="107"
-                height="5"
-                viewBox="0 0 107 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.712646"
-                  y="1.05969"
-                  width="106"
-                  height="2.80597"
-                  rx="1.40298"
-                  fill="#E7E6EF"
-                />
-                <rect
-                  x="0.712646"
-                  y="0.358215"
-                  width="20"
-                  height="4"
-                  rx="2"
-                  fill="#27AE60"
-                />
-              </svg>
-
-              <div class="title  leading-17 text-transpurple">
-                Illegal oil dealing
-              </div>
-              <div class="number text-transgray400 justify-self-center">
-                116
-              </div>
-              <svg
-                width="107"
-                height="5"
-                viewBox="0 0 107 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.712646"
-                  y="1.05969"
-                  width="106"
-                  height="2.80597"
-                  rx="1.40298"
-                  fill="#E7E6EF"
-                />
-                <rect
-                  x="0.712646"
-                  y="0.358215"
-                  width="13"
-                  height="4"
-                  rx="2"
-                  fill="#56CCF2"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div
-          class="chart col-span-8 border shadow-xl rounded-lg pl-10 pr-10 pt-5"
-        >
-          <span class="text-sm leading-25 text-transpurple font-semibold pb-5 "
-            >Case by state</span
-          >
-          <!--          <img class="pt-8 pl-5" src="../assets/svg/herochart.svg" alt="" />-->
-          <div class="chart-wrapper mt-5">
-            <bar-chart :chartdata="chartdata" :options="options"></bar-chart>
-          </div>
-        </div>
-      </div>
     </div>
   </header>
 </template>
