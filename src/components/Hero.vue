@@ -1,6 +1,6 @@
 <template>
   <header class="h-auto font-serif ">
-    <div class="md:pb-12 md:pt-59 md:pl-16 bg-hero relative overflow-y-hidden">
+    <div class="md:pb-12 md:pt-59 md:px-12 bg-hero relative overflow-y-hidden">
       <div class="text p-3 pt-10 md:pt-8 lg:pt-5 text-left">
         <h1
           class="font-bold md:leading-58 text-transpurple text-2xl md:text-5xl"
@@ -13,7 +13,7 @@
           corruption cases in the country with <br class="hidden md:block"> simplified infographics.
         </p>
       </div>
-      <div class="form-group h-50 rounded-lg mt-10 md:mt-66 p-3">
+      <div class="form-group md:w-3/5 xl:w-1/2 h-50 rounded-lg mt-10 md:mt-66 p-3">
         <form action="">
           <div class="h-full flex bg-white rounded-lg">
             <label for="search-text" class="flex w-1/2 items-center border-r ml-2">
@@ -57,7 +57,9 @@
           </div>
         </form>
       </div>
-      <img class="absolute w-0 md:w-4/12 lg:w-auto right-0 top-0 mt-4" src="../assets/svg/heroill.svg" alt=""/>
+      <!-- <div class="svg-container"> -->
+        <img class="absolute md:w-2/5 right-0 bottom-0" src="../assets/svg/heroill.svg" alt=""/>
+      <!-- </div> -->
     </div>
     <div class="pb-12 h-auto bg-white  pt-69 pl-74 pr-78s  pr-12">
       <div class="grid grid-cols-12 gap-5">
