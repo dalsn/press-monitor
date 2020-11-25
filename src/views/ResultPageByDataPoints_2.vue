@@ -321,54 +321,36 @@
     </header>
 
     <h1
-      class="text-2xl text-center font-transmedium py-4 my-8 text-transpurple leading-29"
+      class="text-2xl text-center font-transmedium py-4 text-transpurple leading-29"
     >
-      Data Analytics
+      All Selected data points
     </h1>
 
-    <main class="bg-hero h-auto my-4">
-      <div class="w-full flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 items-center gap-4 lg:px-6 px-2">
-        <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-          <div class="flex flex-col items-center lg:p-6 p-4 border-b border-gray-200 dark:border-dark-5">
-            <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
-          </div>
-          <div class="py-4 px-4 lg:px-6">
-            <BarChart :chartdata="chartdata" :options="options"></BarChart>
-          </div>
-        </div>
-        <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-          <div class="flex flex-col items-center lg:p-6 p-4 border-b border-gray-200 dark:border-dark-5">
-            <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
-          </div>
-          <div class="py-4 px-4 lg:px-6">
-            <BarChart :chartdata="chartdata" :options="options"></BarChart>
-          </div>
-        </div>
-        <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-          <div class="flex flex-col items-center lg:p-6 p-4 border-b border-gray-200 dark:border-dark-5">
-            <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
-          </div>
-          <div class="py-4 px-4 lg:px-6">
-            <BarChart :chartdata="chartdata" :options="options"></BarChart>
-          </div>
-        </div>
+    <main class="bg-hero h-auto pl-16 pr-107 pb-10">
+      <div
+        class="table-section shadow border rounded mt-5 bg-white pt-5 pl-5 pb-10"
+      >
+        <TableTitle>Lagos Cases</TableTitle>
+        <TableSummary class="mt-2"></TableSummary>
+        <!--        <CaseTable :columns="columns" class="mt-8"></CaseTable>-->
+        <CasesTable :filtered-data="filteredData" />
       </div>
-    </main>
-  </section>
-</template>
+    </main></section
+></template>
 
 <script>
-
+import TableTitle from "@/components/UIElements/TableTitle";
+import TableSummary from "@/components/UIElements/TableSummary";
 import StatePill from "@/components/UIElements/StatePill";
-import tableData from "@/data/mockData";
-import BarChart from "@/components/Charts/BarChart";
 
+import tableData from "@/data/mockData";
+import CasesTable from "@/components/UIElements/CasesTable";
 export default {
   name: "ResultPageByDataPoints",
   created() {
     this.gridData = tableData;
   },
-  components: { StatePill, BarChart },
+  components: { CasesTable, StatePill, TableSummary, TableTitle },
   data: () => {
     return {
       activeParameter: "location",
@@ -425,56 +407,7 @@ export default {
         "Court",
         "Agency",
         "Date of sittings"
-      ],
-      chartdata: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-        datasets: [{
-            label: "Html Template",
-            barPercentage: 0.5,
-            barThickness: 6,
-            maxBarThickness: 8,
-            minBarLength: 2,
-            data: [0, 200, 250, 200, 500, 450, 850, 1050],
-            backgroundColor: "#3160D8"
-        }, {
-            label: "VueJs Template",
-            barPercentage: 0.5,
-            barThickness: 6,
-            maxBarThickness: 8,
-            minBarLength: 2,
-            data: [0, 300, 400, 560, 320, 600, 720, 850],
-            backgroundColor: "#BCBABA"
-        }]
-    },
-    options: {
-        scales: {
-            xAxes: [{
-                ticks: {
-                    fontSize: "12",
-                    fontColor: "#777777"
-                },
-                gridLines: {
-                    display: false
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    fontSize: "12",
-                    fontColor: "#777777",
-                    callback: function(value) {
-                        return "$" + value;
-                    }
-                },
-                gridLines: {
-                    color: "#D8D8D8",
-                    zeroLineColor: "#D8D8D8",
-                    borderDash: [2, 2],
-                    zeroLineBorderDash: [2, 2],
-                    drawBorder: false
-                }
-            }]
-        }
-    }
+      ]
     };
   },
   methods: {

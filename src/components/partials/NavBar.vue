@@ -50,13 +50,13 @@
         class="nav-links w-full mt-5 lg:mt-0  lg:flex flex-grow lg:items-center lg:w-auto font-sans text-white "
       >
         <router-link
-          to="/"
+          to="/state/1"
           class="links block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           Pick a state
         </router-link>
         <router-link
-          to="/"
+          to="/explore"
           class="block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center  cursor-pointer"
         >
           Cases

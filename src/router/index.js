@@ -7,12 +7,12 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "/explore",
     name: "LandingPage",
     component: LandingPage
   },
   {
-    path: "/explore",
+    path: "/",
     name: "Index",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
