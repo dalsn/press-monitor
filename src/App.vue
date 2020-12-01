@@ -16,7 +16,9 @@ export default {
 
 <style lang="scss">
 @import "assets/main";
-main {
-  //height: 200vh;
-}
+@import "assets/scss/_breakpoints";
+@import "assets/scss/_tags-input";
+@import "assets/scss/_report-box";
+@import "assets/scss/_report-chart";
+@import "assets/scss/_mini-report-chart";
 </style>

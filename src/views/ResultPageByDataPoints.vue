@@ -1,374 +1,210 @@
 <template>
-  <section class="bg-hero font-serif">
-    <header class="bg-white overflow-y-hidden pt-12">
-      <div
-        class="text text-center"
+  <div class="font-serif flex flex-wrap">
+    <h5
+      class="md:hidden text-center mx-auto font-bold text-xl text-transpurple my-8"
+    >
+      Welcome to our data portal
+    </h5>
+    <aside class="w-full md:w-1/4 bg-transpurple px-6 py-4 text-white">
+      <p>Filter Parameters</p>
+      <hr class="my-4">
+
+      <p>State</p>
+      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+
+      <hr class="my-2">
+
+      <p>Agency</p>
+      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+
+      <hr class="my-2">
+
+      <p>Crime</p>
+      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+
+      <hr class="my-2">
+
+      <p>Court</p>
+      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+
+      <hr class="my-2">
+
+      <p>Judge</p>
+      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+
+    </aside>
+
+    <main class="bg-hero w-full md:w-3/4 md:py-4">
+      <!-- <h3
+        class="hidden md:block text-center font-bold text-3xl text-transpurple mb-8"
       >
-        <h1
-          class="w-3/5 mx-auto font-bold text-transpurple text-2xl md:text-5xl"
-        >
-          Welcome to our data portal
-        </h1>
+        Welcome to our data portal
+      </h3> -->
+
+      <div class="hidden md:flex items-center h-10 px-4">
+        <h2 class="text-lg font-medium truncate mr-5">Data Portal</h2>
+        <a href="" class="ml-auto flex text-theme-1 dark:text-theme-10">
+          <RefreshCcwIcon class="w-4 h-4 mr-3" /> Reload Data
+        </a>
       </div>
-      <div
-        class="form-group w-full mx-auto flex md:inline-flex justify-center items-center mt-16 mb-8"
-      >
+
+      <div class="entry-points pt-4 w-full bg-gray-200 md:my-4 mb-4 px-4">
+        <p class="mb-4">Filters</p>
         <div
-          v-for="dropdownMenu in dropdownParameters"
-          :key="dropdownMenu.id"
-          @click="activeParameter = dropdownMenu.id"
-          :class="{
-            'opacity-50': activeParameter !== dropdownMenu.id,
-            '': dropdownMenu.id === 'crime',
-            'w-32': dropdownMenu.id === 'entity'
-          }"
-          class="location self-start text-transpurple cursor-pointer"
-        >
-          <h1
-            :class="{
-              'border-transpurple': activeParameter === dropdownMenu.id,
-              'pl-10s': dropdownMenu.id !== 'location'
-            }"
-            class="text-base  pb-2 mb-4 font-medium leading-19 transgray900 border-b"
-          >
-            {{ dropdownMenu.title }}
-          </h1>
-          <div
-            :class="{
-              'pl-10s': dropdownMenu.id !== 'location'
-            }"
-            class="state inline-flex items-center pr-10"
-          >
-            <h1 class="text-lg  font-normal leading-22 mr-2">
-              {{ dropdownMenu.dropMenu }}
-            </h1>
-            <svg
-              width="13"
-              height="8"
-              viewBox="0 0 13 8"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5.66016 7.19531C5.90625 7.44141 6.31641 7.44141 6.5625 7.19531L11.8945 1.89062C12.1406 1.61719 12.1406 1.20703 11.8945 0.960938L11.2656 0.332031C11.0195 0.0859375 10.6094 0.0859375 10.3359 0.332031L6.125 4.54297L1.88672 0.332031C1.61328 0.0859375 1.20312 0.0859375 0.957031 0.332031L0.328125 0.960938C0.0820312 1.20703 0.0820312 1.61719 0.328125 1.89062L5.66016 7.19531Z"
-                fill="#070241"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <div class="entry-points pt-8 pb-8 w-full bg-entrypoint h-auto">
-        <div
-          v-show="activeParameter === 'location'"
-          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
+          class="flex flex-wrap"
         >
           <StatePill
             :class="{ 'bg-pill': !selectedLocationCategory.includes(state) }"
-            class="mr-4 bg-selected rounded-full mb-5"
+            class="mr-4 bg-selected rounded-full mb-4"
             v-for="(state, i) in mockState"
             :key="i"
-            ><span @click="addToLocation(state)">{{ state }}</span></StatePill
+            ><span>{{ state }}</span></StatePill
           >
+        </div>
+      </div>
+
+      <section class="h-auto md:my-4">
+
+        <div class="grid grid-cols-12 gap-6 mt-5 px-6 mb-4">
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <ShoppingCartIcon class="report-box__icon text-theme-10" />
+                  <div class="ml-auto">
+                    <Tippy
+                      tag="div"
+                      class="report-box__indicator bg-theme-9 cursor-pointer"
+                      content="33% Higher than last month"
+                    >
+                      33% <ChevronUpIcon class="w-4 h-4" />
+                    </Tippy>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold leading-8 mt-6">4.510</div>
+                <div class="text-base text-gray-600 mt-1">Item Sales</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <CreditCardIcon class="report-box__icon text-theme-11" />
+                  <div class="ml-auto">
+                    <Tippy
+                      tag="div"
+                      class="report-box__indicator bg-theme-6 cursor-pointer"
+                      content="2% Lower than last month"
+                    >
+                      2% <ChevronDownIcon class="w-4 h-4" />
+                    </Tippy>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold leading-8 mt-6">3.521</div>
+                <div class="text-base text-gray-600 mt-1">New Orders</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <MonitorIcon class="report-box__icon text-theme-12" />
+                  <div class="ml-auto">
+                    <Tippy
+                      tag="div"
+                      class="report-box__indicator bg-theme-9 cursor-pointer"
+                      content="12% Higher than last month"
+                    >
+                      12% <ChevronUpIcon class="w-4 h-4" />
+                    </Tippy>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold leading-8 mt-6">2.145</div>
+                <div class="text-base text-gray-600 mt-1">Total Products</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6 xl:col-span-3">
+            <div class="report-box zoom-in">
+              <div class="box p-5">
+                <div class="flex">
+                  <UserIcon class="report-box__icon text-theme-9" />
+                  <div class="ml-auto">
+                    <Tippy
+                      tag="div"
+                      class="report-box__indicator bg-theme-9 cursor-pointer"
+                      content="22% Higher than last month"
+                    >
+                      22% <ChevronUpIcon class="w-4 h-4" />
+                    </Tippy>
+                  </div>
+                </div>
+                <div class="text-3xl font-bold leading-8 mt-6">152.000</div>
+                <div class="text-base text-gray-600 mt-1">Unique Visitor</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div
-          v-show="activeParameter === 'entity'"
-          class="state-wrapper flex flex-wrap ml-pillspacing  mr-pillright"
-        >
-          <StatePill
-            :class="{ 'bg-pill': !selectedEntityCategory.includes(court) }"
-            class="mr-4  bg-selected rounded-full mb-5"
-            @click="() => console.log('working')"
-            v-for="(court, i) in mockCourt"
-            :key="i"
-          >
-            <span @click="addToEntity(court)">{{ court }}</span>
-          </StatePill>
-        </div>
-
-        <div
-          v-show="activeParameter === 'persona'"
-          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
-        >
-          <StatePill
-            :class="{ 'bg-pill': !selectedPersonaCategory.includes(judge) }"
-            class="mr-4  bg-selected rounded-full mb-5"
-            v-for="(judge, i) in mockJudge"
-            :key="i"
-          >
-            <span @click="addToPersona(judge)">{{ judge }}</span>
-          </StatePill>
-        </div>
-
-        <div
-          v-show="activeParameter === 'crime'"
-          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
-        >
-          <StatePill
-            :class="{ 'bg-pill': !selectedCrimeCategory.includes(crime) }"
-            class="mr-4  bg-selected rounded-full mb-5"
-            v-for="(crime, i) in mockCrime"
-            :key="i"
-          >
-            <span @click="addToCrime(crime)">{{ crime }}</span>
-          </StatePill>
-        </div>
-
-        <div
-          v-show="activeParameter === 'enforcement'"
-          class="state-wrapper   flex flex-wrap ml-pillspacing  mr-pillright"
-        >
-          <StatePill
-            :class="{ 'bg-pill': !selectedAgencyCategory.includes(agency) }"
-            class="mr-4  bg-selected rounded-full mb-5"
-            v-for="(agency, i) in mockAgency"
-            :key="i"
-          >
-            <span @click="addToAgency(agency)">{{ agency }}</span>
-          </StatePill>
-        </div>
-      </div>
-      <div
-        v-show="activeParameter === 'location'"
-        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
-      >
-        <div
-          v-show="selectedLocationCategory.length > 0"
-          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
-        >
-          <span class="text-sm opacity-50">Select Category:</span>
-          <div
-            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings mr-pillrights"
-          >
-            <StatePill
-              class="mr-4 bg-pill rounded-full mb-5"
-              v-for="(state, i) in selectedLocationCategory"
-              :key="i"
-              ><span class="mr-2">{{ state }}</span>
-              <span
-                @click="removeItemFromSelectedCategory('location', state)"
-                class="bg-entrypoint rounded-full"
-                ><svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
-                    fill="white"
-                  />
-                </svg> </span
-            ></StatePill>
+        <div class="w-full flex flex-col items-center lg:px-6 px-2">
+          <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
+            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+              <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
+            </div>
+            <div class="py-4 px-4 lg:px-6">
+              <BarChart :chartdata="chartdata" :options="options"></BarChart>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        v-show="activeParameter === 'entity'"
-        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
-      >
-        <div
-          v-show="selectedEntityCategory.length > 0"
-          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
-        >
-          <span class="text-sm opacity-50">Select Category:</span>
-          <div
-            class="state-wrapper ml-5 flex flex-wrap ml-pillspacings mr-pillrights"
-          >
-            <StatePill
-              class="mr-4 bg-pill rounded-full mb-5"
-              v-for="(state, i) in selectedEntityCategory"
-              :key="i"
-              ><span class="mr-2">{{ state }}</span>
-              <span
-                @click="removeItemFromSelectedCategory('entity', state)"
-                class="bg-entrypoint rounded-full"
-                ><svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
-                    fill="white"
-                  />
-                </svg> </span
-            ></StatePill>
+        <div class="w-full flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 items-center gap-4 lg:px-6 px-2">
+          <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
+            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+              <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
+            </div>
+            <div class="py-4 px-4 lg:px-6">
+              <BarChart :chartdata="chartdata" :options="options"></BarChart>
+            </div>
+          </div>
+          <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
+            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+              <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
+            </div>
+            <div class="py-4 px-4 lg:px-6">
+              <BarChart :chartdata="chartdata" :options="options"></BarChart>
+            </div>
+          </div>
+          <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
+            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+              <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
+            </div>
+            <div class="py-4 px-4 lg:px-6">
+              <BarChart :chartdata="chartdata" :options="options"></BarChart>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        v-show="activeParameter === 'persona'"
-        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
-      >
-        <div
-          v-show="selectedPersonaCategory.length > 0"
-          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
-        >
-          <span class="text-sm opacity-50">Select Category:</span>
-          <div
-            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
-          >
-            <StatePill
-              class="mr-4  bg-pill rounded-full mb-5"
-              v-for="(state, i) in selectedPersonaCategory"
-              :key="i"
-              ><span class="mr-2">{{ state }}</span>
-              <span
-                @click="removeItemFromSelectedCategory('persona', state)"
-                class="bg-entrypoint rounded-full"
-                ><svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
-                    fill="white"
-                  />
-                </svg> </span
-            ></StatePill>
-          </div>
-        </div>
-      </div>
-      <div
-        v-show="activeParameter === 'crime'"
-        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
-      >
-        <div
-          v-show="selectedCrimeCategory.length > 0"
-          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
-        >
-          <span class="text-sm opacity-50">Select Category:</span>
-          <div
-            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
-          >
-            <StatePill
-              class="mr-4  bg-pill rounded-full mb-5"
-              v-for="(state, i) in selectedCrimeCategory"
-              :key="i"
-              ><span class="mr-2">{{ state }}</span>
-              <span
-                @click="removeItemFromSelectedCategory('crime', state)"
-                class="bg-entrypoint rounded-full"
-                ><svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
-                    fill="white"
-                  />
-                </svg> </span
-            ></StatePill>
-          </div>
-        </div>
-      </div>
-      <div
-        v-show="activeParameter === 'enforcement'"
-        class="selected-points   pb-8 w-full bg-entrypoint h-auto pl-pillspacing  pr-pillright"
-      >
-        <div
-          v-show="selectedAgencyCategory.length > 0"
-          class="title w-full inline-flex flex-wrap text-white pt-4 border-t  "
-        >
-          <span class="text-sm opacity-50">Select Category:</span>
-          <div
-            class="state-wrapper  ml-5 flex flex-wrap ml-pillspacings  mr-pillrights"
-          >
-            <StatePill
-              class="mr-4  bg-pill rounded-full mb-5"
-              v-for="(state, i) in selectedAgencyCategory"
-              :key="i"
-              ><span class="mr-2">{{ state }}</span>
-              <span
-                @click="removeItemFromSelectedCategory('agency', state)"
-                class="bg-entrypoint rounded-full"
-                ><svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M11.2371 3.50733C11.5182 3.78405 11.5218 4.2363 11.2451 4.51745L8.74038 7.06231L11.2852 9.56806C11.5664 9.84478 11.57 10.297 11.2933 10.5782C11.0166 10.8593 10.5643 10.8629 10.2832 10.5862L7.73829 8.08046L5.23255 10.6263C4.95583 10.9075 4.50358 10.9111 4.22243 10.6344C3.94127 10.3576 3.93768 9.90539 4.2144 9.62423L6.72014 7.07836L4.17428 4.57363C3.89312 4.29691 3.88953 3.84466 4.16625 3.56351C4.44297 3.28236 4.89522 3.27876 5.17637 3.55549L7.72224 6.06021L10.227 3.51536C10.5037 3.23421 10.9559 3.23061 11.2371 3.50733Z"
-                    fill="white"
-                  />
-                </svg> </span
-            ></StatePill>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <h1
-      class="text-2xl text-center font-transmedium py-4 my-8 text-transpurple leading-29"
-    >
-      Data Analytics
-    </h1>
-
-    <main class="bg-hero h-auto my-4">
-      <div class="w-full flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 items-center gap-4 lg:px-6 px-2">
-        <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-          <div class="flex flex-col items-center lg:p-6 p-4 border-b border-gray-200 dark:border-dark-5">
-            <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
-          </div>
-          <div class="py-4 px-4 lg:px-6">
-            <BarChart :chartdata="chartdata" :options="options"></BarChart>
-          </div>
-        </div>
-        <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-          <div class="flex flex-col items-center lg:p-6 p-4 border-b border-gray-200 dark:border-dark-5">
-            <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
-          </div>
-          <div class="py-4 px-4 lg:px-6">
-            <BarChart :chartdata="chartdata" :options="options"></BarChart>
-          </div>
-        </div>
-        <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-          <div class="flex flex-col items-center lg:p-6 p-4 border-b border-gray-200 dark:border-dark-5">
-            <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
-          </div>
-          <div class="py-4 px-4 lg:px-6">
-            <BarChart :chartdata="chartdata" :options="options"></BarChart>
-          </div>
-        </div>
-      </div>
+      </section>
     </main>
-  </section>
+  </div>
 </template>
 
 <script>
 
-import StatePill from "@/components/UIElements/StatePill";
 import tableData from "@/data/mockData";
 import BarChart from "@/components/Charts/BarChart";
+import TagsInput from '@/components/UIElements/TagsInput';
+import StatePill from "@/components/UIElements/StatePill";
 
 export default {
   name: "ResultPageByDataPoints",
   created() {
     this.gridData = tableData;
   },
-  components: { StatePill, BarChart },
+  mounted() {
+    this.url = "http://example.com"
+  },
+  components: { BarChart, TagsInput, StatePill },
   data: () => {
     return {
       activeParameter: "location",
@@ -378,7 +214,8 @@ export default {
       selectedCrimeCategory: [],
       selectedAgencyCategory: [],
       gridData: [],
-      mockState: ["Lagos", "Kogi", "Ekiti", "Abia"],
+      url: "http://example.com",
+      mockState: ["Lagos", "Kogi", "Ekiti", "Abia", "Kaduna", "Kano", "Adamawa", "Bauchi"],
       mockCourt: [
         "Federal High Court, Awka, Anambra",
         "Federal High Court, Abuja, FCT",
