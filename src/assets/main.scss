@@ -41,3 +41,39 @@ th{
   font-weight: normal !important;
 }
 
+.btn {
+  @apply font-semibold py-2 rounded shadow-lg;
+  &:focus {
+    @apply outline-none;
+  }
+  &:active {
+    @apply shadow-inner;
+  }
+}
+
+
+.case-card {
+  @apply border-transpurple text-transpurple;
+  .btn {
+    @apply bg-white text-transpurple border border-transpurple;
+    &:hover {
+      @apply bg-transpurple text-white border border-white;
+    }
+  }
+  hr {
+    @apply border-transpurple;
+  }
+}
+
+.active.case-card {
+  @apply bg-transpurple border-white text-white;
+  .btn {
+    @apply bg-transpurple text-white border border-white;
+    &:hover {
+      @apply bg-white text-transpurple border border-transpurple;
+    }
+  }
+  hr {
+    @apply border-white;
+  }
+}
