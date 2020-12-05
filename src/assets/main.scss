@@ -42,23 +42,29 @@ th{
 }
 
 .btn {
-  @apply font-semibold py-2 rounded shadow-lg;
+  @apply font-semibold py-2 rounded shadow-md;
   &:focus {
-    @apply outline-none;
+    @apply outline-none shadow-outline;
   }
   &:active {
     @apply shadow-inner;
   }
+  &:hover {
+    @apply shadow-lg;
+  }
 }
 
+.case-summary-card {
+  @apply bg-white text-transpurple;
+  hr {
+    @apply border-transpurple;
+  }
+}
 
 .case-card {
-  @apply border-transpurple text-transpurple;
+  @apply bg-white border-transpurple text-transpurple;
   .btn {
     @apply bg-white text-transpurple border border-transpurple;
-    &:hover {
-      @apply bg-transpurple text-white border border-white;
-    }
   }
   hr {
     @apply border-transpurple;

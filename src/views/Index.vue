@@ -1,16 +1,26 @@
 <template>
-  <div class="home mb-16">
+  <div class="mb-16">
     <Hero />
     <Summary />
-    <div class="px-4 mx-auto md:px-12 lg:w-3/5 py-8 mb-16">
-    	<h2 class="text-center text-3xl font-semibold text-transpurple mb-8">Recent Cases</h2>
-		<CaseSummaryCard />
-	</div>
-	<div class="px-4 mx-auto md:px-12 lg:px-32 md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-		<CaseCard className="active" />
-		<CaseCard />
-		<CaseCard />
-	</div>
+    <section class="bg-hero py-8">
+	    <div class="px-4 mx-auto lg:px-12 lg:w-3/5 mb-16">
+	    	<h2 class="text-center text-3xl font-semibold text-transpurple mb-8">Recent Cases</h2>
+			<CaseSummaryCard />
+		</div>
+	</section>
+	<section class="flex flex-col mt-8 py-16">
+		<div class="px-4 mx-auto lg:px-12 xl:px-32 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-4">
+			<CaseCard className="active" />
+			<CaseCard />
+			<CaseCard />
+			<CaseCard />
+			<CaseCard />
+			<CaseCard />
+		</div>
+		<button class="btn mx-auto mt-12 border border-transpurple w-1/6 p-3 rounded-full hover:shadow-xl">
+			View All Cases
+		</button>
+	</section>
   </div>
 </template>
 

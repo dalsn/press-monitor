@@ -1,5 +1,5 @@
 <template>
-	<div class="relative flex shadow-xl rounded-xl px-6 lg:px-12 pt-4 pb-2 md:pt-8 md:pb-4 border">
+	<div class="case-summary-card relative flex shadow-xl rounded-xl px-6 lg:px-12 pt-4 pb-2 md:pt-8 md:pb-4">
 		<span class="absolute rounded-full shadow-lg bg-transpurple p-2 md:p-3" style="top: -1.25rem; left: -1.25rem;">
 			<img alt="Scale of justice" src="@/assets/images/vectors/scale.svg" class="">
 		</span>
