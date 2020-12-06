@@ -3,13 +3,13 @@
         <div class="">
             <div class="flex items-center">
                 <hr class="border-2 w-1/4">
-                <p class="text-2xl px-3 leading-tight">Cyber crime/Some other crime</p>
+                <p class="text-lg md:text-2xl px-3 leading-tight">Cyber crime/Some other crime</p>
             </div>
-            <p class="text-xl lg:text-2xl my-4">FRN vs Edidiong Udokpoh</p>
-            <p class="mb-1"><strong>Prosecuting Agency:</strong> Economic and Financial Crimes Commission
-            <p class="mb-4"><strong>Prosecuting Judge:</strong> Justice Mercy Abang</p>
+            <p class="text-lg md:text-xl lg:text-2xl my-4">FRN vs Edidiong Udokpoh</p>
+            <p class="text-sm md:text-lg mb-1"><strong>Prosecuting Agency:</strong> Economic and Financial Crimes Commission
+            <p class="text-sm md:text-lg mb-4"><strong>Prosecuting Judge:</strong> Justice Mercy Abang</p>
             <div class="flex items-center justify-between">
-                <button class="btn w-2/5">
+                <button class="text-sm md:text-md btn w-2/5">
                     Read More
                 </button>
                 <p class="text-right text-sm font-semibold">
