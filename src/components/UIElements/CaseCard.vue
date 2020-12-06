@@ -1,5 +1,5 @@
 <template>
-	<div class="case-card flex shadow-lg rounded-xl px-6 py-4 md:pt-8 md:pb-4 mb-8 border" :class="className">
+	<div class="case-card flex shadow-lg rounded-lg px-6 py-4 md:pt-8 md:pb-4 mb-8 border" :class="className">
         <div class="">
             <div class="flex items-center">
                 <hr class="border-2 w-1/4">
