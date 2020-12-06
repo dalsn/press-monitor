@@ -10,6 +10,7 @@
     <Stages />
     <PrivateSector />
     <PublicSector />
+    <Footer />
   </section>
 </template>
 
@@ -24,6 +25,7 @@ import Sector from "../components/LandingPage/Sector";
 import Stages from "../components/LandingPage/Stages";
 import PrivateSector from "../components/LandingPage/PrivateSector";
 import PublicSector from "../components/LandingPage/PublicSector";
+import Footer from "../components/partials/Footer";
 export default {
   name: "LandingPage",
   components: {
@@ -36,7 +38,8 @@ export default {
     TimeLine,
     NumberOfCases,
     Recorded,
-    Header
+    Header,
+    Footer
   }
 };
 </script>

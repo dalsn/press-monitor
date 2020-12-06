@@ -22,7 +22,7 @@
         class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66 p-3"
       >
         <form action="">
-          <div class="h-full flex bg-white rounded-lg">
+          <div class="h-full flex bg-white rounded-lg shadow-md">
             <label
               for="search-text"
               class="flex w-1/2 items-center border-r ml-2 md:px-5 md:py-4"

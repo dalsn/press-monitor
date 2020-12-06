@@ -6,13 +6,13 @@
         <div class="w-full md:px-4 mb-8 md:w-1/2 lg:w-1/3">
           <p class="text-xl md:text-2xl mb-2">Tracking Corruption Cases</p>
           <p class="text-sm text-justify">
-            This is a project of <a href="http://transparencit.com" target="_blank" rel="noreferrer noopener">TransparencIT</a> funded and supported by <a href="http://trustafrica.org" target="_blank" rel="noreferrer noopener">TrustAfrica</a> to monitor corruption cases in Nigeria to ensure compliance, reduce delays, improve efficiency and achieve speedy conclusion of trials.
+            This is a project of <a class="text-link" href="http://transparencit.com" target="_blank" rel="noreferrer noopener">TransparencIT</a> funded and supported by <a class="text-link" href="http://trustafrica.org" target="_blank" rel="noreferrer noopener">TrustAfrica</a> to monitor corruption cases in Nigeria to ensure compliance, reduce delays, improve efficiency and achieve speedy conclusion of trials.
           </p>
         </div>
         <div class="w-full md:px-4 mb-8 md:w-1/2 lg:w-1/3">
           <p class="text-sm">Newsletter Signup</p>
           <form action="#" method="GET">
-            <div class="h-full flex bg-white rounded-lg justify-between items-center">
+            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
               <label
                 for="search-text"
                 class="flex w-2/3 items-center ml-2"
@@ -38,13 +38,13 @@
         <div class="w-full md:px-4 lg:w-1/3">
           <h4 class="text-2xl mb-2">Contact</h4>
           <div class="flex flex-row mb-3">
-            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/TransparencITng" class="" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/TransparencITng" class="text-link" data-toggle="tooltip" data-original-title="Follow us">
               <TwitterIcon />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/TransparencITng" class="ml-3" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" rel="noopener noreferrer" href="https://facebook.com/TransparencITng" class="ml-3 text-link" data-toggle="tooltip" data-original-title="Follow us">
               <FacebookIcon />
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/TransparencITng" class="ml-3" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" rel="noopener noreferrer" href="https://instagram.com/TransparencITng" class="ml-3 text-link" data-toggle="tooltip" data-original-title="Follow us">
               <InstagramIcon />
             </a>
           </div>

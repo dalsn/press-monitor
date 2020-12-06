@@ -66,6 +66,7 @@ module.exports = {
         transblue: "#EEFFE6",
         case: "#1C3644",
         statorange: "#FF9292",
+        link: "#5e72e4",
         2: "#79AFFF",
         737: "#FFB992",
         43: "#FF4747",
