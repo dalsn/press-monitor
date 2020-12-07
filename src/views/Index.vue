@@ -21,7 +21,7 @@
 			View All Cases
 		</button>
 	</section>
-	<Footer />
+	<Footer className="bg-hero"/>
   </div>
 </template>
 

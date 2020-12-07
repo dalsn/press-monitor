@@ -34,7 +34,7 @@
 
     </aside>
 
-    <main class="bg-hero w-full md:w-3/4 md:py-4">
+    <main class="bg-hero w-full md:w-3/4 md:pt-2">
       <!-- <h3
         class="hidden md:block text-center font-bold text-3xl text-transpurple mb-8"
       >
@@ -44,7 +44,7 @@
       <div class="hidden md:flex items-center h-10 px-4">
         <h2 class="text-lg font-medium truncate mr-5">Data Portal</h2>
         <a href="" class="ml-auto flex text-theme-1 dark:text-theme-10">
-          <RefreshCcwIcon class="w-4 h-4 mr-3" /> Reload Data
+          <RefreshCcwIcon class="mr-3" /> Reload Data
         </a>
       </div>
 
@@ -186,6 +186,7 @@
         </div>
       </section>
     </main>
+    <Footer className="bg-white" />
   </div>
 </template>
 
@@ -195,6 +196,7 @@ import tableData from "@/data/mockData";
 import BarChart from "@/components/Charts/BarChart";
 import TagsInput from '@/components/UIElements/TagsInput';
 import StatePill from "@/components/UIElements/StatePill";
+import Footer from "@/components/partials/Footer";
 
 export default {
   name: "ResultPageByDataPoints",
@@ -204,7 +206,7 @@ export default {
   mounted() {
     this.url = "http://example.com"
   },
-  components: { BarChart, TagsInput, StatePill },
+  components: { BarChart, TagsInput, StatePill, Footer },
   data: () => {
     return {
       activeParameter: "location",

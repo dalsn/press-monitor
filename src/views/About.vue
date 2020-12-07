@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</div>
-		<Footer />
+		<Footer className="bg-hero" />
 	</section>
 </template>
 

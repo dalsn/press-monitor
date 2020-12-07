@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-hero">
+  <footer class="" :class="className">
       <div
         class="pt-16 pb-8 px-4 md:px-8 flex flex-row flex-wrap"
       >
@@ -70,6 +70,7 @@
 <script>
 export default {
   name: "Footer",
+  props: ['className'],
   data() {
     return {
       year: new Date().getFullYear()

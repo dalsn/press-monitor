@@ -17,6 +17,18 @@ const routes = [
       import (/* webpackChunkName: "explore" */ "../views/LandingPage")
   },
   {
+    path: "/cases",
+    name: "CaseList",
+    component: () => 
+      import (/* webpackChunkName: "explore" */ "../views/CaseList")
+  },
+  {
+    path: "/cause-list",
+    name: "CauseList",
+    component: () => 
+      import (/* webpackChunkName: "explore" */ "../views/CauseList")
+  },
+  {
     path: "/state/:id",
     name: "ResultPageByStateSearch",
     component: () =>
