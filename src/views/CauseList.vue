@@ -83,7 +83,7 @@
                     </div> -->
                 </div>
             </div>
-            <div class="section pt-3">
+            <div class="pt-3">
                 <div class="w-full">
                     <table class="table w-full">
                         <thead class="bg-light">
