@@ -98,7 +98,7 @@
                         <tbody>
                             <tr class="text-md">
                                 <td class="bg-hero lg:hidden p-4 text-md">Bello Bello <span>(Test 1)</span> </td>
-                                <td class="hidden lg:block">Sani Sani <span>(Testing)</span> Fmr MD</td>
+                                <td class="hidden lg:table-cell">Sani Sani <span>(Testing)</span> Fmr MD</td>
                                 <td data-th="Alleged Offence">
                                     $400,000
                                     <br >
@@ -110,7 +110,7 @@
                             </tr>
                             <tr class="text-md">
                                 <td class="bg-hero lg:hidden p-4 text-md">Bello Bello <span>(Test 1)</span> </td>
-                                <td class="hidden lg:block">Sani Sani <span>(Testing)</span> Fmr MD</td>
+                                <td class="hidden lg:table-cell">Sani Sani <span>(Testing)</span> Fmr MD</td>
                                 <td data-th="Alleged Offence">
                                     $400,000
                                     <br >
@@ -122,7 +122,7 @@
                             </tr>
                             <tr class="text-md">
                                 <td class="bg-hero lg:hidden p-4 text-md">Bello Bello <span>(Test 1)</span> </td>
-                                <td class="hidden lg:block">Sani Sani <span>(Testing)</span> Fmr MD</td>
+                                <td class="hidden lg:table-cell">Sani Sani <span>(Testing)</span> Fmr MD</td>
                                 <td data-th="Alleged Offence">
                                     $400,000
                                     <br >

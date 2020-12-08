@@ -1,15 +1,15 @@
 <template>
   <footer class="" :class="className">
       <div
-        class="pt-16 pb-8 px-4 md:px-8 flex flex-row flex-wrap"
+        class="pt-16 pb-8 px-4 flex flex-row flex-wrap"
       >
-        <div class="w-full md:px-4 mb-8 md:w-1/2 lg:w-1/3">
+        <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
           <p class="text-xl md:text-2xl mb-2">Tracking Corruption Cases</p>
           <p class="text-sm text-justify">
             This is a project of <a class="text-link" href="http://transparencit.com" target="_blank" rel="noreferrer noopener">TransparencIT</a> funded and supported by <a class="text-link" href="http://trustafrica.org" target="_blank" rel="noreferrer noopener">TrustAfrica</a> to monitor corruption cases in Nigeria to ensure compliance, reduce delays, improve efficiency and achieve speedy conclusion of trials.
           </p>
         </div>
-        <div class="w-full md:px-4 mb-8 md:w-1/2 lg:w-1/3">
+        <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
           <p class="text-sm">Newsletter Signup</p>
           <form action="#" method="GET">
             <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
@@ -20,7 +20,7 @@
                 <input
                   id="search-text"
                   class="h-12 focus:outline-none pl-1 w-full"
-                  type="text"
+                  type="email"
                   placeholder="Enter your email"
                 />
               </label>
@@ -35,7 +35,7 @@
             </div>
           </form>
         </div>
-        <div class="w-full md:px-4 lg:w-1/3">
+        <div class="w-full lg:w-1/3 lg:pl-8">
           <h4 class="text-2xl mb-2">Contact</h4>
           <div class="flex flex-row mb-3">
             <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/TransparencITng" class="text-link" data-toggle="tooltip" data-original-title="Follow us">

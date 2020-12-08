@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-transpurple py-4 md:py-5 px-2 md:px-10 lg:px-16  overflow-x-hiddens shadow-xl"
+    class="bg-transpurple py-4 md:py-5 px-2 md:px-10 xl:px-16 overflow-x-hiddens shadow-xl"
   >
     <div class="lg:flex justify-between items-center">
       <div class="w-full top-menu flex justify-between items-center">
@@ -21,43 +21,43 @@
       >
         <!-- <router-link
           to="/state/1"
-          class="links block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          class="links block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           Pick a state
         </router-link> -->
         <router-link
           to="/datapoints"
-          class="links block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          class="links block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           Data Portal
         </router-link>
         <router-link
           to="/cases"
-          class="block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           Cases
         </router-link>
         <router-link
           to="/cause-list"
-          class=" block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          class=" block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           Cause List
         </router-link>
         <router-link
           to="/"
-          class=" block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          class=" block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           Resources
         </router-link>
         <router-link
           to="/about"
-          class="block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           About
         </router-link>
         <router-link
-          to="/"
-          class="links block lg:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
+          to="/contact-us"
+          class="links block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           Contact Us
         </router-link>
@@ -82,6 +82,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-nav {
+img {
+  max-width: inherit;
 }
 </style>
