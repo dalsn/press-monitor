@@ -43,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mx-auto px-4 lg:px-24 section pt-3 mt-4">
+            <div class="mx-auto px-4 lg:px-24 section pt-3 mt-4" v-show="cases.length > 0">
                 <div class="flex justify-between items-center mb-6">
                     <p class="flex text-xl md:text-4xl text-transpurple">
                         List of Cases
@@ -65,12 +65,12 @@
                 <button class="flex justify-center btn mx-4 md:mx-auto mt-8 border border-transpurple xl:w-1/6 md:w-1/3 p-3 rounded-full hover:shadow-lg">
                     VIEW MORE
                 </button>
-                <!-- <div class="section pt-3 no-records">
-                    <h4>No records Available</h4>
-                </div> -->
-                <div class="mt-4 algolia flex justify-end">
-                    <img alt="Search by Algolia" src="../assets/images/vectors/search-by-algolia.svg" class="h-4">
-                </div>
+            </div>
+            <div class="h-64 flex items-center justify-center" v-show="cases.length < 1">
+                <h4 class="text-2xl">{{message}}</h4>
+            </div>
+            <div class="mt-4 algolia flex justify-end" v-show="searchAction">
+                <img alt="Search by Algolia" src="../assets/images/vectors/search-by-algolia.svg" class="h-4">
             </div>
         </div>
 		<Footer className="bg-hero" />
@@ -80,6 +80,7 @@
 <script>
     import Footer from "../components/partials/Footer";
 	import CaseCard from "../components/UIElements/CaseCard";
+    import axios from "axios";
 
 	export default {
 		components: {
@@ -88,8 +89,118 @@
 		},
 		data() {
 			return {
-
+                "cases": [],
+                "casesList": [],
+                "page": 0,
+                "disabled": false,
+                "isLoading": true,
+                "fullPage": false,
+                "message": "No cases recorded yet!",
+                "q": "",
+                "filterQuery": "",
+                "searchAction": false
 			}
-		}
+		},
+        created() {
+            this.getCases();
+        },
+        computed: {
+            offenceUrl() {
+                return id => `/offence?pid=${id}`;
+            }
+        },
+        watch: {
+            filterQuery() {
+                this.filterCases();
+            }
+        },
+        methods: {
+            getCases() {
+                this.searchAction = false;
+                this.disabled = true;
+                this.isLoading = true;
+
+                axios.get('/api/cases?page=' + this.page)
+                .then(response => {
+                    if (response.data.cases) {
+                        let cases = response.data.cases;
+
+                        if (typeof cases === "object")
+                            cases = Object.keys(cases).map(key => cases[key]);
+
+                        cases.forEach(c => {
+                            this.casesList.push(c);
+                        });
+
+                        this.cases = this.casesList;
+                        this.page++;
+                    }
+                    if (this.cases.length < 1)
+                        this.message = "No cases recorded yet!";
+
+                    this.disabled = false;
+                    this.isLoading = false;
+                })
+                .catch(e => {
+                    console.error(e);
+                    this.disabled = false;
+                    this.isLoading = false;
+                });
+            },
+
+            search() {
+                if (this.q.trim().length < 1) {
+                    this.reset();
+                    this.getCases();
+                    return;
+                }
+
+                this.searchAction = true;
+                this.isLoading = true;
+                axios.get('/api/cases/search?q=' + this.q)
+                .then(response => {
+                    this.casesList = [];
+                    this.page = 0;
+                    if (response.data.cases) {
+                        let cases = response.data.cases;
+
+                        if (typeof cases === "object")
+                            cases = Object.keys(cases).map(key => cases[key]);
+
+                        cases.forEach(c => {
+                            this.casesList.push(c);
+                        });
+                        // this.casesList = response.data.cases;
+                    }
+                    this.cases = this.casesList;
+
+                    if (this.cases.length < 1)
+                        this.message = "No cases found!";
+                    this.isLoading = false;
+                })
+                .catch(e => {
+                    console.error(e);
+                    this.isLoading = false;
+                });
+            },
+
+            filterCases () {
+                var vm = this
+                this.cases = this.casesList.filter(function (item) {
+                    let q = vm.filterQuery.trim().toLowerCase();
+                    return item.title.toLowerCase().includes(q) || item.type.toLowerCase().includes(q) || item.judge.name.toLowerCase().includes(q) || item.agency.name.toLowerCase().includes(q) || item.status.toLowerCase().includes(q);
+                        // return item.title.toLowerCase().indexOf(q) !== -1;
+                });
+
+                if (this.cases.length < 1)
+                    this.message = "No cases found!";
+            },
+
+            reset() {
+                this.casesList = [];
+                this.cases = [];
+                this.page = 0;
+            }
+        }
 	};
 </script>

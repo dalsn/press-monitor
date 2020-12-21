@@ -65,6 +65,14 @@ const routes = [
       import(
         /* webpackChunkName: "about" */ "../views/Contact.vue"
       )
+  },
+  {
+    path: "/data",
+    name: "DataPortal",
+    component: () =>
+      import(
+        /* webpackChunkName: "about" */ "../views/Dataportal.vue"
+      )
   }
 ];
 
