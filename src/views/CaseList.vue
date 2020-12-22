@@ -106,7 +106,7 @@
         },
         computed: {
             offenceUrl() {
-                return id => `/offence?pid=${id}`;
+                return id => `https://corruptioncases.ng/offence?pid=${id}`;
             }
         },
         watch: {
@@ -120,7 +120,7 @@
                 this.disabled = true;
                 this.isLoading = true;
 
-                axios.get('/api/cases?page=' + this.page)
+                axios.get('https://corruptioncases.ng/api/cases?page=' + this.page)
                 .then(response => {
                     if (response.data.cases) {
                         let cases = response.data.cases;
@@ -157,7 +157,7 @@
 
                 this.searchAction = true;
                 this.isLoading = true;
-                axios.get('/api/cases/search?q=' + this.q)
+                axios.get('https://corruptioncases.ng/api/cases/search?q=' + this.q)
                 .then(response => {
                     this.casesList = [];
                     this.page = 0;
