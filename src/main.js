@@ -8,6 +8,7 @@ import "./assets/tailwind.css";
 import "./libs";
 
 window.cash = cash;
+window.host = `${process.env.VUE_APP_CCD_HOST}`;
 
 Vue.config.productionTip = false;
 
