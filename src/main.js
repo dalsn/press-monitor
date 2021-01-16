@@ -9,6 +9,7 @@ import "./libs";
 
 window.cash = cash;
 window.host = `${process.env.VUE_APP_CCD_HOST}`;
+window.portal = `${process.env.VUE_APP_PORTAL_URL}`;
 
 Vue.config.productionTip = false;
 

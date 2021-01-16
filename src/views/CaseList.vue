@@ -1,7 +1,7 @@
 <template>
 	<section class="pt-4 lg:pt-12">
-		<div class="mb-2 md:mb-16 mx-auto w-full px-4 py-6 lg:py-1">
-            <div class="mx-auto w-2/3 pt-5 pb-2">
+		<div class=" px-2 md:px-10 xl:px-16 mb-2 md:mb-16 mx-auto w-full py-6 lg:py-1">
+            <div class="mx-auto lg:w-2/3 pt-5 pb-2">
                 <div class="mx-auto">
                     <form method="GET" class="mb-4" @submit.prevent="search()">
                         <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mx-auto px-4 lg:px-24 pt-3 mt-4">
+            <div class="mx-auto pt-3 mt-4">
                 <div class="flex justify-between items-center mb-6">
                     <p class="flex text-xl md:text-4xl text-transpurple">
                         List of Cases

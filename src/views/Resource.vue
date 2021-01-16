@@ -1,6 +1,6 @@
 <template>
 	<section class="pt-4 lg:pt-12">
-		<div class="pb-5 mb-2 md:mb-16 mx-auto w-11/12 lg:w-3/4 py-6 lg:py-1">
+		<div class="pb-5 mb-2 md:mb-16 mx-auto px-2 md:px-10 xl:px-16 py-6 lg:py-1">
             <div class="flex text-xl md:text-2xl text-transpurple mb-6">
                 <ArchiveIcon class="md:mt-1 mr-2" /> <strong>Archives</strong> <span class="pl-2"><small> - Download</small> </span>
             </div>
@@ -18,7 +18,7 @@
                     <div class="mx-auto">
                         <div class="flex flex-col mb-4">
                             <label>Search</label>
-                            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
+                            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3">
                                 <label
                                     for="filter-date"
                                     class="flex w-full items-center mx-2 px-2"
@@ -87,7 +87,7 @@
                     <div class="mx-auto">
                         <div class="flex flex-col mb-4">
                             <label>Search</label>
-                            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
+                            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3">
                                 <label
                                     for="filter-date"
                                     class="flex w-full items-center mx-2 px-2"

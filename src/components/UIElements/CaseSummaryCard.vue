@@ -4,16 +4,16 @@
 			<img alt="Scale of justice" src="@/assets/images/vectors/scale.svg" class="">
 		</span>
         <div class="text-transpurple">
-            <p><small>Date of first arraignment | 24th Oct. 2020</small></p>
-            <p class="text-xl lg:text-2xl my-4"><strong>FRN vs Edidiong Udokpoh</strong></p>
-            <p class="lg:text-lg mb-3 text-justify">The Defendant, whilst being the IT Officer of the Bank, was alleged to have fraudulently inserted the names and account numbers of his family members and friends into the payroll schedule of Delta State government being handled by Access bank and subsequently paid monies into those Accounts.</p>
-            <ul class="mb-3">
-            	<li>Edidiong Udokpoh (Cyber Criminal)</li>
+            <p><small>Date of first arraignment | {{ caseFile.date_of_arraignment }}</small></p>
+            <p class="text-xl lg:text-2xl my-4"><strong>{{ caseFile.title }}</strong></p>
+            <p class="lg:text-lg mb-3 text-justify">{{ caseFile.description }}</p>
+            <ul v-if="caseFile.defendants" class="mb-3">
+            	<li v-for="(defendant, key) in caseFile.defendants" :key="key">{{ defendant.name }} <span v-if="defendant.designation">({{ defendant.designation }})</span></li>
             </ul>
-            <p class="mb-1"><strong>Prosecuting Agency:</strong> Economic and Financial Crimes Commission
-            <p class="mb-4"><strong>Prosecuting Judge:</strong> Justice Mercy Abang</p>
+            <p v-if="caseFile.agency" class="mb-1"><strong>Prosecuting Agency:</strong> {{ caseFile.agency.name }}
+            <p v-if="caseFile.judge" class="mb-4"><strong>Prosecuting Judge:</strong> {{ caseFile.judge.name }}</p>
             <p class="text-right">
-            	<strong>Status: Decided</strong>
+            	<strong>Status: {{ caseFile.status }}</strong>
             </p>
         </div>
     </div>
@@ -21,12 +21,18 @@
 
 <script>
 	export default {
-		props: ['case', 'className'],
+		props: {
+            caseFile: {
+                type: Object,
+                default: () => {
+                    return {}
+                }
+            },
+            className: [Object, String]
+        },
 		name: "CaseSummaryCard",
 		data() {
-			return {
-
-			}
+			return {}
 		}
 	};
 </script>

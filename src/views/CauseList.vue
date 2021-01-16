@@ -1,6 +1,6 @@
 <template>
 	<section class="pt-4 lg:pt-12">
-		<div class="pb-5 mb-2 md:mb-16 mx-auto w-11/12 py-6 lg:py-1">
+		<div class="pb-5 mb-2 md:mb-16 mx-auto py-6 lg:py-1 px-2 md:px-10 xl:px-16">
             <p class="flex text-xl md:text-2xl text-transpurple mb-2 md:mb-4">
                 <CalendarIcon class="md:mt-1 mr-2" /> <span>Upcoming Corruption Cases</span>
             </p>
@@ -141,7 +141,7 @@
                 "temp_list": [],
                 "isLoading": true,
                 "fullPage": false,
-                "message": "",
+                "message": "Loading...",
                 "q": "",
                 "filterQuery": "",
                 "date": "",

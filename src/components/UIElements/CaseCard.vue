@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex shadow-lg rounded-lg px-5 py-4 md:pt-8 md:pb-4 mb-8 border"
+    class="flex shadow-lg rounded-lg px-5 py-4 md:pt-8 md:pb-4 mb-8 border case-card"
     :class="className"
   >
     <div>
@@ -41,7 +41,7 @@
 <script>
 export default {
   props: {
-    className: String,
+    className: [Object, String],
     caseFile: Object
   },
   name: "CaseCard",
