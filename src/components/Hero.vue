@@ -1,9 +1,9 @@
 <template>
   <header class="h-auto font-serif">
     <div
-      class="md:pb-12 md:pt-59 md:px-8 lg:px-12 bg-hero relative overflow-y-hidden"
+      class="md:pb-12 md:pt-59 px-2 md:px-10 xl:px-16 bg-hero relative overflow-y-hidden"
     >
-      <div class="text p-3 pt-10 md:pt-8 lg:pt-5 text-left">
+      <div class="text pt-10 md:pt-8 lg:pt-5 text-left">
         <h1
           class="font-bold md:leading-58 text-transpurple text-2xl md:text-5xl"
         >
@@ -19,7 +19,7 @@
         </p>
       </div>
       <div
-        class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66 p-3"
+        class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66"
       >
         <form action="">
           <div class="h-full flex bg-white rounded-lg shadow-md">
@@ -66,8 +66,8 @@
                 id="search-dropdown"
                 class="h-12 w-full mx-2 focus:outline-none"
               >
-                <option value="">Abia</option>
-                <option value="">Adamawa</option>
+                <option value="">Search all states</option>
+                <option v-for="(state, key) in states" :key="key" :value="state.shortname">{{ state.name }}</option>
               </select>
             </label>
             <div
@@ -103,11 +103,28 @@
 </template>
 
 <script>
+
+import axios from "axios";
+
 export default {
   name: "Hero",
   data() {
     return {
+      states: []
     }
+  },
+  mounted() {
+    this.getStates();
+  },
+  methods: {
+    getStates() {
+      axios.get(`${window.host}/api/states`)
+      .then(response => {
+        if (response.data) {
+          this.states = response.data;
+        }
+      });
+    },
   }
 };
 </script>

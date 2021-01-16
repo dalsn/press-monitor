@@ -1,9 +1,9 @@
 <template>
 	<section class="pt-4 lg:pt-12">
-		<div class="mb-2 md:mb-16 mx-auto w-full px-4 py-6 lg:py-1">
-            <div class="mx-auto w-2/3 pt-5 pb-2">
+		<div class=" px-2 md:px-10 xl:px-16 mb-2 md:mb-16 mx-auto w-full py-6 lg:py-1">
+            <div class="mx-auto lg:w-2/3 pt-5 pb-2">
                 <div class="mx-auto">
-                    <form method="GET" class="mb-4">
+                    <form method="GET" class="mb-4" @submit.prevent="search()">
                         <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
                             <label
                                 for="search-text"
@@ -14,6 +14,7 @@
                                     class="h-12 focus:outline-none pl-1 w-full"
                                     type="text"
                                     placeholder="Search database"
+                                    v-model="q"
                                 />
                             </label>
                             <div class="w-1/3 md:w-1/4 px-2">
@@ -37,40 +38,38 @@
                                     class="h-12 focus:outline-none w-full"
                                     type="text"
                                     placeholder="Filter list"
+                                    v-model="filterQuery"
                                 />
                             </label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mx-auto px-4 lg:px-24 section pt-3 mt-4" v-show="cases.length > 0">
+            <div class="mx-auto pt-3 mt-4">
                 <div class="flex justify-between items-center mb-6">
                     <p class="flex text-xl md:text-4xl text-transpurple">
                         List of Cases
                     </p>
                     <span class="rounded-full shadow-lg bg-transpurple p-2 md:p-3">
-                        <img alt="Scale of justice" src="../assets/images/vectors/scale.svg" class="">
+                        <img alt="Scale of justice" src="@/assets/images/vectors/scale.svg" class="">
                     </span>
                 </div>
-                <div class="md:grid md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
-                    <CaseCard />
-                    <CaseCard />
-                    <CaseCard />
-                    <CaseCard />
-                    <CaseCard />
-                    <CaseCard />
-                    <CaseCard />
-                    <CaseCard />
+                <div v-if="cases.length > 0 && !isLoading">
+                    <div class="md:grid md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+                        <template v-for="(c, key) in cases">
+                            <CaseCard :caseFile="c" :key="key"></CaseCard>
+                        </template>
+                    </div>
+                    <button class="flex justify-center btn mx-4 md:mx-auto mt-8 border border-transpurple xl:w-1/6 md:w-1/3 p-3 rounded-full hover:shadow-lg disabled:opacity-75" @click="getCases()" :disabled="disabled" v-show="!searchAction">
+                        VIEW MORE
+                    </button>
                 </div>
-                <button class="flex justify-center btn mx-4 md:mx-auto mt-8 border border-transpurple xl:w-1/6 md:w-1/3 p-3 rounded-full hover:shadow-lg">
-                    VIEW MORE
-                </button>
-            </div>
-            <div class="h-64 flex items-center justify-center" v-show="cases.length < 1">
-                <h4 class="text-2xl">{{message}}</h4>
-            </div>
-            <div class="mt-4 algolia flex justify-end" v-show="searchAction">
-                <img alt="Search by Algolia" src="../assets/images/vectors/search-by-algolia.svg" class="h-4">
+                <div class="h-64 flex items-center justify-center" v-else>
+                    <h4 class="text-2xl">{{message}}</h4>
+                </div>
+                <div class="mt-4 algolia flex justify-end" v-show="searchAction">
+                    <img alt="Search by Algolia" src="@/assets/images/vectors/search-by-algolia.svg" class="h-5">
+                </div>
             </div>
         </div>
 		<Footer className="bg-hero" />
@@ -95,7 +94,7 @@
                 "disabled": false,
                 "isLoading": true,
                 "fullPage": false,
-                "message": "No cases recorded yet!",
+                "message": "Loading...",
                 "q": "",
                 "filterQuery": "",
                 "searchAction": false
@@ -106,7 +105,7 @@
         },
         computed: {
             offenceUrl() {
-                return id => `https://corruptioncases.ng/offence?pid=${id}`;
+                return id => `${window.host}/offence?pid=${id}`;
             }
         },
         watch: {
@@ -118,9 +117,10 @@
             getCases() {
                 this.searchAction = false;
                 this.disabled = true;
-                this.isLoading = true;
+                // this.isLoading = true;
+                this.message = "Loading...";
 
-                axios.get('https://corruptioncases.ng/api/cases?page=' + this.page)
+                axios.get(`${window.host}/api/cases?page=${this.page}`)
                 .then(response => {
                     if (response.data.cases) {
                         let cases = response.data.cases;
@@ -157,7 +157,7 @@
 
                 this.searchAction = true;
                 this.isLoading = true;
-                axios.get('https://corruptioncases.ng/api/cases/search?q=' + this.q)
+                axios.get(`${window.host}/api/cases/search?q=${this.q}`)
                 .then(response => {
                     this.casesList = [];
                     this.page = 0;
