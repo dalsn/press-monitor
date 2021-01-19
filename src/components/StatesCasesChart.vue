@@ -1,8 +1,6 @@
 <template>
   <div class="overflow-y-hidden">
-    <div
-      class="chart px-6 py-4 h-auto text-center lg:col-span-1"
-    >
+    <div class="chart px-6 py-4 h-auto text-center lg:col-span-1">
       <span class="text-lg text-transpurple font-bold mb-8"
         >Top Five States</span
       >
@@ -86,5 +84,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

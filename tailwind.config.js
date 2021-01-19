@@ -147,8 +147,8 @@ module.exports = {
     }
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
-    opacity: ['disabled']
+    backgroundColor: ["responsive", "hover", "focus", "active"],
+    opacity: ["disabled"]
   },
   plugins: []
 };

@@ -13,7 +13,9 @@
             Total Court Cases
           </h1>
           <img class="mb-4 mx-auto" src="../assets/svg/staticon.svg" alt="" />
-          <p class="mx-auto text-5xl font-bold -mt-24 mb-6">{{ no_of_cases }}</p>
+          <p class="mx-auto text-5xl font-bold -mt-24 mb-6">
+            {{ no_of_cases }}
+          </p>
         </div>
         <p class="text-lg text-center text-transpurple font-bold mt-4 mb-2">
           Top Four Crimes
@@ -93,42 +95,48 @@ export default {
     chartdata() {
       return {
         labels: this.names,
-        datasets: [{
-          label: "Cases by State",
-          backgroundColor: [
-            "#070241",
-            "#58B72B",
-            "#F2994A",
-            "#66C9E8",
-            "#35D3B7",
-            "#BCC924"
-          ],
-          pointBackgroundColor: "white",
-          borderWidth: 1,
-          pointBorderColor: "#249EBF",
-          data: this.counts
-        }]
-      }
+        datasets: [
+          {
+            label: "Cases by State",
+            backgroundColor: [
+              "#070241",
+              "#58B72B",
+              "#F2994A",
+              "#66C9E8",
+              "#35D3B7",
+              "#BCC924"
+            ],
+            pointBackgroundColor: "white",
+            borderWidth: 1,
+            pointBorderColor: "#249EBF",
+            data: this.counts
+          }
+        ]
+      };
     },
-    options() { 
+    options() {
       return {
         scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            },
-            gridLines: {
-              display: true
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              },
+              gridLines: {
+                display: true
+              }
             }
-          }],
-          xAxes: [{
-            ticks: {
-              beginAtZero: true
-            },
-            gridLines: {
-              display: false
+          ],
+          xAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              },
+              gridLines: {
+                display: false
+              }
             }
-          }]
+          ]
         },
         legend: {
           display: false
@@ -145,7 +153,7 @@ export default {
         responsive: true,
         maintainAspectRatio: false,
         height: 200
-      }
+      };
     }
   },
   mounted() {
@@ -155,10 +163,9 @@ export default {
   },
   methods: {
     getSummary() {
-      axios.get(`${window.host}/api/offences/4`)
-      .then(response => {
+      axios.get(`${window.host}/api/offences/4`).then(response => {
         if (response.data) {
-          this.offences = Object.keys(response.data).map(i => response.data[i])
+          this.offences = Object.keys(response.data).map(i => response.data[i]);
           this.offences.sort((a, b) => {
             return b.cases_count - a.cases_count;
           });
@@ -173,12 +180,11 @@ export default {
       });
     },
     getCasesCount() {
-      axios.get(`${window.host}/api/casescount`)
-      .then(response => {
+      axios.get(`${window.host}/api/casescount`).then(response => {
         if (response.data) {
           this.no_of_cases = response.data.no_of_cases;
         }
-      })
+      });
     }
   }
 };

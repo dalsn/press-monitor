@@ -134,8 +134,7 @@
 export default {
   name: "Summary",
   data() {
-    return {
-    }
+    return {};
   }
 };
 </script>

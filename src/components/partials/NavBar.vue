@@ -6,7 +6,11 @@
       <div class="w-full top-menu flex justify-between items-center">
         <div class="logo">
           <router-link to="/">
-            <img class="h-8 md:h-10" src="../../assets/images/vectors/tcclogo_white.svg" alt="TransparencIT logo">
+            <img
+              class="h-8 md:h-10"
+              src="../../assets/images/vectors/tcclogo_white.svg"
+              alt="TransparencIT logo"
+            />
           </router-link>
         </div>
         <HamburgerIcon
