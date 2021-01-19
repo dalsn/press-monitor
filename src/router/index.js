@@ -65,6 +65,14 @@ const routes = [
   //     import(
   //       /* webpackChunkName: "about" */ "../views/Contact.vue"
   //     )
+  },
+  { 
+    path: "/cases/:slug",
+    name: "Case Details",
+    component: () => 
+      import(
+        "../views/Case.vue"
+      ) 
   }
 ];
 

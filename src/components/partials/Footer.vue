@@ -1,7 +1,7 @@
 <template>
   <footer class="" :class="className">
       <div
-        class="pt-16 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16"
+        class="pt-16 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
       >
         <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
           <p class="text-xl md:text-2xl mb-2">Tracking Corruption Cases</p>

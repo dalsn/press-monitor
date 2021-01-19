@@ -75,7 +75,8 @@ module.exports = {
         16: "#3A5F97",
         37: "#FF8B49",
         stages: "#F8FDFF",
-        hero: "#F5F5F6"
+        hero: "#F5F5F6",
+        dark: "#212529"
       },
       letterSpacing: {
         23: "0.014375rem"
