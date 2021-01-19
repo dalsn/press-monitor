@@ -6,7 +6,7 @@
         <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
           <p class="text-xl md:text-2xl mb-2">Tracking Corruption Cases</p>
           <p class="text-sm text-justify">
-            This is a project of <a class="text-link" href="http://transparencit.com" target="_blank" rel="noreferrer noopener">TransparencIT</a> funded and supported by <a class="text-link" href="http://trustafrica.org" target="_blank" rel="noreferrer noopener">TrustAfrica</a> to monitor corruption cases in Nigeria to ensure compliance, reduce delays, improve efficiency and achieve speedy conclusion of trials.
+            This is a project of <a class="text-link" href="//transparencit.com" target="_blank" rel="noreferrer noopener">TransparencIT</a> funded and supported by <a class="text-link" href="//trustafrica.org" target="_blank" rel="noreferrer noopener">TrustAfrica</a> and <a class="text-link" href="//www.gov.uk/government/organisations/department-for-international-development" target="_blank" rel="noreferrer noopener">UK Department for International Development</a> to monitor corruption cases in Nigeria to ensure compliance, reduce delays, improve efficiency and achieve speedy conclusion of trials.
           </p>
         </div>
         <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">

@@ -9,17 +9,20 @@
         class="py-4 px-6 h-auto border rounded-lg flex flex-col items-center my-4 shadow-md items-center lg:col-span-1"
       >
         <div class="text-center">
-          <h1 class="text-lg text-transpurple font-bold mb-8">
+          <h1 class="text-lg text-transpurple font-bold mb-4">
             Total Court Cases
           </h1>
-          <img class="mb-8 mx-auto" src="../assets/svg/staticon.svg" alt="" />
+          <img class="mb-4 mx-auto" src="../assets/svg/staticon.svg" alt="" />
           <p class="mx-auto text-5xl font-bold -mt-24 mb-6">{{ no_of_cases }}</p>
         </div>
+        <p class="text-lg text-center text-transpurple font-bold mt-4 mb-2">
+          Top Four Crimes
+        </p>
         <div class="statistics text-stat">
           <div
             v-for="(offence, key) in offences"
             :key="key"
-            class="stat grid grid-cols-3 items-center row-gap-2 md:gap-x-12 md:text-lg mb-2"
+            class="stat grid grid-cols-3 items-center row-gap-2 md:gap-x-6 md:text-lg mb-2"
           >
             <div class="title text-transpurple">{{ offence.name }}</div>
             <div class="number justify-self-center text-transgray400">
@@ -54,7 +57,7 @@
         class="chart px-6 py-4 my-8 lg:my-4 col-span-8 border rounded-lg text-center shadow-md lg:col-span-1"
       >
         <span class="text-lg text-transpurple font-bold mb-8"
-          >Cases by State</span
+          >Top Five States</span
         >
         <div class="chart-wrapper mt-5">
           <bar-chart :chartdata="chartdata" :options="options"></bar-chart>

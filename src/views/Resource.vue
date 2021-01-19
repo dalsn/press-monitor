@@ -11,68 +11,52 @@
             <hr class="my-8">
             <div class="py-2" id="acja-table">
                 <p class="text-lg text-transpurple font-semibold pb-2"><strong>Administration of Criminal Justice Act/Laws</strong></p>
-                <!-- <div class="">
-                    <h6>No files available for download</h6>
-                </div> -->
-                <div class="pt-5 pb-2">
-                    <div class="mx-auto">
-                        <div class="flex flex-col mb-4">
-                            <label>Search</label>
-                            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3">
-                                <label
-                                    for="filter-date"
-                                    class="flex w-full items-center mx-2 px-2"
-                                >
-                                    <input
-                                        id="filter-date"
-                                        class="h-12 focus:outline-none w-full"
-                                        type="text"
-                                        placeholder="Filter list"
-                                    />
-                                </label>
+                <div v-if = "acjafiles.length > 0">
+                    <div class="pt-5 pb-2">
+                        <div class="mx-auto">
+                            <div class="flex flex-col mb-4">
+                                <label>Search</label>
+                                <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3">
+                                    <label
+                                        for="filterAcja"
+                                        class="flex w-full items-center mx-2 px-2"
+                                    >
+                                        <input
+                                            id="filterAcja"
+                                            class="h-12 focus:outline-none w-full"
+                                            type="text"
+                                            placeholder="Filter list"
+                                        />
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <table class="table w-full" id="acja">
+                        <thead class="bg-light">
+                            <tr class="text-left">
+                                <th>Document</th>
+                                <th width="20%">File size</th>
+                                <th width="20%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(doc, key) in acjafiles" :key="key">
+                                <td class="bg-hero">{{ doc.filename }}</td>
+                                <td data-th="File size">{{ doc.size }}</td>
+                                <td data-th="Action">
+                                    <a class="flex flex-row" target="_blank" rel="noreferrer noopener" :href="doc.url" download>
+                                        <DownloadCloudIcon class="mr-3" /> Download
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="pagination"></div>
                 </div>
-                <table class="table w-full" id="acja">
-                    <thead class="bg-light">
-                        <tr class="text-left">
-                            <th>Document</th>
-                            <th width="20%">File size</th>
-                            <th width="20%"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="pagination"></div>
+                <div v-else class="">
+                    <h6>No files available for download</h6>
+                </div>
             </div>
             <!-- <div class="section pt-3 no-records">
                 <h4>No records Available</h4>
@@ -80,113 +64,52 @@
             <hr class="my-8">
             <div class="py-2" id="acja-table">
                 <p class="text-lg text-transpurple font-semibold pb-2"><strong>Judgments</strong></p>
-                <!-- <div class="">
-                    <h6>No files available for download</h6>
-                </div> -->
-                <div class="pt-5 pb-2">
-                    <div class="mx-auto">
-                        <div class="flex flex-col mb-4">
-                            <label>Search</label>
-                            <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3">
-                                <label
-                                    for="filter-date"
-                                    class="flex w-full items-center mx-2 px-2"
-                                >
-                                    <input
-                                        id="filter-date"
-                                        class="h-12 focus:outline-none w-full"
-                                        type="text"
-                                        placeholder="Filter list"
-                                    />
-                                </label>
+                <div v-if="judgements.length > 0">
+                    <div class="pt-5 pb-2">
+                        <div class="mx-auto">
+                            <div class="flex flex-col mb-4">
+                                <label>Search</label>
+                                <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3">
+                                    <label
+                                        for="filterJudg"
+                                        class="flex w-full items-center mx-2 px-2"
+                                    >
+                                        <input
+                                            id="filterJudg"
+                                            class="h-12 focus:outline-none w-full"
+                                            type="text"
+                                            placeholder="Filter list"
+                                        />
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <table class="table w-full" id="acja">
+                        <thead class="bg-light">
+                            <tr class="text-left">
+                                <th>Document</th>
+                                <th width="20%">File size</th>
+                                <th width="20%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(doc, key) in judgements" :key="key">
+                                <td class="bg-hero">{{ doc.filename }}</td>
+                                <td data-th="File size">{{ doc.size }}</td>
+                                <td data-th="Action">
+                                    <a class="flex flex-row" target="_blank" rel="noreferrer noopener" :href="doc.url" download>
+                                        <DownloadCloudIcon class="mr-3" /> Download
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="pagination"></div>
                 </div>
-                <table class="table w-full" id="acja">
-                    <thead class="bg-light">
-                        <tr class="text-left">
-                            <th>Document</th>
-                            <th width="20%">File size</th>
-                            <th width="20%"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="bg-hero">Bauchi ACJA</td>
-                            <td data-th="File size">25 MB</td>
-                            <td data-th="Action">
-                                <a class="flex flex-row" target="_blank" rel="noreferrer noopener" href="#" download>
-                                    <DownloadCloudIcon class="mr-3" /> Download
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="pagination"></div>
+                <div v-else class="">
+                    <h6>No files available for download</h6>
+                </div>
             </div>
         </div>
 		<Footer className="bg-hero" />
@@ -195,6 +118,8 @@
 
 <script>
 	import Footer from "../components/partials/Footer";
+    import axios from "axios";
+    import $ from "jquery";
 
 	export default {
 		components: {
@@ -202,10 +127,12 @@
 		},
 		data() {
 			return {
-
+                acjafiles: [],
+                judgements: []
 			}
 		},
         mounted() {
+            this.getFiles();
             // $(document).ready( function () {
 
             //     let acja = $('#acja').DataTable({
@@ -225,6 +152,33 @@
             //         judg.search( this.value ).draw();
             //     });
             // })
+            let acja = $('#acja').DataTable({
+                "dom": 'rtp',
+                "pageLength": 5
+            });
+            let judg = $('#judg').DataTable({
+                "dom": 'rtp',
+                "pageLength": 5
+            });
+
+            $('#filterAcja').on( 'keyup', function () {
+                acja.search( this.value ).draw();
+            });
+
+            $('#filterJudg').on( 'keyup', function () {
+                judg.search( this.value ).draw();
+            });
+        },
+        methods: {
+            getFiles() {
+                axios.get(`${window.host}/api/resources`)
+                .then(response => {
+                    if (response.data) {
+                        this.acjafiles = response.data.acjaFiles;
+                        this.judgements = response.data.judgementFiles;
+                  }
+              });
+            }
         }
 	};
 </script>

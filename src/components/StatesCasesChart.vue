@@ -4,7 +4,7 @@
       class="chart px-6 py-4 h-auto text-center lg:col-span-1"
     >
       <span class="text-lg text-transpurple font-bold mb-8"
-        >Cases by State</span
+        >Top Five States</span
       >
       <div class="chart-wrapper mt-5">
         <bar-chart :chartdata="chartdata" :options="options"></bar-chart>
