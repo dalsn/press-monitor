@@ -13,26 +13,26 @@ const routes = [
   {
     path: "/explore",
     name: "Explore",
-    component: () => 
-      import (/* webpackChunkName: "explore" */ "../views/LandingPage")
+    component: () =>
+      import(/* webpackChunkName: "explore" */ "../views/LandingPage")
   },
   {
     path: "/cases",
     name: "CaseList",
-    component: () => 
-      import (/* webpackChunkName: "explore" */ "../views/CaseList")
+    component: () =>
+      import(/* webpackChunkName: "explore" */ "../views/CaseList")
   },
   {
     path: "/cause-list",
     name: "CauseList",
-    component: () => 
-      import (/* webpackChunkName: "explore" */ "../views/CauseList")
+    component: () =>
+      import(/* webpackChunkName: "explore" */ "../views/CauseList")
   },
   {
     path: "/resources",
     name: "Resource",
-    component: () => 
-      import (/* webpackChunkName: "explore" */ "../views/Resource")
+    component: () =>
+      import(/* webpackChunkName: "explore" */ "../views/Resource")
   },
   {
     path: "/state/:id",
@@ -54,25 +54,20 @@ const routes = [
     path: "/about",
     name: "About",
     component: () =>
-      import(
-        /* webpackChunkName: "about" */ "../views/About.vue"
-      )
-  // },
-  // {
-  //   path: "/contact-us",
-  //   name: "Contact",
-  //   component: () =>
-  //     import(
-  //       /* webpackChunkName: "about" */ "../views/Contact.vue"
-  //     )
+      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    // },
+    // {
+    //   path: "/contact-us",
+    //   name: "Contact",
+    //   component: () =>
+    //     import(
+    //       /* webpackChunkName: "about" */ "../views/Contact.vue"
+    //     )
   },
-  { 
+  {
     path: "/cases/:slug",
     name: "Case Details",
-    component: () => 
-      import(
-        "../views/Case.vue"
-      ) 
+    component: () => import("../views/Case.vue")
   }
 ];
 

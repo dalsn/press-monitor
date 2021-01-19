@@ -13,7 +13,7 @@ window.portal = `${process.env.VUE_APP_PORTAL_URL}`;
 
 Vue.config.productionTip = false;
 
-require( 'datatables.net' );
+require("datatables.net");
 
 new Vue({
   router,

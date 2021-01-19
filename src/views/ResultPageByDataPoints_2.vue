@@ -1,9 +1,7 @@
 <template>
   <section class="bg-hero font-serif">
     <header class="bg-white overflow-y-hidden pt-12">
-      <div
-        class="text text-center"
-      >
+      <div class="text text-center">
         <h1
           class="w-3/5 mx-auto font-bold text-transpurple text-2xl md:text-5xl"
         >

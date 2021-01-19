@@ -35,7 +35,7 @@ export default {
   methods: {
     setValue(el, binding, vnode) {
       if (vnode.context.value.length) {
-        (vnode.context.$refs["select"]).val(vnode.context.value);
+        vnode.context.$refs["select"].val(vnode.context.value);
       }
     },
     init(el, binding, vnode) {

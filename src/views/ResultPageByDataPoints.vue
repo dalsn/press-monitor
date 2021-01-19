@@ -7,31 +7,70 @@
     </h5>
     <aside class="w-full md:w-1/4 bg-transpurple px-6 py-4 text-white">
       <p>Filter Parameters</p>
-      <hr class="my-4">
+      <hr class="my-4" />
 
       <p>State</p>
-      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+      <tags-input
+        class="rounded-lg"
+        only-existing-tags="true"
+        add-tags-on-comma="true"
+        add-tags-on-blur="true"
+        typeahead="true"
+        typeahead-style="dropdown"
+        :typeahead-url="url"
+      ></tags-input>
 
-      <hr class="my-2">
+      <hr class="my-2" />
 
       <p>Agency</p>
-      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+      <tags-input
+        class="rounded-lg"
+        only-existing-tags="true"
+        add-tags-on-comma="true"
+        add-tags-on-blur="true"
+        typeahead="true"
+        typeahead-style="dropdown"
+        :typeahead-url="url"
+      ></tags-input>
 
-      <hr class="my-2">
+      <hr class="my-2" />
 
       <p>Crime</p>
-      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+      <tags-input
+        class="rounded-lg"
+        only-existing-tags="true"
+        add-tags-on-comma="true"
+        add-tags-on-blur="true"
+        typeahead="true"
+        typeahead-style="dropdown"
+        :typeahead-url="url"
+      ></tags-input>
 
-      <hr class="my-2">
+      <hr class="my-2" />
 
       <p>Court</p>
-      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
+      <tags-input
+        class="rounded-lg"
+        only-existing-tags="true"
+        add-tags-on-comma="true"
+        add-tags-on-blur="true"
+        typeahead="true"
+        typeahead-style="dropdown"
+        :typeahead-url="url"
+      ></tags-input>
 
-      <hr class="my-2">
+      <hr class="my-2" />
 
       <p>Judge</p>
-      <tags-input class="rounded-lg" only-existing-tags="true" add-tags-on-comma="true" add-tags-on-blur="true" typeahead="true" typeahead-style="dropdown" :typeahead-url="url"></tags-input>
-
+      <tags-input
+        class="rounded-lg"
+        only-existing-tags="true"
+        add-tags-on-comma="true"
+        add-tags-on-blur="true"
+        typeahead="true"
+        typeahead-style="dropdown"
+        :typeahead-url="url"
+      ></tags-input>
     </aside>
 
     <main class="bg-hero w-full md:w-3/4 md:pt-2">
@@ -50,9 +89,7 @@
 
       <div class="entry-points pt-4 w-full bg-gray-200 md:my-4 mb-4 px-4">
         <p class="mb-4">Filters</p>
-        <div
-          class="flex flex-wrap"
-        >
+        <div class="flex flex-wrap">
           <StatePill
             :class="{ 'bg-pill': !selectedLocationCategory.includes(state) }"
             class="mr-4 bg-selected rounded-full mb-4"
@@ -64,7 +101,6 @@
       </div>
 
       <section class="h-auto md:my-4">
-
         <div class="grid grid-cols-12 gap-6 mt-5 px-6 mb-4">
           <div class="col-span-12 sm:col-span-6 xl:col-span-3">
             <div class="report-box zoom-in">
@@ -150,7 +186,9 @@
 
         <div class="w-full flex flex-col items-center lg:px-6 px-2">
           <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+            <div
+              class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5"
+            >
               <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
             </div>
             <div class="py-4 px-4 lg:px-6">
@@ -158,9 +196,13 @@
             </div>
           </div>
         </div>
-        <div class="w-full flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 items-center gap-4 lg:px-6 px-2">
+        <div
+          class="w-full flex flex-col lg:grid lg:grid-cols-2 xl:grid-cols-3 items-center gap-4 lg:px-6 px-2"
+        >
           <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+            <div
+              class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5"
+            >
               <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
             </div>
             <div class="py-4 px-4 lg:px-6">
@@ -168,7 +210,9 @@
             </div>
           </div>
           <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+            <div
+              class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5"
+            >
               <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
             </div>
             <div class="py-4 px-4 lg:px-6">
@@ -176,7 +220,9 @@
             </div>
           </div>
           <div class="w-full mb-4 max-w-full bg-white rounded-lg shadow-md">
-            <div class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5">
+            <div
+              class="flex flex-col items-center p-4 border-b border-gray-200 dark:border-dark-5"
+            >
               <h2 class="font-medium text-base mr-auto">Vertical Bar Chart</h2>
             </div>
             <div class="py-4 px-4 lg:px-6">
@@ -191,10 +237,9 @@
 </template>
 
 <script>
-
 import tableData from "@/data/mockData";
 import BarChart from "@/components/Charts/BarChart";
-import TagsInput from '@/components/UIElements/TagsInput';
+import TagsInput from "@/components/UIElements/TagsInput";
 import StatePill from "@/components/UIElements/StatePill";
 import Footer from "@/components/partials/Footer";
 
@@ -204,7 +249,7 @@ export default {
     this.gridData = tableData;
   },
   mounted() {
-    this.url = "http://example.com"
+    this.url = "http://example.com";
   },
   components: { BarChart, TagsInput, StatePill, Footer },
   data: () => {
@@ -217,7 +262,16 @@ export default {
       selectedAgencyCategory: [],
       gridData: [],
       url: "http://example.com",
-      mockState: ["Lagos", "Kogi", "Ekiti", "Abia", "Kaduna", "Kano", "Adamawa", "Bauchi"],
+      mockState: [
+        "Lagos",
+        "Kogi",
+        "Ekiti",
+        "Abia",
+        "Kaduna",
+        "Kano",
+        "Adamawa",
+        "Bauchi"
+      ],
       mockCourt: [
         "Federal High Court, Awka, Anambra",
         "Federal High Court, Abuja, FCT",
@@ -267,7 +321,8 @@ export default {
       ],
       chartdata: {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-        datasets: [{
+        datasets: [
+          {
             label: "Html Template",
             barPercentage: 0.5,
             barThickness: 6,
@@ -275,7 +330,8 @@ export default {
             minBarLength: 2,
             data: [0, 200, 250, 200, 500, 450, 850, 1050],
             backgroundColor: "#3160D8"
-        }, {
+          },
+          {
             label: "VueJs Template",
             barPercentage: 0.5,
             barThickness: 6,
@@ -283,37 +339,42 @@ export default {
             minBarLength: 2,
             data: [0, 300, 400, 560, 320, 600, 720, 850],
             backgroundColor: "#BCBABA"
-        }]
-    },
-    options: {
+          }
+        ]
+      },
+      options: {
         scales: {
-            xAxes: [{
-                ticks: {
-                    fontSize: "12",
-                    fontColor: "#777777"
-                },
-                gridLines: {
-                    display: false
+          xAxes: [
+            {
+              ticks: {
+                fontSize: "12",
+                fontColor: "#777777"
+              },
+              gridLines: {
+                display: false
+              }
+            }
+          ],
+          yAxes: [
+            {
+              ticks: {
+                fontSize: "12",
+                fontColor: "#777777",
+                callback: function(value) {
+                  return "$" + value;
                 }
-            }],
-            yAxes: [{
-                ticks: {
-                    fontSize: "12",
-                    fontColor: "#777777",
-                    callback: function(value) {
-                        return "$" + value;
-                    }
-                },
-                gridLines: {
-                    color: "#D8D8D8",
-                    zeroLineColor: "#D8D8D8",
-                    borderDash: [2, 2],
-                    zeroLineBorderDash: [2, 2],
-                    drawBorder: false
-                }
-            }]
+              },
+              gridLines: {
+                color: "#D8D8D8",
+                zeroLineColor: "#D8D8D8",
+                borderDash: [2, 2],
+                zeroLineBorderDash: [2, 2],
+                drawBorder: false
+              }
+            }
+          ]
         }
-    }
+      }
     };
   },
   methods: {
