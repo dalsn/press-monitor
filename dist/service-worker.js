@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.852d8716cc58b661d617d297e54e48e6.js"
+  "/precache-manifest.cc90b33cbeb3d62bc2c6194bbf1ba29b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "transparenc-it"});
