@@ -34,22 +34,6 @@
             </div>
           </form>
           <div class="flex flex-col lg:grid grid-cols-3 gap-4 mb-4">
-            <div
-              class="h-full flex bg-white rounded-lg justify-between items-center shadow-md"
-            >
-              <label
-                for="filter-date"
-                class="flex w-full items-center mx-2 px-2"
-              >
-                <input
-                  id="filter-date"
-                  class="h-12 focus:outline-none w-full"
-                  type="text"
-                  placeholder="Filter list"
-                  v-model="date"
-                />
-              </label>
-            </div>
             <div class="h-full flex bg-white rounded-lg shadow-md">
               <label for="search-dropdown" class="flex w-full items-center">
                 <select
@@ -88,6 +72,22 @@
                 </select>
               </label>
             </div>
+            <div
+              class="h-full flex bg-white rounded-lg justify-between items-center shadow-md"
+            >
+              <label
+                for="filter-date"
+                class="flex w-full items-center mx-2 px-2"
+              >
+                <input
+                  id="filter-date"
+                  class="h-12 focus:outline-none w-full"
+                  type="text"
+                  placeholder="Filter by date"
+                  v-model="date"
+                />
+              </label>
+            </div>
           </div>
           <!-- <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
                         <label
@@ -104,7 +104,7 @@
                     </div> -->
         </div>
       </div>
-      <div class="pt-3" v-show="temp_list.length > 0">
+      <div class="pt-3" v-show="temp_list.length > 0 && !isLoading">
         <div class="w-full">
           <table class="table w-full">
             <thead class="bg-light">
@@ -150,7 +150,7 @@
       </div>
       <div
         class="h-64 flex items-center justify-center"
-        v-if="temp_list.length < 1"
+        v-if="temp_list.length < 1 || isLoading"
       >
         <h4 class="text-2xl">{{ message }}</h4>
       </div>
@@ -207,6 +207,7 @@ export default {
   methods: {
     getAll() {
       this.isLoading = true;
+      this.message = "Loading...";
       axios
         .get(window.host + "/api/cause-list")
         .then(response => {
@@ -233,6 +234,7 @@ export default {
         return;
       }
 
+      this.message = "Loading...";
       this.isLoading = true;
       axios
         .get(window.host + "/api/cause-list/search?q=" + this.q)
@@ -240,13 +242,14 @@ export default {
           this.cause_list = [];
           if (response.data) this.cause_list = response.data;
           this.temp_list = this.cause_list;
-
-          if (this.temp_list.length < 1) this.message = "No cases found!";
           this.isLoading = false;
           this.searchAction = true;
+
+          this.message = "No cases found!";
         })
         .catch(e => {
           console.error(e);
+          this.message = "An error was encountered.";
           this.isLoading = false;
         });
     },
