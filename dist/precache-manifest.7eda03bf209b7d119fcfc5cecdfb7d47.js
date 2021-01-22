@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "91c0800af82b0003b9ba",
-    "url": "/css/app.13d74a9e.css"
+    "revision": "c5dea51221b92c9d3ec5",
+    "url": "/css/app.9e85dbab.css"
   },
   {
-    "revision": "7b6b7c86113761033a20",
+    "revision": "e84e8644365a843f8c13",
     "url": "/css/chunk-7cf20cc6.f5dadd15.css"
   },
   {
-    "revision": "396a5abb1fda25e29b85",
+    "revision": "b26f7384c6a022e9c90a",
     "url": "/css/explore.ffac4955.css"
   },
   {
-    "revision": "3cbc623179f75b8bda89",
-    "url": "/css/index.9032962f.css"
+    "revision": "4f11e894a56c73dd403b",
+    "url": "/css/index.b0766808.css"
   },
   {
     "revision": "eefd059238b622a0bf53",
@@ -100,7 +100,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/trustafrica.de2e031c.png"
   },
   {
-    "revision": "2834c734a90216823119a78425feaebb",
+    "revision": "0ca52b9beca0051856c3d21f7a750e59",
     "url": "/index.html"
   },
   {
@@ -108,36 +108,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.cfefe446.js"
   },
   {
-    "revision": "91c0800af82b0003b9ba",
-    "url": "/js/app.ea5469bc.js"
+    "revision": "c5dea51221b92c9d3ec5",
+    "url": "/js/app.81611742.js"
   },
   {
     "revision": "12233a1de7f862c8708e",
     "url": "/js/chunk-0d585f80.ec229baf.js"
   },
   {
-    "revision": "7b6b7c86113761033a20",
-    "url": "/js/chunk-7cf20cc6.bb3276f4.js"
+    "revision": "e84e8644365a843f8c13",
+    "url": "/js/chunk-7cf20cc6.71ef8d3e.js"
   },
   {
     "revision": "2c28cd3f20cac8bcfc64",
     "url": "/js/chunk-vendors.20af5072.js"
   },
   {
-    "revision": "8d41b20cd263c12c7b25",
-    "url": "/js/datapoint.ddb58e17.js"
+    "revision": "efc8a51b1fe1465aabcd",
+    "url": "/js/datapoint.e568762d.js"
   },
   {
-    "revision": "1592d4b01ce8fb2aebcb",
-    "url": "/js/datapoint~explore~index.bd6810e4.js"
+    "revision": "9dd5bc4819e38d659878",
+    "url": "/js/datapoint~explore~index.a8c73eb9.js"
   },
   {
-    "revision": "396a5abb1fda25e29b85",
-    "url": "/js/explore.6df921bb.js"
+    "revision": "b26f7384c6a022e9c90a",
+    "url": "/js/explore.c22ae2bd.js"
   },
   {
-    "revision": "3cbc623179f75b8bda89",
-    "url": "/js/index.335db59d.js"
+    "revision": "4f11e894a56c73dd403b",
+    "url": "/js/index.327f1164.js"
   },
   {
     "revision": "eefd059238b622a0bf53",
