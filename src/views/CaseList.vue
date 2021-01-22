@@ -119,8 +119,16 @@ export default {
       searchAction: false
     };
   },
-  created() {
-    this.getCases();
+  mounted() {
+    let query = this.$route.query.q;
+    let state = this.$route.query.state;
+
+    if (query && state) {
+      this.q = query + " " + state;
+      this.search();
+    } else {
+      this.getCases();
+    }
   },
   computed: {
     offenceUrl() {
@@ -175,6 +183,7 @@ export default {
       }
 
       this.searchAction = true;
+      this.message = "Loading...";
       this.isLoading = true;
       axios
         .get(`${window.host}/api/cases/search?q=${this.q}`)
