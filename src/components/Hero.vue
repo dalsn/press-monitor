@@ -19,7 +19,7 @@
         </p>
       </div>
       <div class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66">
-        <form action="">
+        <form @submit.prevent="search">
           <div class="h-full flex bg-white rounded-lg shadow-md">
             <label
               for="search-text"
@@ -40,7 +40,7 @@
                 </svg>
               </div>
               <input
-                id="search-text"
+                v-model="q"
                 class="h-12 focus:outline-none pl-1 md:pl-3 w-full"
                 type="text"
                 placeholder="Search by case name, crime etc"
@@ -61,14 +61,14 @@
                 </svg>
               </div>
               <select
-                id="search-dropdown"
+                v-model="state"
                 class="h-12 w-full mx-2 focus:outline-none"
               >
                 <option value="">Search all states</option>
                 <option
                   v-for="(state, key) in states"
                   :key="key"
-                  :value="state.shortname"
+                  :value="state.name"
                   >{{ state.name }}</option
                 >
               </select>
@@ -78,7 +78,7 @@
             >
               <button
                 type="submit"
-                class=" text-white rounded-searchbutton bg-transpurple leading-24 focus:outline-none text-xl font-transsemibold w-full h-full"
+                class="z-10 text-white rounded-searchbutton bg-transpurple leading-24 focus:outline-none text-xl font-transsemibold w-full h-full"
               >
                 Search
               </button>
@@ -96,8 +96,8 @@
       </div>
       <!-- <div class="svg-container"> -->
       <img
-        class="hidden md:block absolute md:w-2/5 right-0 bottom-0"
-        src="../assets/svg/heroill.svg"
+        class="z-0 hidden md:block absolute md:w-2/5 right-0 bottom-0"
+        src="@/assets/svg/heroill.svg"
         alt=""
       />
       <!-- </div> -->
@@ -112,7 +112,9 @@ export default {
   name: "Hero",
   data() {
     return {
-      states: []
+      states: [],
+      state: "",
+      q: ""
     };
   },
   mounted() {
@@ -125,6 +127,9 @@ export default {
           this.states = response.data;
         }
       });
+    },
+    search() {
+      this.$router.push(`/cases?state=${this.state}&q=${this.q}`);
     }
   }
 };

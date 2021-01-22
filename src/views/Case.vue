@@ -322,17 +322,16 @@
                     }}
                     {{ caseFile.update.note ? "-" + caseFile.update.note : "" }}
                   </div>
-                  <div
-                    v-if="caseFile.status.toLowerCase() == 'decided'"
-                    class="title bg-white"
-                  >
-                    <strong>Court Decision</strong>
-                  </div>
-                  <div class="info text-justify">
-                    {{
-                      caseFile.update ? caseFile.update.court_decision : "Nil"
-                    }}
-                  </div>
+                  <template v-if="caseFile.status.toLowerCase() == 'decided'">
+                    <div class="title bg-white">
+                      <strong>Court Decision</strong>
+                    </div>
+                    <div class="info text-justify">
+                      {{
+                        caseFile.update ? caseFile.update.court_decision : "Nil"
+                      }}
+                    </div>
+                  </template>
                 </div>
               </div>
             </div>
