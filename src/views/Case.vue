@@ -68,6 +68,23 @@
                 >
               </p>
             </div>
+            <div v-if="caseFile && caseFile.description" class="flex mb-2 items-start">
+              <img
+                alt="File summary"
+                src="@/assets/images/vectors/summary.svg"
+                class="img-fluid info-icon"
+              />
+              <p
+                class="pl-2 info-detail pt-3"
+              >
+                <span class="info-title">Case Summary</span>
+                <br />
+                <span
+                  class="size-sm"
+                  ><small>{{ caseFile.description }}</small></span
+                >
+              </p>
+            </div>
             <div class="flex mb-2 items-start">
               <img
                 alt="Calendar"
@@ -114,6 +131,23 @@
                 <span class="info-title">Case Update</span> <br />
                 <span class="size-sm"
                   ><small>{{ caseFile.update.court_decision }}</small></span
+                >
+              </p>
+            </div>
+            <div v-if="caseFile && caseFile.next_sitting" class="flex mb-2 items-start">
+              <img
+                alt="calendar"
+                src="@/assets/images/vectors/date.svg"
+                class="img-fluid info-icon"
+              />
+              <p
+                class="pl-2 info-detail pt-3"
+              >
+                <span class="info-title">Date of Adjournment</span>
+                <br />
+                <span
+                  class="size-sm"
+                  ><small>{{ caseFile.next_sitting }}</small></span
                 >
               </p>
             </div>
