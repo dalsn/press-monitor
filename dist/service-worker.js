@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.97bb3f73a2d258ac2a86f2189c4fdf57.js"
+  "/precache-manifest.ad713b9608b187020fc23e2ec6ab76a7.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "TransparencIT"});
+workbox.core.setCacheNameDetails({prefix: "TransparencIT-CCD"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
