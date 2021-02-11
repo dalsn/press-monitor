@@ -98,7 +98,7 @@
                     <small>
                       {{
                         caseFile.update.end_date || caseFile.hasEnded
-                          ? "Day(s) case tried in court"
+                          ? "Day(s) case lasted in court"
                           : "Day(s) since arraignment"
                       }}
                     </small>
@@ -110,7 +110,7 @@
                     <small>
                       {{
                         caseFile.update.end_year || caseFile.hasEnded
-                          ? "Year(s) case tried in court"
+                          ? "Year(s) case lasted in court"
                           : "Year(s) since arraignment"
                       }}
                     </small>
@@ -143,7 +143,7 @@
               <p
                 class="pl-2 info-detail pt-3"
               >
-                <span class="info-title">Date of Adjournment</span>
+                <span class="info-title">Date of Next Sitting</span>
                 <br />
                 <span
                   class="size-sm"
