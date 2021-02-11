@@ -6,7 +6,7 @@
       > -->
       <div
         v-show="no_of_cases > 0"
-        class="py-4 px-6 h-auto border rounded-lg flex flex-col items-center my-4 shadow-md items-center lg:col-span-1"
+        class="py-4 px-6 h-auto border rounded-lg flex flex-col my-4 shadow-md lg:col-span-1"
       >
         <div class="text-center">
           <h1 class="text-lg text-transpurple font-bold mb-4">
@@ -17,7 +17,7 @@
             {{ no_of_cases }}
           </p>
         </div>
-        <p class="text-lg text-center text-transpurple font-bold mt-4 mb-2">
+        <p class="text-md text-transpurple font-bold mt-4 mb-2">
           Top Four Crimes
         </p>
         <div class="statistics text-stat">
@@ -56,10 +56,13 @@
         </div>
       </div>
       <div
-        class="chart px-6 py-4 my-8 lg:my-4 col-span-8 border rounded-lg text-center shadow-md lg:col-span-1"
+        class="chart px-6 py-4 my-8 lg:my-4 col-span-8 border rounded-lg shadow-md lg:col-span-1"
       >
-        <span class="text-lg text-transpurple font-bold mb-8"
-          >Top Five States</span
+        <p class="text-lg text-transpurple font-bold mb-4 text-center"
+          >Cases by States</p
+        >
+        <p class="text-md text-transpurple text-left"
+          >Top Five States</p
         >
         <div class="chart-wrapper mt-5">
           <bar-chart :chartdata="chartdata" :options="options"></bar-chart>

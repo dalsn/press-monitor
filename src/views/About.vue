@@ -9,7 +9,7 @@
             >
               We monitor and provide information on Corruption Cases in Nigeria
             </h1>
-            <p class="text-justify">
+            <p class="text-justify mb-4">
               Tracking Corruption Cases is a project of
               <a
                 class="text-link"
@@ -42,7 +42,7 @@
               them with information on judicial proceedings in a simplified and
               appealing format.
             </p>
-            <p class="text-justify">
+            <p class="text-justify mb-4">
               The corruption cases database provides information that helps
               citizens to map trends and patterns of prosecution, offences,
               locations, length of trial, status of cases and the extent of
