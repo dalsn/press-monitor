@@ -203,7 +203,7 @@ export default {
       filterJudg: "",
       current_page_acja: 1,
       current_page_judg: 1,
-      page_size: 1
+      page_size: 5
     };
   },
   mounted() {
