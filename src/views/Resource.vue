@@ -69,16 +69,16 @@
             </tbody>
           </table>
           <!-- <div id="pagination"></div> -->
-          <div class="py-6">
+          <div v-show="totalAcjaPages > 1" class="py-6">
             <nav class="block">
               <ul class="flex justify-end pl-0 list-none flex-wrap">
                 <li>
-                  <button @click="prevPageAcja" class="first:ml-0 nav-btn active" :class="{'disabled': current_page_acja == 1}">
+                  <button @click="prevPageAcja" class="first:ml-0 nav-btn" :class="{'disabled': current_page_acja == 1}">
                     Prev
                   </button>
                 </li>
                 <li v-for="(index) in totalAcjaPages" :key="index">
-                  <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'disabled': current_page_acja == index}">
+                  <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_acja == index}">
                     {{ index }}
                   </button>
                 </li>
@@ -154,7 +154,7 @@
             </tbody>
           </table>
           <!-- <div id="pagination"></div> -->
-          <div class="py-6">
+          <div v-show="totalJudgPages > 1" class="py-6">
             <nav class="block">
               <ul class="flex justify-end pl-0 list-none flex-wrap">
                 <li>
@@ -163,7 +163,7 @@
                   </button>
                 </li>
                 <li v-for="(index) in totalJudgPages" :key="index">
-                  <button @click="gotoPageJudg(index)" class="first:ml-0 nav-btn" :class="{'disabled': current_page_judg == index}">
+                  <button @click="gotoPageJudg(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_judg == index}">
                     {{ index }}
                   </button>
                 </li>
@@ -206,25 +206,6 @@ export default {
   },
   mounted() {
     this.getFiles();
-    // $(document).ready( function () {
-
-    //     let acja = $('#acja').DataTable({
-    //         "dom": 'rtp',
-    //         "pageLength": 5
-    //     });
-    //     let judg = $('#judg').DataTable({
-    //         "dom": 'rtp',
-    //         "pageLength": 5
-    //     });
-
-    //     $('#filterAcja').on( 'keyup', function () {
-    //         acja.search( this.value ).draw();
-    //     });
-
-    //     $('#filterJudg').on( 'keyup', function () {
-    //         judg.search( this.value ).draw();
-    //     });
-    // })
   },
   computed: {
     sortedAcja() {
