@@ -31,6 +31,7 @@
                     class="flex w-full items-center mx-2 px-2"
                   >
                     <input
+                      v-model="filterAcja"
                       id="filterAcja"
                       class="h-12 focus:outline-none w-full"
                       type="text"
@@ -50,7 +51,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(doc, key) in acjafiles" :key="key">
+              <tr v-for="(doc, key) in filteredAcja" :key="key">
                 <td class="bg-hero">{{ doc.filename }}</td>
                 <td data-th="File size">{{ doc.size }}</td>
                 <td data-th="Action">
@@ -67,7 +68,28 @@
               </tr>
             </tbody>
           </table>
-          <div id="pagination"></div>
+          <!-- <div id="pagination"></div> -->
+          <div class="py-6">
+            <nav class="block">
+              <ul class="flex justify-end pl-0 list-none flex-wrap">
+                <li>
+                  <button @click="prevPageAcja" class="first:ml-0 nav-btn active" :class="{'disabled': current_page_acja == 1}">
+                    Prev
+                  </button>
+                </li>
+                <li v-for="(index) in totalAcjaPages" :key="index">
+                  <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'disabled': current_page_acja == index}">
+                    {{ index }}
+                  </button>
+                </li>
+                <li>
+                  <button @click="nextPageAcja" class="first:ml-0 nav-btn" :class="{'disabled': current_page_acja >= totalAcjaPages}">
+                    Next
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
         <div v-else class="">
           <h6>No files available for download</h6>
@@ -77,7 +99,7 @@
                 <h4>No records Available</h4>
             </div> -->
       <hr class="my-8" />
-      <div class="py-2" id="acja-table">
+      <div class="py-2" id="judg-table">
         <p class="text-lg text-transpurple font-semibold pb-2">
           <strong>Judgments</strong>
         </p>
@@ -94,6 +116,7 @@
                     class="flex w-full items-center mx-2 px-2"
                   >
                     <input
+                      v-model="filterJudg"
                       id="filterJudg"
                       class="h-12 focus:outline-none w-full"
                       type="text"
@@ -104,7 +127,7 @@
               </div>
             </div>
           </div>
-          <table class="table w-full" id="acja">
+          <table class="table w-full" id="judg">
             <thead class="bg-light">
               <tr class="text-left">
                 <th>Document</th>
@@ -113,7 +136,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(doc, key) in judgements" :key="key">
+              <tr v-for="(doc, key) in filteredJudg" :key="key">
                 <td class="bg-hero">{{ doc.filename }}</td>
                 <td data-th="File size">{{ doc.size }}</td>
                 <td data-th="Action">
@@ -130,7 +153,28 @@
               </tr>
             </tbody>
           </table>
-          <div id="pagination"></div>
+          <!-- <div id="pagination"></div> -->
+          <div class="py-6">
+            <nav class="block">
+              <ul class="flex justify-end pl-0 list-none flex-wrap">
+                <li>
+                  <button @click="prevPageJudg" class="first:ml-0 nav-btn active" :class="{'disabled': current_page_judg == 1}">
+                    Prev
+                  </button>
+                </li>
+                <li v-for="(index) in totalJudgPages" :key="index">
+                  <button @click="gotoPageJudg(index)" class="first:ml-0 nav-btn" :class="{'disabled': current_page_judg == index}">
+                    {{ index }}
+                  </button>
+                </li>
+                <li>
+                  <button @click="nextPageJudg" class="first:ml-0 nav-btn" :class="{'disabled': current_page_judg >= totalJudgPages}">
+                    Next
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
         <div v-else class="">
           <h6>No files available for download</h6>
@@ -144,7 +188,6 @@
 <script>
 import Footer from "../components/partials/Footer";
 import axios from "axios";
-import $ from "jquery";
 
 export default {
   components: {
@@ -153,7 +196,12 @@ export default {
   data() {
     return {
       acjafiles: [],
-      judgements: []
+      judgements: [],
+      filterAcja: "",
+      filterJudg: "",
+      current_page_acja: 1,
+      current_page_judg: 1,
+      page_size: 5
     };
   },
   mounted() {
@@ -177,22 +225,52 @@ export default {
     //         judg.search( this.value ).draw();
     //     });
     // })
-    let acja = $("#acja").DataTable({
-      dom: "rtp",
-      pageLength: 5
-    });
-    let judg = $("#judg").DataTable({
-      dom: "rtp",
-      pageLength: 5
-    });
-
-    $("#filterAcja").on("keyup", function() {
-      acja.search(this.value).draw();
-    });
-
-    $("#filterJudg").on("keyup", function() {
-      judg.search(this.value).draw();
-    });
+  },
+  computed: {
+    sortedAcja() {
+      let array = this.acjafiles;
+      if (this.filterAcja == "")
+        array = this.acjafiles;
+      if (this.filterAcja != "") {
+        array = array.filter((acja) => {
+          let q = this.filterAcja.trim().toLowerCase();
+          return acja.filename.toLowerCase().includes(q);
+        });
+      }
+      return array;
+    },
+    filteredAcja() {
+      return this.sortedAcja.filter((row, index) => {
+        let start = (this.current_page_acja - 1) * this.page_size;
+        let end = this.current_page_acja * this.page_size;
+        if(index >= start && index < end) return true;
+      });
+    },
+    totalAcjaPages() {
+      return Math.ceil(this.acjafiles.length / this.page_size) ?? 0;
+    },
+    sortedJudg() {
+      let array = this.judgements;
+      if (this.filterJudg == "")
+        array = this.judgements;
+      if (this.filterJudg != "") {
+        array = array.filter((judg) => {
+          let q = this.filterJudg.trim().toLowerCase();
+          return judg.filename.toLowerCase().includes(q);
+        });
+      }
+      return array;
+    },
+    filteredJudg() {
+      return this.sortedJudg.filter((row, index) => {
+        let start = (this.current_page_judg - 1) * this.page_size;
+        let end = this.current_page_judg * this.page_size;
+        if(index >= start && index < end) return true;
+      });
+    },
+    totalJudgPages() {
+      return Math.ceil(this.judgements.length / this.page_size) ?? 0;
+    }
   },
   methods: {
     getFiles() {
@@ -202,7 +280,50 @@ export default {
           this.judgements = response.data.judgementFiles;
         }
       });
+    },
+    gotoPageAcja(index) {
+      if (this.current_page_acja == index) return;
+
+      this.current_page_acja = index;
+    },
+    nextPageAcja() {
+      if (this.current_page_acja < this.totalAcjaPages) {
+        this.current_page_acja++;
+      }
+    },
+    prevPageAcja() {
+      if (this.current_page_acja > 1) {
+        this.current_page_acja--;
+      }
+    },
+    gotoPageJudg(index) {
+      if (this.current_page_judg == index) return;
+
+      this.current_page_judg = index;
+    },
+    nextPageJudg() {
+      if (this.current_page_judg < this.totalJudgPages) {
+        this.current_page_judg++;
+      }
+    },
+    prevPageJudg() {
+      if (this.current_page_judg > 1) {
+        this.current_page_judg--;
+      }
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.nav-btn {
+  @apply text-xs font-semibold flex w-8 h-8 mx-1 p-2 rounded-full items-center justify-center leading-tight relative border border-solid border-transpurple bg-white text-transpurple shadow-lg;
+}
+.active {
+  @apply bg-transpurple text-white;
+}
+.disabled {
+  @apply bg-light border-0 text-white;
+  cursor: initial;
+}
+</style>
