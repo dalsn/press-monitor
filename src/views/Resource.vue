@@ -36,6 +36,7 @@
                       class="h-12 focus:outline-none w-full"
                       type="text"
                       placeholder="Filter list"
+                      @input="current_page_acja = 1"
                     />
                   </label>
                 </div>
@@ -121,6 +122,7 @@
                       class="h-12 focus:outline-none w-full"
                       type="text"
                       placeholder="Filter list"
+                      @input="current_page_judg = 1"
                     />
                   </label>
                 </div>
@@ -201,7 +203,7 @@ export default {
       filterJudg: "",
       current_page_acja: 1,
       current_page_judg: 1,
-      page_size: 5
+      page_size: 1
     };
   },
   mounted() {
