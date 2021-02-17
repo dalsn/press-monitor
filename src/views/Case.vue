@@ -75,7 +75,7 @@
                 class="img-fluid info-icon"
               />
               <p
-                class="pl-2 info-detail pt-3"
+                class="pl-2 info-detail pt-3 text-justify"
               >
                 <span class="info-title">Case Summary</span>
                 <br />

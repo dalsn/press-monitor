@@ -9,7 +9,7 @@
         <p class="text-lg mb-8"><strong>Corruption Cases Database</strong></p>
         <a
           class="py-3 px-8 shadow-md rounded-lg hover:shadow-lg hover:bg-white hover:text-transpurple bg-transpurple text-white"
-          href="#"
+          :href="host + '/resources/database'"
           >Download CSV</a
         >
       </div>
@@ -203,7 +203,8 @@ export default {
       filterJudg: "",
       current_page_acja: 1,
       current_page_judg: 1,
-      page_size: 5
+      page_size: 5,
+      host: `${window.host}`
     };
   },
   mounted() {
