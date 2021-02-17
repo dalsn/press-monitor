@@ -22,7 +22,7 @@
         <strong>Prosecuting Agency:</strong> {{ caseFile.agency.name }}
       </p>
       <p class="text-sm md:text-lg mb-4">
-        <strong>Prosecuting Judge:</strong> {{ caseFile.judge.name }}
+        <strong>Presiding Judge:</strong> {{ caseFile.judge.name }}
       </p>
       <div class="flex items-center justify-between">
         <button

@@ -34,7 +34,7 @@
         <strong>Prosecuting Agency:</strong> {{ caseFile.agency.name }}
       </p>
       <p v-if="caseFile.judge" class="mb-4">
-        <strong>Prosecuting Judge:</strong> {{ caseFile.judge.name }}
+        <strong>Presiding Judge:</strong> {{ caseFile.judge.name }}
       </p>
       <p class="text-right">
         <strong>Status: {{ caseFile.status }}</strong>
