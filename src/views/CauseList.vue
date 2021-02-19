@@ -109,10 +109,10 @@
           <table class="table w-full">
             <thead class="bg-light">
               <tr class="text-left">
-                <th width="25%">Accused Person/Defendant</th>
-                <th width="20%">Alleged Offence</th>
-                <th width="30%">Presiding Judge and Designated Court</th>
-                <th width="10%">Prosecuting Agency</th>
+                <th width="33%">Accused Person/Defendant</th>
+                <th width="15%">Alleged Offence</th>
+                <th width="28%">Presiding Judge and Designated Court</th>
+                <th width="9%">Prosecuting Agency</th>
                 <th width="15%">Date of Sitting</th>
               </tr>
             </thead>
