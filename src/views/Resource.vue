@@ -78,8 +78,13 @@
                     Prev
                   </button>
                 </li>
-                <li v-for="(index) in totalAcjaPages" :key="index">
+                <!-- <li v-for="(index) in totalAcjaPages" :key="index">
                   <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_acja == index}">
+                    {{ index }}
+                  </button>
+                </li> -->
+                <li v-for="(index) in paginate(current_page_acja, totalAcjaPages)" :key="index">
+                  <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_acja == index, 'disabled': index == '...'}">
                     {{ index }}
                   </button>
                 </li>
@@ -160,12 +165,12 @@
             <nav class="block">
               <ul class="flex justify-end pl-0 list-none flex-wrap">
                 <li>
-                  <button @click="prevPageJudg" class="first:ml-0 nav-btn active" :class="{'disabled': current_page_judg == 1}">
+                  <button @click="prevPageJudg" class="first:ml-0 nav-btn" :class="{'disabled': current_page_judg == 1}">
                     Prev
                   </button>
                 </li>
-                <li v-for="(index) in totalJudgPages" :key="index">
-                  <button @click="gotoPageJudg(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_judg == index}">
+                <li v-for="(index) in paginate(current_page_judg, totalJudgPages)" :key="index">
+                  <button @click="gotoPageJudg(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_judg == index, 'disabled': index == '...'}">
                     {{ index }}
                   </button>
                 </li>
@@ -266,7 +271,7 @@ export default {
       });
     },
     gotoPageAcja(index) {
-      if (this.current_page_acja == index) return;
+      if (this.current_page_acja == index || index == "...") return;
 
       this.current_page_acja = index;
     },
@@ -281,7 +286,7 @@ export default {
       }
     },
     gotoPageJudg(index) {
-      if (this.current_page_judg == index) return;
+      if (this.current_page_judg == index || index == "...") return;
 
       this.current_page_judg = index;
     },

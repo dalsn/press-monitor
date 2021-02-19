@@ -211,7 +211,7 @@
           <div class="w-full mb-12">
             <div class="case-info">
               <div class="card">
-                <div class="text-white bg-dark px-8 py-6 text-lg rounded-t-lg">
+                <div class="text-white bg-transpurple px-8 py-6 text-lg rounded-t-lg">
                   <strong>Case Information</strong>
                 </div>
                 <div class="card-body bg-light p-0">
