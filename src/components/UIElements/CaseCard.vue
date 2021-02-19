@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col shadow-lg rounded-lg px-5 py-4 md:pt-8 md:pb-4 mb-8 border case-card justify-between"
+    class="flex flex-col shadow-lg rounded-lg px-5 py-4 md:pt-8 md:pb-4 mb-8 border case-card"
     :class="className"
   >
     <!-- <div> -->
@@ -64,3 +64,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+div.case-card {
+  height: fit-content;
+}
+</style>
