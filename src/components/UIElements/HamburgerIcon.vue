@@ -18,15 +18,15 @@
           'bar-one gray': status === true,
           'css-1gyiezd': status === false
         }"
-        class=""
+        class="rounded-lg"
       ></rect>
       <rect
         :class="{ 'bar-two gray': status === true }"
         x="8"
         y="10"
-        width="17"
+        width="25"
         height="3"
-        class="css-1b5twje"
+        class="css-1b5twje rounded-lg"
         fill="#f8f8f9"
       ></rect>
       <rect
@@ -38,6 +38,7 @@
         }"
         width="25"
         height="3"
+        class="rounded-lg"
       ></rect>
     </g>
   </svg>
