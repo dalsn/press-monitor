@@ -20,11 +20,11 @@
         caseFile.title
       }}</router-link>
     </p>
-    <p class="text-sm md:text-lg mb-1">
-      <strong>Prosecuting Agency:</strong> {{ caseFile.agency.name }}
-    </p>
     <p class="text-sm md:text-lg mb-4">
       <strong>Presiding Judge:</strong> {{ caseFile.judge.name }}
+    </p>
+    <p class="text-sm md:text-lg mb-4">
+      <strong>Prosecuting Agency:</strong> {{ caseFile.agency.name }}
     </p>
     <!-- </div> -->
     <div class="flex items-center justify-between">
