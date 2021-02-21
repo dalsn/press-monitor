@@ -27,37 +27,37 @@
           to="/"
           class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          Home
+          <span @click="isNavOpen = false">Home</span>
         </router-link>
         <router-link
           to="/cases"
           class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          Cases
+          <span @click="isNavOpen = false">Cases</span>
         </router-link>
         <router-link
           to="/cause-list"
           class=" block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          Cause List
+          <span @click="isNavOpen = false">Cause List</span>
         </router-link>
         <a
           :href="portal_url"
           class="links block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          Data Portal
+          <span @click="isNavOpen = false">Data Portal</span>
         </a>
         <router-link
           to="/resources"
           class=" block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          Resources
+          <span @click="isNavOpen = false">Resources</span>
         </router-link>
         <router-link
           to="/about"
           class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          About Us
+          <span @click="isNavOpen = false">About Us</span>
         </router-link>
         <!-- <router-link
           to="/contact-us"

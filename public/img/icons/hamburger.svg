@@ -1,0 +1,43 @@
+<svg
+    width="25px"
+    height="23px"
+    :class="{ 'text-eatizgray': status === true }"
+    class="fill-current z-50"
+    viewBox="0 0 25 23"
+    xmlns="http://www.w3.org/2000/svg"
+    @click="updateNavStatus"
+  >
+    <g id="Hamburger">
+      <rect
+        x="0"
+        y="0"
+        width="25"
+        height="3"
+        :class="{
+          'bar-one gray': status === true,
+          'css-1gyiezd': status === false
+        }"
+        class="rounded-lg"
+      ></rect>
+      <rect
+        :class="{ 'bar-two gray': status === true }"
+        x="8"
+        y="10"
+        width="25"
+        height="3"
+        class="css-1b5twje rounded-lg"
+        fill="#f8f8f9"
+      ></rect>
+      <rect
+        x="0"
+        y="20"
+        :class="{
+          'bar-three gray': status === true,
+          'css-ppgaya': status === false
+        }"
+        width="25"
+        height="3"
+        class="rounded-lg"
+      ></rect>
+    </g>
+  </svg>
