@@ -35,6 +35,14 @@
         width="100"
         height="5"
       ></rect>
+      <rect
+        :class="{ 'bar-two gray': status === true }"
+        y="70"
+        width="100"
+        height="5"
+        class="css-1b5twje"
+        fill="#f8f8f9"
+      ></rect>
     </g>
   </svg>
 </template>
