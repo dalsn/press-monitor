@@ -97,21 +97,33 @@
                   <span class="size-sm">
                     <small>
                       {{
-                        caseFile.update.end_date || caseFile.hasEnded
+                        (caseFile.update && caseFile.update.end_year) || caseFile.hasEnded
                           ? "Day(s) case lasted in court"
                           : "Day(s) since arraignment"
                       }}
                     </small>
                   </span>
                 </template>
-                <template v-else>
+                <template v-else-if="caseFile.years">
                   <span class="info-title">{{ caseFile.years }}</span> <br />
                   <span class="size-sm">
                     <small>
                       {{
-                        caseFile.update.end_year || caseFile.hasEnded
+                        (caseFile.update && caseFile.update.end_year) || caseFile.hasEnded
                           ? "Year(s) case lasted in court"
                           : "Year(s) since arraignment"
+                      }}
+                    </small>
+                  </span>
+                </template>
+                <template v-else>
+                  <span class="info-title">{{ caseFile.days }}</span> <br />
+                  <span class="size-sm">
+                    <small>
+                      {{
+                        (caseFile.update && caseFile.update.end_year) || caseFile.hasEnded
+                          ? "Day(s) case lasted in court"
+                          : "Day(s) since arraignment"
                       }}
                     </small>
                   </span>
@@ -181,19 +193,19 @@
                   >ACJA/ACJL Compliance
                   <br />
                   <small>
-                    <strong v-if="caseFile.update.compliance == 3"
+                    <strong v-if="caseFile.update && caseFile.update.compliance == 3"
                       >(violated)</strong
                     >
-                    <strong v-else-if="caseFile.update.compliance == 1"
+                    <strong v-else-if="caseFile.update && caseFile.update.compliance == 1"
                       >(complied)</strong
                     >
                     <strong v-else>(not applicable)</strong>
                   </small>
                 </span>
-                <template v-if="caseFile.update.note">
+                <template v-if="caseFile.update && caseFile.update.note">
                   <br />
                   <span class="size-sm"
-                    ><small>{{ caseFile.update.note }}</small></span
+                    ><small>{{ caseFile.update ? caseFile.update.note : "" }}</small></span
                   >
                 </template>
               </p>
@@ -340,21 +352,21 @@
                       <strong>Case Update</strong>
                     </div>
                     <div class="info text-justify">
-                      {{ caseFile.update.court_decision }}
+                      {{ caseFile.update ? caseFile.update.court_decision : "" }}
                     </div>
                   </template>
                   <div v-if="caseFile.update" class="title bg-white">
                     <strong>ACJA/ACJL Compliance</strong>
                   </div>
-                  <div class="info text-justify">
+                  <div v-if="caseFile.update" class="info text-justify">
                     {{
-                      parseInt(caseFile.update.compliance) == 3
+                      caseFile.update && parseInt(caseFile.update.compliance) == 3
                         ? "Violated"
-                        : parseInt(caseFile.update.compliance) == 1
+                        : caseFile.update && parseInt(caseFile.update.compliance) == 1
                         ? "Complied"
                         : "Not Applicable"
                     }}
-                    {{ caseFile.update.note ? "-" + caseFile.update.note : "" }}
+                    {{ caseFile.update && caseFile.update.note ? "-" + caseFile.update.note : "" }}
                   </div>
                   <template v-if="caseFile.status.toLowerCase() == 'decided'">
                     <div class="title bg-white">
