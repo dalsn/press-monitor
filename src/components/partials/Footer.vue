@@ -36,24 +36,27 @@
       </div>
       <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
         <p class="text-sm">Newsletter Signup</p>
-        <form action="#" method="GET">
+        <form action="#" method="POST" @submit.prevent="subscribe">
           <div
             class="h-full flex bg-white rounded-lg justify-between items-center shadow-md"
           >
             <label for="search-text" class="flex w-2/3 items-center ml-2">
               <input
+                v-model="email"
                 id="search-text"
                 class="h-12 focus:outline-none pl-1 w-full"
                 type="email"
                 placeholder="Enter your email"
+                required
               />
             </label>
             <div class="w-1/3 px-2">
               <button
                 type="submit"
                 class="px-4 text-white rounded bg-transpurple focus:outline-none text-sm w-full py-2"
+                :disabled="isLoading"
               >
-                Join
+                {{ isLoading ? "Subscribing..." : "Join" }}
               </button>
             </div>
           </div>
@@ -117,15 +120,41 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Footer",
   props: ["className"],
   data() {
     return {
-      year: new Date().getFullYear()
+      email: "",
+      year: new Date().getFullYear(),
+      host_url: `${window.host}`,
+      isLoading: false
     };
+  },
+  methods: {
+    subscribe() {
+      this.isLoading = true;
+      axios
+        .post(this.host_url + "/api/subscribe", {
+          email: this.email
+        })
+        .then(response => {
+          if (response.data) {
+            window.toastr.success(response.data.message);
+            this.email = "";
+          }
+          this.isLoading = false;
+        })
+        .catch(error => {
+          window.toastr.error(error.response.data.message);
+          this.isLoading = false;
+        });
+    }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

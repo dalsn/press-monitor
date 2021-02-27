@@ -168,8 +168,9 @@
                 <button
                   type="submit"
                   class="w-full mt-4 p-2 bg-transpurple text-white rounded shadow-md hover:shadow-lg"
+                  :disabled="isLoading"
                 >
-                  Send
+                  {{ isLoading ? "Sending..." : "Send" }}
                 </button>
               </form>
             </div>
@@ -194,11 +195,13 @@ export default {
       name: "",
       email: "",
       subject: "",
-      message: ""
+      message: "",
+      isLoading: false
     };
   },
   methods: {
     sendMail() {
+      this.isLoading = true;
       axios
         .post(`${window.host}/api/contact`, {
           name: this.name,
@@ -207,20 +210,20 @@ export default {
           message: this.message
         })
         .then(response => {
-          console.log(response);
           if (response.data) {
-            alert(response.data.message);
+            window.toastr.success(`Sent! ${response.data.message}`);
             this.name = "";
             this.email = "";
             this.subject = "";
             this.message = "";
           } else {
-            alert("Unable to send message. Try again.");
+            window.toastr.error("Unable to send message. Try again.");
           }
+          this.isLoading = false;
         })
-        .catch(err => {
-          console.log("Error: ", err);
-          alert(err.message);
+        .catch(error => {
+          window.toastr.error(error.response.data.message);
+          this.isLoading = false;
         });
     }
   }
