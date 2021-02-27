@@ -123,7 +123,7 @@ export default {
     let query = this.$route.query.q;
     let state = this.$route.query.state;
 
-    if (query && state) {
+    if (query || state) {
       this.q = query + " " + state;
       this.search();
     } else {
