@@ -339,7 +339,7 @@
                     {{
                       caseFile.days
                         ? caseFile.days + " day(s)"
-                        : caseFile.years + " year(s)"
+                        : caseFile.years ? caseFile.years + " year(s)" : caseFile.days + " day(s)"
                     }}
                   </div>
                   <template
