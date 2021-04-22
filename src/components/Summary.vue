@@ -38,7 +38,7 @@
               <rect
                 x="0.712646"
                 y="1.43283"
-                width="106"
+                width="100"
                 height="2.80597"
                 rx="1.40299"
                 fill="#E7E6EF"
@@ -46,7 +46,7 @@
               <rect
                 x="0.712646"
                 y="0.731354"
-                width="90"
+                :width="(offence.cases_count/no_of_cases) * 100"
                 height="4.20896"
                 rx="2.10448"
                 fill="#8676FF"

@@ -107,7 +107,7 @@
       <hr class="my-8" />
       <div class="py-2" id="judg-table">
         <p class="text-lg text-transpurple font-semibold pb-2">
-          <strong>Judgments</strong>
+          <strong>Corruption Cases Judgements</strong>
         </p>
         <div v-if="judgements.length > 0">
           <div class="pt-5 pb-2">
