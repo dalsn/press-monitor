@@ -49,7 +49,7 @@
                 :width="(offence.cases_count/no_of_cases) * 100"
                 height="4.20896"
                 rx="2.10448"
-                fill="#8676FF"
+                :fill="bar_colors[key]"
               />
             </svg>
           </div>
@@ -82,7 +82,13 @@ export default {
     return {
       offences: [],
       state_counts: [],
-      no_of_cases: 0
+      no_of_cases: 0,
+      bar_colors: [
+        "#070241",
+        "#58B72B",
+        "#F2994A",
+        "#8676FF"
+      ]
     };
   },
   components: {
