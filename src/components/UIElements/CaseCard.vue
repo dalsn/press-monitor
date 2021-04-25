@@ -5,7 +5,7 @@
   >
     <!-- <div> -->
     <div class="flex items-center">
-      <hr class="border-2 w-1/6" />
+      <hr class="border w-1/6" />
       <p class="text-lg md:text-2xl px-3 leading-tight">
         <!-- <router-link :to="offenceUrl(caseFile.type_id)">{{
           caseFile.type
