@@ -9,7 +9,7 @@
             <img
               class="h-12 md:h-16"
               src="../../assets/images/vectors/ccd_logo_white.svg"
-              alt="TransparencIT logo"
+              alt="Corruption Cases Database logo"
             />
           </router-link>
         </div>
