@@ -55,7 +55,7 @@
         <div class="md:grid grid-cols-2 mt-12">
           <div class="">
             <h4 class="text-2xl leading-tight mb-2">
-              Tracking Corruption Cases
+              Corruption Cases Database
             </h4>
             <p class="text-justify">
               This is a project of

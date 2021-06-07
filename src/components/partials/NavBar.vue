@@ -8,7 +8,7 @@
           <router-link to="/">
             <img
               class="h-8 md:h-10"
-              src="../../assets/images/vectors/tcclogo_white.svg"
+              src="../../assets/images/vectors/ccd_logo_white.svg"
               alt="TransparencIT logo"
             />
           </router-link>

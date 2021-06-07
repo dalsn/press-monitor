@@ -10,7 +10,7 @@
               We monitor and provide information on Corruption Cases in Nigeria
             </h1>
             <p class="text-justify mb-4">
-              Tracking Corruption Cases is a project of
+              Corruption Cases Database is a project of
               <a
                 class="text-link"
                 href="//transparencit.com"
