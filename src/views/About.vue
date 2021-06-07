@@ -1,7 +1,7 @@
 <template>
   <section class="pt-16 md:pt-24">
     <div class="px-2 md:px-10 xl:px-16">
-      <div class="container mx-auto mb-12">
+      <div class="container mx-auto lg:mb-12">
         <div class="flex flex-col lg:grid grid-cols-2 gap-6">
           <div class="items-center">
             <h1
@@ -68,21 +68,21 @@
           <div class="py-8 mb-4 md:mb-0">
             <img
               alt="TransparencIT logo"
-              class="object-scale-down h-16"
+              class="object-scale-down h-16 mx-auto lg:mx-0"
               src="@/assets/images/vectors/site-logo.svg"
             />
           </div>
           <div class="py-8">
             <img
               alt="TrustAfrica logo"
-              class="object-scale-down h-16"
+              class="object-scale-down h-16 mx-auto lg:mx-0"
               src="@/assets/images/trustafrica.png"
             />
           </div>
           <div class="py-8">
             <img
               alt="DFID logo"
-              class="object-scale-down h-16"
+              class="object-scale-down h-16 mx-auto lg:mx-0"
               src="@/assets/images/dfid.png"
             />
           </div>
