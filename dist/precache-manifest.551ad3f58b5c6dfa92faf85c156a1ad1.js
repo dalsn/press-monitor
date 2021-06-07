@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "313f87a7c41ac6f4345f",
-    "url": "/css/app.17f3fa2d.css"
+    "revision": "068646d0822c01605af5",
+    "url": "/css/app.2fb521b6.css"
   },
   {
     "revision": "c461e43c1327d43d9e36",
@@ -42,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7919768a1ecd2478c31bf3c33d4d519f",
     "url": "/img/blackdot.7919768a.png"
+  },
+  {
+    "revision": "7f8720fd89c56530798368d4da9313ea",
+    "url": "/img/ccd_logo_white.7f8720fd.svg"
   },
   {
     "revision": "461c1ff5ab84ce519ead7a9ae717e652",
@@ -92,10 +96,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/summary.53a2bd90.svg"
   },
   {
-    "revision": "4dd263c6c61d0986d56e52cabc335a7e",
-    "url": "/img/tcclogo_white.4dd263c6.svg"
-  },
-  {
     "revision": "47ad2cecbb9732589f641ea23bd88797",
     "url": "/img/topic.47ad2cec.svg"
   },
@@ -104,20 +104,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/trustafrica.de2e031c.png"
   },
   {
-    "revision": "ce89317c72be386a6d9e08b55b3887ea",
+    "revision": "797d4e85bc5e951bf732781bea7984e3",
     "url": "/index.html"
   },
   {
-    "revision": "424e2356579287191dec",
-    "url": "/js/about.ec1a7f56.js"
+    "revision": "f5f0e5bfb70d4859e747",
+    "url": "/js/about.a31881de.js"
   },
   {
-    "revision": "313f87a7c41ac6f4345f",
-    "url": "/js/app.b25c0df7.js"
+    "revision": "068646d0822c01605af5",
+    "url": "/js/app.f30d09e4.js"
   },
   {
-    "revision": "fb3a8c515f999317af70",
-    "url": "/js/chunk-19e89508.670e2a47.js"
+    "revision": "a069fcc3214321d71766",
+    "url": "/js/chunk-19e89508.44fbf2ce.js"
   },
   {
     "revision": "c461e43c1327d43d9e36",
