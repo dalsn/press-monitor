@@ -7,7 +7,7 @@
         <div class="logo">
           <router-link to="/">
             <img
-              class="h-8 md:h-10"
+              class="h-10 md:h-12"
               src="../../assets/images/ccdlogo_white.png"
               alt="Corruption Cases Database logo"
             />
