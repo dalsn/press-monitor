@@ -1,14 +1,14 @@
 <template>
   <nav
-    class="bg-transpurple py-2 px-3 md:px-10 xl:px-16 overflow-x-hiddens shadow-xl"
+    class="bg-transpurple py-4 md:py-5 px-2 md:px-10 xl:px-16 overflow-x-hiddens shadow-xl"
   >
     <div class="lg:flex justify-between items-center">
       <div class="w-full top-menu flex justify-between items-center">
         <div class="logo">
           <router-link to="/">
             <img
-              class="h-12 md:h-16"
-              src="../../assets/images/vectors/ccd_logo_white.svg"
+              class="h-10 md:h-12"
+              src="../../assets/images/ccdlogo_white.png"
               alt="Corruption Cases Database logo"
             />
           </router-link>
