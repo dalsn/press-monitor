@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cfb64cf4a10496432ef",
+    "revision": "a6f899443d78e580204e",
     "url": "/css/app.bdaf95bf.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/blackdot.7919768a.png"
   },
   {
-    "revision": "3e5d926d85c1c266fb1c7918f6068826",
-    "url": "/img/ccdlogo_white.3e5d926d.png"
+    "revision": "125f774d78493a2de27a20303a7bfd38",
+    "url": "/img/ccdlogo_white.125f774d.png"
   },
   {
     "revision": "461c1ff5ab84ce519ead7a9ae717e652",
@@ -104,7 +104,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/trustafrica.de2e031c.png"
   },
   {
-    "revision": "f6e8b7f431f229a7e5f624ac74f87848",
+    "revision": "8a76492fcf27634a14bcf8c829a2c3e6",
     "url": "/index.html"
   },
   {
@@ -112,8 +112,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.a31881de.js"
   },
   {
-    "revision": "7cfb64cf4a10496432ef",
-    "url": "/js/app.7fdab7d3.js"
+    "revision": "a6f899443d78e580204e",
+    "url": "/js/app.91be0b8b.js"
   },
   {
     "revision": "a069fcc3214321d71766",
