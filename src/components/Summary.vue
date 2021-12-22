@@ -26,7 +26,7 @@
             :key="key"
             class="stat grid grid-cols-3 items-center row-gap-2 md:gap-x-6 md:text-lg mb-2"
           >
-            <div class="title text-transpurple">{{ offence.name }}</div>
+            <div class="text-transpurple">{{ offence.name }}</div>
             <div class="number justify-self-center text-transgray400">
               {{ offence.cases_count }}
             </div>
