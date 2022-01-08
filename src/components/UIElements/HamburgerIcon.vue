@@ -1,9 +1,9 @@
 <template>
   <svg
     width="40"
-    height="40"
+    height="30"
     :class="{ 'text-eatizgray': status === true }"
-    class="fill-current z-50"
+    class="fill-current z-50 px-1"
     viewBox="0 0 100 80"
     xmlns="http://www.w3.org/2000/svg"
     @click="updateNavStatus"

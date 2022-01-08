@@ -4,10 +4,10 @@
   >
     <div class="lg:flex justify-between items-center">
       <div class="w-full top-menu flex justify-between items-center">
-        <div class="logo">
+        <div class="logo p-1">
           <router-link to="/">
             <img
-              class="h-16 md:h-20"
+              class="h-12 md:h-20"
               src="../../assets/images/ccdlogo_white.png"
               alt="Corruption Cases Database logo"
             />
