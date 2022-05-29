@@ -15,7 +15,7 @@
     </div>
 
     <!-- <div> -->
-    <p class="text-lg md:text-xl lg:text-2xl my-4">
+    <p class="text-lg md:text-xl lg:text-2xl my-4 case-title">
       <router-link :to="'cases/' + caseFile.slug">{{
         caseFile.title
       }}</router-link>
@@ -68,5 +68,13 @@ export default {
 <style scoped>
 div.case-card {
   height: fit-content;
+}
+.case-card.case-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3; 
+  -webkit-box-orient: vertical;
 }
 </style>
