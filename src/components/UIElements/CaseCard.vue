@@ -6,7 +6,7 @@
     <!-- <div> -->
     <div class="flex items-center">
       <hr class="border w-1/6" />
-      <p class="text-lg md:text-2xl px-3 leading-tight">
+      <p class="text-xl px-3 leading-tight">
         <!-- <router-link :to="offenceUrl(caseFile.type_id)">{{
           caseFile.type
         }}</router-link> -->
@@ -68,13 +68,5 @@ export default {
 <style scoped>
 div.case-card {
   height: fit-content;
-}
-.case-card.case-title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  line-clamp: 3; 
-  -webkit-box-orient: vertical;
 }
 </style>

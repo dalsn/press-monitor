@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.0c7bd7cca6db13e2db2a0cc659dccf43.js"
+  "/precache-manifest.39b3ffdd0dd16ce6c54ae2159074b8db.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "TransparencIT-CCD"});

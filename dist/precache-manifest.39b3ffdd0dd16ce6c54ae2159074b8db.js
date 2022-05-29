@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8aa090a6872eb0626643",
+    "revision": "111c569a41e16ab90db1",
     "url": "/css/app.11e2d149.css"
   },
   {
-    "revision": "c461e43c1327d43d9e36",
+    "revision": "75ec5dc17200abd924bf",
     "url": "/css/chunk-214343c4.f5dadd15.css"
   },
   {
-    "revision": "19a473194047bb39998b",
-    "url": "/css/explore.3d9ddcfd.css"
+    "revision": "7be533add6410b839c07",
+    "url": "/css/explore.b21f3b1e.css"
   },
   {
-    "revision": "0387a432d9009c315c43",
-    "url": "/css/index.3537e677.css"
+    "revision": "3041997ed9d46a1f454e",
+    "url": "/css/index.2ba0c2f0.css"
   },
   {
     "revision": "57b60a479e57a1d4775f",
@@ -104,7 +104,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/trustafrica.de2e031c.png"
   },
   {
-    "revision": "eecef4645b17a452f6d3afba63559df1",
+    "revision": "fece8f96d893758823729b206b8b0ccb",
     "url": "/index.html"
   },
   {
@@ -112,16 +112,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/about.a31881de.js"
   },
   {
-    "revision": "8aa090a6872eb0626643",
-    "url": "/js/app.bd5ee2fc.js"
+    "revision": "111c569a41e16ab90db1",
+    "url": "/js/app.99c9a3de.js"
   },
   {
     "revision": "a069fcc3214321d71766",
     "url": "/js/chunk-19e89508.44fbf2ce.js"
   },
   {
-    "revision": "c461e43c1327d43d9e36",
-    "url": "/js/chunk-214343c4.1588408c.js"
+    "revision": "75ec5dc17200abd924bf",
+    "url": "/js/chunk-214343c4.fd8560ab.js"
   },
   {
     "revision": "b6bd5b6209ea8b34e40c",
@@ -136,12 +136,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/datapoint~explore~index.e35a0b91.js"
   },
   {
-    "revision": "19a473194047bb39998b",
-    "url": "/js/explore.2338143e.js"
+    "revision": "7be533add6410b839c07",
+    "url": "/js/explore.9e253e53.js"
   },
   {
-    "revision": "0387a432d9009c315c43",
-    "url": "/js/index.8da66969.js"
+    "revision": "3041997ed9d46a1f454e",
+    "url": "/js/index.a12704a1.js"
   },
   {
     "revision": "57b60a479e57a1d4775f",

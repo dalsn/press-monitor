@@ -273,50 +273,54 @@
                       – <strong>{{ defendant.pivot.plea }}</strong>
                     </div>
                   </div>
-                  <div class="title bg-white">
-                    <strong>Defence Counsel(s)</strong>
-                  </div>
-                  <div class="info">
-                    <div v-if="caseFile.counsels.length < 1">
-                      No defence counsel
+                  <template v-if="caseFile.counsels.length > 0">
+                    <div class="title bg-white">
+                      <strong>Defence Counsel(s)</strong>
                     </div>
-                    <template v-else>
-                      <div
-                        v-for="(counsel, key) in caseFile.counsels"
-                        :key="key"
-                      >
-                        {{ key + 1 }}. {{ counsel.name }}
-                        <small v-if="counsel.designation"
-                          >({{ counsel.designation }})</small
-                        >
+                    <div class="info">
+                      <div v-if="caseFile.counsels.length < 1">
+                        No defence counsel
                       </div>
-                    </template>
-                  </div>
+                      <template v-else>
+                        <div
+                          v-for="(counsel, key) in caseFile.counsels"
+                          :key="key"
+                        >
+                          {{ key + 1 }}. {{ counsel.name }}
+                          <small v-if="counsel.designation"
+                            >({{ counsel.designation }})</small
+                          >
+                        </div>
+                      </template>
+                    </div>
+                  </template>
                   <div class="title bg-white">
                     <strong>Prosecuting Agency</strong>
                   </div>
                   <div class="info">
                     {{ caseFile.agency.name }}
                   </div>
-                  <div class="title bg-white">
-                    <strong>Prosecutor(s) </strong>
-                  </div>
-                  <div class="info">
-                    <div v-if="caseFile.prosecutors.length < 1">
-                      No prosecutors recorded
+                  <template v-if="caseFile.prosecutors.length > 0">
+                    <div class="title bg-white">
+                      <strong>Prosecutor(s) </strong>
                     </div>
-                    <template v-else>
-                      <div
-                        v-for="(prosecutor, key) in caseFile.prosecutors"
-                        :key="key"
-                      >
-                        {{ key + 1 }}. {{ prosecutor.name }}
-                        <small v-if="prosecutor.designation"
-                          >({{ prosecutor.designation }})</small
-                        >
+                    <div class="info">
+                      <div v-if="caseFile.prosecutors.length < 1">
+                        No prosecutors recorded
                       </div>
-                    </template>
-                  </div>
+                      <template v-else>
+                        <div
+                          v-for="(prosecutor, key) in caseFile.prosecutors"
+                          :key="key"
+                        >
+                          {{ key + 1 }}. {{ prosecutor.name }}
+                          <small v-if="prosecutor.designation"
+                            >({{ prosecutor.designation }})</small
+                          >
+                        </div>
+                      </template>
+                    </div>
+                  </template>
                   <div class="title bg-white">
                     <strong>Status of Case</strong>
                   </div>
