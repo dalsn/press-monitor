@@ -54,7 +54,7 @@
       <div class="mx-auto pt-3 mt-4">
         <div class="flex justify-between items-center mb-6">
           <p class="flex text-xl md:text-4xl text-transpurple">
-            List of Cases
+            Incidents
           </p>
           <span class="rounded-full shadow-lg bg-transpurple p-2 md:p-3">
             <img

@@ -7,10 +7,10 @@
             <h1
               class="text-2xl mb-6 text-transpurple font-semibold md:text-3xl xl:text-4xl"
             >
-              We monitor and provide information on Corruption Cases in Nigeria
+              We monitor the incidences of attack, arrest, detention and trial of journalists or citizen bloggers reporting around the Nigeria’s 2023 elections.
             </h1>
             <p class="text-justify mb-4">
-              Corruption Cases Database is a project of
+              Press Monitor is a project of
               <a
                 class="text-link"
                 href="//transparencit.com"
@@ -21,19 +21,19 @@
               funded and supported by
               <a
                 class="text-link"
-                href="//trustafrica.org"
+                href="#"
                 target="_blank"
                 rel="noreferrer noopener"
-                >TrustAfrica</a
+                >_______________</a
               >
-              and
+              <!-- and
               <a
                 class="text-link"
                 href="//www.gov.uk/government/organisations/department-for-international-development"
                 target="_blank"
                 rel="noreferrer noopener"
                 >UK Department for International Development</a
-              >
+              > -->
               to monitor corruption cases in Nigeria. The aim is to ensure
               compliance to extant laws, reduce delays, improve efficiency,
               achieve speedy trial and conclusion of cases. The project also
@@ -59,12 +59,12 @@
           <div class="hidden lg:block lg:mx-auto lg:my-auto">
             <img
               alt="Scales of justice"
-              class="object-scale-down justice"
-              src="../assets/images/vectors/justice.svg"
+              class="justice" style="height: 40rem;"
+              src="@/assets/images/vectors/press_freedom.svg"
             />
           </div>
         </div>
-        <div class="md:flex justify-between pt-5">
+        <div class="md:flex justify-center pt-5">
           <div class="py-8 mb-4 md:mb-0">
             <img
               alt="TransparencIT logo"
@@ -72,7 +72,7 @@
               src="@/assets/images/vectors/site-logo.svg"
             />
           </div>
-          <div class="py-8">
+          <!-- <div class="py-8">
             <img
               alt="TrustAfrica logo"
               class="object-scale-down h-16 mx-auto lg:mx-0"
@@ -85,7 +85,7 @@
               class="object-scale-down h-16 mx-auto lg:mx-0"
               src="@/assets/images/dfid.png"
             />
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="pt-8 pb-16 md:mb-24">
@@ -229,3 +229,6 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+</style>

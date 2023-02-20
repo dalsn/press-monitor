@@ -1,10 +1,10 @@
 <template>
   <footer class="" :class="className">
     <div
-      class="pt-16 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
+      class="pt-8 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
     >
       <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-xl md:text-2xl mb-2">Corruption Cases Database</p>
+        <p class="text-xl md:text-2xl mb-2">Press Monitor</p>
         <p class="text-sm text-justify">
           This is a project of
           <a
@@ -17,21 +17,20 @@
           funded and supported by
           <a
             class="text-link"
-            href="//trustafrica.org"
+            href="#"
             target="_blank"
             rel="noreferrer noopener"
-            >TrustAfrica</a
+            >___________</a
           >
-          and
+          <!-- and
           <a
             class="text-link"
-            href="//www.gov.uk/government/organisations/department-for-international-development"
+            href="#"
             target="_blank"
             rel="noreferrer noopener"
-            >UK Department for International Development</a
-          >
-          to monitor corruption cases in Nigeria to ensure compliance, reduce
-          delays, improve efficiency and achieve speedy conclusion of trials.
+            >___________</a
+          > -->
+          monitors the incidences of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
         </p>
       </div>
       <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
@@ -106,7 +105,7 @@
           </div>
           <div class="w-full">
             <p class="">
-              info@corruptioncases.ng<br />
+              info@transparencit.com<br />
               +234 (0) 704 141 0707
             </p>
           </div>

@@ -3,19 +3,19 @@
     <div
       class="md:pb-12 md:pt-59 px-2 md:px-10 xl:px-16 bg-hero relative overflow-y-hidden"
     >
-      <div class="text pt-10 md:pt-8 lg:pt-5 text-left">
+      <div class="text pt-10 md:pt-8 lg:pt-5 lg:mb-24 text-left">
         <h1
           class="font-bold md:leading-58 text-transpurple text-2xl md:text-5xl"
         >
-          Find Information on <br />
-          Corruption Cases in Nigeria
+          PRESS 
+          MONITOR
         </h1>
         <p class="text-17 leading-28  text-transgray200 pt-5">
-          This is a central database to find details of ongoing
+          The database monitors the incidences of attack, arrest, detention
           <br class="hidden md:block" />
-          and decided corruption cases in the country with
+          and trial of journalists or citizen bloggers reporting
           <br class="hidden md:block" />
-          simplified infographics.
+          around Nigeria's 2023 elections.
         </p>
       </div>
       <div class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66">
@@ -43,7 +43,7 @@
                 v-model="q"
                 class="h-12 focus:outline-none pl-1 md:pl-3 w-full"
                 type="text"
-                placeholder="Search by case name, crime etc"
+                placeholder="Search incidents database"
               />
             </label>
             <label for="search-dropdown" class="flex w-1/2 items-center ml-2">

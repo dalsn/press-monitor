@@ -12,6 +12,7 @@ window.cash = cash;
 window.host = `${process.env.VUE_APP_CCD_HOST}`;
 window.portal = `${process.env.VUE_APP_PORTAL_URL}`;
 window.toastr = toastr;
+window.mapKey = `${process.env.VUE_APP_GOOGLE_MAP_KEY}`;
 
 Vue.config.productionTip = false;
 

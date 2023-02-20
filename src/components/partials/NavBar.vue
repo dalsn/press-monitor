@@ -6,11 +6,11 @@
       <div class="w-full top-menu flex justify-between items-center">
         <div class="logo">
           <router-link to="/">
-            <img
+            <!-- <img
               class="h-10 md:h-12"
               src="../../assets/images/ccdlogo_white.png"
               alt="Corruption Cases Database logo"
-            />
+            /> -->
           </router-link>
         </div>
         <HamburgerIcon
@@ -33,31 +33,19 @@
           to="/cases"
           class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          <span @click="isNavOpen = false">Cases</span>
+          <span @click="isNavOpen = false">Incidents</span>
         </router-link>
-        <router-link
-          to="/cause-list"
-          class=" block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
-        >
-          <span @click="isNavOpen = false">Cause List</span>
-        </router-link>
-        <a
-          :href="portal_url"
-          class="links block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
-        >
-          <span @click="isNavOpen = false">Data Portal</span>
-        </a>
         <router-link
           to="/resources"
           class=" block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0 text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          <span @click="isNavOpen = false">Resources</span>
+          <span @click="isNavOpen = false">FAQ</span>
         </router-link>
         <router-link
           to="/about"
           class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
-          <span @click="isNavOpen = false">About Us</span>
+          <span @click="isNavOpen = false">About</span>
         </router-link>
         <!-- <router-link
           to="/contact-us"

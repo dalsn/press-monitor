@@ -11,7 +11,7 @@
   "dependencies": {
     "@voerro/vue-tagsinput": "^2.4.3",
     "axios": "^0.21.0",
-    "cash-dom": "^8.1.0",
+    "cash-dom": "^8.0.0",
     "chart.js": "^2.9.4",
     "core-js": "^3.8.3",
     "datatables.net-dt": "^1.10.23",
@@ -28,7 +28,9 @@
     "vue-router": "^3.4.7",
     "vue-slick-carousel": "^1.0.6",
     "vue2-datatable-component": "^2.3.1",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "google-maps-api-loader": "^1.1.1",
+    "@google/markerclusterer": "^2.0.8"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.8",

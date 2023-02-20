@@ -5,7 +5,7 @@
     <section class="bg-hero py-8">
       <div class="px-4 mx-auto lg:px-12 lg:w-3/5 mb-16">
         <h2 class="text-center text-3xl font-semibold text-transpurple mb-8">
-          Recent Cases
+          Latest Incidents
         </h2>
         <CaseSummaryCard :caseFile="cases[index]" />
 
@@ -25,7 +25,8 @@
         </div>
       </div>
     </section>
-    <section class="flex flex-col mt-8 py-16">
+
+    <!-- <section class="flex flex-col mt-8 py-16">
       <div
         class="px-2 mx-auto md:px-10 xl:px-16 md:grid md:grid-cols-2 xl:grid-cols-3 lg:gap-6 gap-4"
       >
@@ -42,8 +43,8 @@
       >
         View All Cases
       </button>
-    </section>
-    <Footer className="bg-hero" />
+    </section> -->
+    <Footer className="bg-white" />
   </div>
 </template>
 
@@ -53,13 +54,13 @@
 import Hero from "@/components/Hero";
 import Summary from "@/components/Summary";
 import CaseSummaryCard from "@/components/UIElements/CaseSummaryCard";
-import CaseCard from "@/components/UIElements/CaseCard";
+// import CaseCard from "@/components/UIElements/CaseCard";
 import Footer from "@/components/partials/Footer";
 import axios from "axios";
 
 export default {
   name: "Index",
-  components: { Hero, Summary, CaseSummaryCard, CaseCard, Footer },
+  components: { Hero, Summary, CaseSummaryCard, Footer },
   data() {
     return {
       cases: [],

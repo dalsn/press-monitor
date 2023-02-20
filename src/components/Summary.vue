@@ -1,71 +1,13 @@
 <template>
   <section class="h-auto font-serif px-2 py-12 md:px-10 xl:px-16">
-    <div class="overflow-y-hidden xl:grid xl:grid-cols-2 xl:gap-x-4">
-      <!-- <div
-        class="py-4 px-6 h-auto border rounded-lg flex flex-col items-center my-4 shadow-md lg:grid lg:grid-cols-6 lg:gap-x-12 lg:items-center"
-      > -->
-      <div
-        v-show="no_of_cases > 0"
-        class="py-4 px-6 h-auto border rounded-lg flex flex-col my-4 shadow-md lg:col-span-1"
-      >
-        <div class="text-center">
-          <h1 class="text-lg text-transpurple font-bold mb-4">
-            Total Court Cases
-          </h1>
-          <img class="mb-4 mx-auto" src="../assets/svg/staticon.svg" alt="" />
-          <p class="mx-auto text-5xl font-bold -mt-24 mb-6">
-            {{ no_of_cases }}
-          </p>
-        </div>
-        <p class="text-md text-transpurple font-bold mt-4 mb-2">
-          Top Four Crimes
-        </p>
-        <div class="statistics text-stat">
-          <div
-            v-for="(offence, key) in offences"
-            :key="key"
-            class="stat grid grid-cols-3 items-center row-gap-2 md:gap-x-6 md:text-lg mb-2"
-          >
-            <div class="title text-transpurple">{{ offence.name }}</div>
-            <div class="number justify-self-center text-transgray400">
-              {{ offence.cases_count }}
-            </div>
-            <svg
-              class="svg-content"
-              viewBox="0 0 107 5"
-              preserveAspectRatio="xMinYMin meet"
-            >
-              <rect
-                x="0.712646"
-                y="1.43283"
-                width="100"
-                height="2.80597"
-                rx="1.40299"
-                fill="#E7E6EF"
-              />
-              <rect
-                x="0.712646"
-                y="0.731354"
-                :width="(offence.cases_count/no_of_cases) * 100"
-                height="4.20896"
-                rx="2.10448"
-                :fill="bar_colors[key]"
-              />
-            </svg>
+    <div class="overflow-y-hidden">
+      <div>
+        <h2 class="text-lg font-medium truncate mr-3">Incidents Location</h2>
+        <div class="box mt-3">
+          <div>
+            Click the marker to see location details.
           </div>
-        </div>
-      </div>
-      <div
-        class="chart px-6 py-4 my-8 lg:my-4 col-span-8 border rounded-lg shadow-md lg:col-span-1"
-      >
-        <p class="text-lg text-transpurple font-bold mb-4 text-center"
-          >Cases by States</p
-        >
-        <p class="text-md text-transpurple text-left"
-          >Top Five States</p
-        >
-        <div class="chart-wrapper mt-5">
-          <bar-chart :chartdata="chartdata" :options="options"></bar-chart>
+          <ReportMap class="report-maps w-full mt-5 bg-gray-200 rounded-md" />
         </div>
       </div>
     </div>
@@ -73,7 +15,7 @@
 </template>
 
 <script>
-import BarChart from "./Charts/BarChart";
+import ReportMap from "./ReportMap.vue";
 import axios from "axios";
 
 export default {
@@ -92,7 +34,7 @@ export default {
     };
   },
   components: {
-    BarChart
+    ReportMap
   },
   computed: {
     counts() {
@@ -212,5 +154,9 @@ export default {
     top: 0;
     left: 0;
   }
+}
+
+.report-maps {
+  height: 620px;
 }
 </style>
