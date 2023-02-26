@@ -10,7 +10,7 @@
           PRESS MONITOR
         </h1>
         <p class="text-xl md:text-2xl text-transgray200 pt-5">
-          The database monitors the incidences of attack, arrest, detention and trial
+          The database monitors the incidents of attack, arrest, detention and trial
           <br class="hidden md:block" />
           of journalists or citizen bloggers reporting
           <!-- <br class="hidden md:block" /> -->
@@ -128,7 +128,7 @@ export default {
       });
     },
     search() {
-      this.$router.push(`/cases?state=${this.state}&q=${this.q}`);
+      this.$router.push(`/incidents?state=${this.state}&q=${this.q}`);
     }
   }
 };

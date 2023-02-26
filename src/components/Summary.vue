@@ -1,13 +1,34 @@
 <template>
   <section class="h-auto font-serif px-2 py-12 md:px-10 xl:px-16">
-    <div class="overflow-y-hidden">
-      <div>
-        <h2 class="text-3xl font-medium truncate mr-3">Incidents Location</h2>
-        <div class="box mt-3">
-          <div>
-            Click the marker to see location details.
+    <div class="overflow-y-hidden xl:grid xl:grid-cols-2 xl:gap-x-4 flex items-stretch">
+      <!-- <div
+        class="py-4 px-6 h-auto border rounded-lg flex flex-col items-center my-4 shadow-md lg:grid lg:grid-cols-6 lg:gap-x-12 lg:items-center"
+      > -->
+      <div
+        class="px-6 h-auto flex flex-col my-4 lg:col-span-1"
+      >
+        <div>
+          <h2 class="text-2xl font-medium truncate mr-3">Incidents Location</h2>
+          <div class="box mt-3">
+            <!-- <div>
+              Hover to see more details.
+            </div> -->
+            <SimpleMap class="w-full bg-white rounded-md" :locations="with_incidents" />
           </div>
-          <ReportMap class="report-maps w-full mt-5 bg-gray-200 rounded-md" />
+        </div>
+      </div>
+      <div
+        class="chart px-6 h-auto flex flex-col my-4 lg:col-span-1"
+      >
+        <div class="overflow-y-hidden">
+          <div>
+            <h2 class="text-2xl font-medium truncate mr-3">Top 5 Location</h2>
+            <div class="box mt-3">
+              <div class="chart-wrapper mt-5">
+                <BarChart :chartdata="chartdata" :options="options" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -15,7 +36,9 @@
 </template>
 
 <script>
-import ReportMap from "./ReportMap.vue";
+// import ReportMap from "./ReportMap.vue";
+import SimpleMap from "./SimpleMap.vue";
+import BarChart from "./Charts/BarChart.vue";
 import axios from "axios";
 
 export default {
@@ -34,21 +57,32 @@ export default {
     };
   },
   components: {
-    ReportMap
+    // ReportMap,
+    SimpleMap,
+    BarChart
   },
   computed: {
     counts() {
-      return this.state_counts.map(a => a.cases_count);
+      return this.top_five.map(a => a.incidents_count);
     },
     names() {
-      return this.state_counts.map(a => a.name);
+      return this.top_five.map(a => a.name);
+    },
+    top_five() {
+      return this.state_counts.slice(0, 5);
+    },
+    with_incidents() {
+      let states = this.state_counts.filter(state => state.incidents_count > 0);
+      return states.map(state => {
+        return { ...state, description: `Incidents: ${state.incidents_count}` };
+      })
     },
     chartdata() {
       return {
         labels: this.names,
         datasets: [
           {
-            label: "Cases by State",
+            label: "Incidents by State",
             backgroundColor: [
               "#070241",
               "#58B72B",
@@ -108,55 +142,20 @@ export default {
     }
   },
   mounted() {
-    this.getSummary();
-    this.getCasesCount();
     this.getStatesCount();
   },
   methods: {
-    getSummary() {
-      axios.get(`${window.host}/api/offences/4`).then(response => {
-        if (response.data) {
-          this.offences = Object.keys(response.data).map(i => response.data[i]);
-          this.offences.sort((a, b) => {
-            return b.cases_count - a.cases_count;
-          });
-        }
-      });
-    },
     getStatesCount() {
-      axios.get(`${window.host}/api/statescount/5`).then(response => {
+      axios.get(`${window.host}/api/press-monitor/statescount`).then(response => {
         if (response.data) {
           this.state_counts = response.data;
         }
       });
     },
-    getCasesCount() {
-      axios.get(`${window.host}/api/casescount`).then(response => {
-        if (response.data) {
-          this.no_of_cases = response.data.no_of_cases;
-        }
-      });
-    }
   }
 };
 </script>
 
 <style scoped lang="scss">
-.svg-container {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  overflow: hidden;
 
-  .svg-content {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
-.report-maps {
-  height: 620px;
-}
 </style>

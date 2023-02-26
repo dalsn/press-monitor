@@ -1,22 +1,22 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0092cc089ca08e1505f0",
-    "url": "/css/app.0e01cfce.css"
+    "revision": "24b126b9728c65ae0b84",
+    "url": "/css/app.6320994b.css"
   },
   {
-    "revision": "962d16cd31e133d2facc",
+    "revision": "0568e8cc8cefdb336e82",
     "url": "/css/chunk-214343c4.f5dadd15.css"
   },
   {
-    "revision": "3d726e87c73916070c1a",
+    "revision": "0a6d0f82cffea9828fa5",
     "url": "/css/explore.17769b81.css"
   },
   {
-    "revision": "7b9e178e304417386f75",
-    "url": "/css/index.43466d46.css"
+    "revision": "703df44e28d791d0e4f8",
+    "url": "/css/index.02b15712.css"
   },
   {
-    "revision": "45eec4c679658470306f",
+    "revision": "8ae784fa462198244264",
     "url": "/css/state.5f92d0fa.css"
   },
   {
@@ -84,55 +84,63 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/topic.47ad2cec.svg"
   },
   {
-    "revision": "b35a134c7e3a33f5cf075abd5b4dd5e7",
+    "revision": "17ba2fb32f78a92d5ce26212c5c61454",
     "url": "/index.html"
   },
   {
-    "revision": "3d7af64d33c153f5651b",
-    "url": "/js/about.742e0bf6.js"
+    "revision": "2b6fa36ff4834949501f",
+    "url": "/js/about.4134a2fb.js"
   },
   {
-    "revision": "0092cc089ca08e1505f0",
-    "url": "/js/app.171ffb24.js"
+    "revision": "24b126b9728c65ae0b84",
+    "url": "/js/app.a972565c.js"
   },
   {
-    "revision": "962d16cd31e133d2facc",
-    "url": "/js/chunk-214343c4.200a6322.js"
+    "revision": "0568e8cc8cefdb336e82",
+    "url": "/js/chunk-214343c4.3c8e3812.js"
   },
   {
-    "revision": "0c089b0c3c51ed987b25",
-    "url": "/js/chunk-558bf1b3.36e77692.js"
+    "revision": "15f214c1e7da24cfdf71",
+    "url": "/js/chunk-558bf1b3.2300c12a.js"
   },
   {
     "revision": "b6bd5b6209ea8b34e40c",
     "url": "/js/chunk-vendors.44e85e14.js"
   },
   {
-    "revision": "0e238b8e398d8e921a4a",
-    "url": "/js/datapoint.571798b2.js"
+    "revision": "5205efcb2d4199606b23811f0ad8446e",
+    "url": "/js/countrymap.dev.js"
   },
   {
-    "revision": "2e97da85ce6073030a26",
-    "url": "/js/datapoint~explore.f18cec7a.js"
+    "revision": "c251e5baa2cf77c946f6",
+    "url": "/js/datapoint.ff85ae5b.js"
   },
   {
-    "revision": "3d726e87c73916070c1a",
-    "url": "/js/explore.d7314840.js"
+    "revision": "ad1c93d7b709d8490f5a",
+    "url": "/js/datapoint~explore~index.60256d8a.js"
   },
   {
-    "revision": "7b9e178e304417386f75",
-    "url": "/js/index.ade06d0f.js"
+    "revision": "0a6d0f82cffea9828fa5",
+    "url": "/js/explore.2ecbff92.js"
   },
   {
-    "revision": "45eec4c679658470306f",
-    "url": "/js/state.9ddbe500.js"
+    "revision": "703df44e28d791d0e4f8",
+    "url": "/js/index.0c191a10.js"
+  },
+  {
+    "revision": "12de231bf5baa9ca71d8752680413824",
+    "url": "/js/mapdata.nig.js"
+  },
+  {
+    "revision": "8ae784fa462198244264",
+    "url": "/js/state.b4cbc628.js"
   },
   {
     "revision": "869edc625a2021ae16ad511b6af7d971",
     "url": "/logo.png"
   },
   {
-    "revision": "89cb4a518b748568581fcfc4d81fa14f",
+    "revision": "339cf474babf29457ca1755a0abe28d8",
     "url": "/manifest.json"
   },
   {

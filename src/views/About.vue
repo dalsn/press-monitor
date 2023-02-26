@@ -7,7 +7,7 @@
             <h1
               class="text-3xl mb-6 text-transpurple font-semibold"
             >
-              We monitor the incidences of attack, arrest, detention and trial of journalists or citizen bloggers reporting around the Nigeria’s 2023 elections.
+              We monitor the incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around the Nigeria’s 2023 elections.
             </h1>
             <p class="text-xl text-justify mb-4">
               The Press Monitoring project tracks incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria’s 2023 elections to provide insights into the violations of rights and criminalization of journalism; offer data to use for evidence-based reporting of abuse of journalists during, before and after the election; and ensure a fair trial for arrested journos.

@@ -91,7 +91,17 @@
           </div>
         </div>
       </div>
-      <IncidentsList :list="temp_list" />
+      <div v-if="!isLoading">
+        <IncidentsList :list="temp_list" />
+        <button
+          class="flex justify-center btn mx-4 md:mx-auto mt-8 border border-transpurple xl:w-1/6 md:w-1/3 p-3 rounded-full hover:shadow-lg disabled:opacity-75"
+          @click="getAll()"
+          :disabled="disabled"
+          v-show="!isLoading && temp_list.length > 0"
+        >
+          {{ loadingMore ? message : 'View More' }}
+        </button>
+      </div>
       <div
         class="h-64 flex items-center justify-center"
         v-if="isLoading"
@@ -125,6 +135,7 @@ export default {
       incidents: [],
       temp_list: [],
       isLoading: true,
+      loadingMore: true,
       fullPage: false,
       message: "Loading...",
       q: "",
@@ -134,13 +145,25 @@ export default {
       state: "",
       states: [],
       agencies: [],
-      searchAction: false
+      searchAction: false,
+      page: 0,
+      disabled: false
     };
   },
-  created() {
+  mounted() {
     this.getStates();
     this.getAgencies();
-    this.getAll();
+
+    let query = this.$route.query.q;
+    let state = this.$route.query.state;
+
+    if (query || state) {
+      this.q = query + " " + state;
+      this.search();
+    } else {
+      this.isLoading = true;
+      this.getAll();
+    }
   },
   watch: {
     date() {
@@ -152,24 +175,31 @@ export default {
   },
   methods: {
     getAll() {
-      this.isLoading = true;
+      this.loadingMore = true;
       this.message = "Loading...";
       axios
-        .get(window.host + "/api/press-monitor/incidents")
+        .get(`${window.host}/api/press-monitor/incidents?page=${this.page}`)
         .then(response => {
           if (response.data) {
-            this.incidents = response.data.arrests;
+            let incidents = response.data.arrests;
+            incidents.forEach(c => {
+              this.incidents.push(c);
+            });
+
+            this.temp_list = this.incidents;
           }
-          console.log("Incidents: ", this.incidents)
-          this.temp_list = this.incidents;
+
           if (this.temp_list.length < 1)
             this.message = "No incidents recorded";
           this.isLoading = false;
+          this.loadingMore = false;
           this.searchAction = false;
+          this.page++;
         })
         .catch(e => {
           console.error(e);
           this.isLoading = false;
+          this.loadingMore = false;
         });
     },
     search() {
@@ -181,7 +211,7 @@ export default {
         return;
       }
 
-      this.message = "Loading...";
+      this.message = "Searching...";
       this.isLoading = true;
       axios
         .get(window.host + "/api/press-monitor/incidents/search?q=" + this.q)

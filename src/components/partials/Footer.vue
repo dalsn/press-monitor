@@ -23,7 +23,7 @@
             rel="noreferrer noopener"
             >TransparencIT</a
           >
-          that monitors the incidences of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
+          that monitors the incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
         </p>
       </div>
       <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
