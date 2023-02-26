@@ -6,11 +6,11 @@
       <div class="w-full top-menu flex justify-between items-center">
         <div class="logo">
           <router-link to="/">
-            <!-- <img
+            <img
               class="h-10 md:h-12"
-              src="../../assets/images/ccdlogo_white.png"
-              alt="Corruption Cases Database logo"
-            /> -->
+              src="../../assets/images/pm-logo-white.png"
+              alt="Press Monitor logo"
+            />
           </router-link>
         </div>
         <HamburgerIcon
@@ -30,7 +30,7 @@
           <span @click="isNavOpen = false">Home</span>
         </router-link>
         <router-link
-          to="/cases"
+          to="/incidents"
           class="block lg:w-24 xl:w-32 lg:inline-block mb-5 py-2 lg:mb-0  text-base md:text-lg lg:text-base leading-19 text-center cursor-pointer"
         >
           <span @click="isNavOpen = false">Incidents</span>

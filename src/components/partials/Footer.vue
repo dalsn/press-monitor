@@ -4,7 +4,16 @@
       class="pt-8 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
     >
       <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-xl md:text-2xl mb-2">Press Monitor</p>
+        <!-- <p class="text-xl md:text-2xl mb-2">Press Monitor</p> -->
+        <div class="logo mb-2">
+          <router-link to="/">
+            <img
+              class="h-10 md:h-12"
+              src="../../assets/images/pm-logo.png"
+              alt="Press Monitor logo"
+            />
+          </router-link>
+        </div>
         <p class="text-sm text-justify">
           This is a project of
           <a
@@ -14,23 +23,7 @@
             rel="noreferrer noopener"
             >TransparencIT</a
           >
-          funded and supported by
-          <a
-            class="text-link"
-            href="#"
-            target="_blank"
-            rel="noreferrer noopener"
-            >___________</a
-          >
-          <!-- and
-          <a
-            class="text-link"
-            href="#"
-            target="_blank"
-            rel="noreferrer noopener"
-            >___________</a
-          > -->
-          monitors the incidences of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
+          that monitors the incidences of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
         </p>
       </div>
       <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">

@@ -3,9 +3,21 @@
     <div class="pb-5 mb-2 md:mb-32 mx-auto px-2 md:px-10 xl:px-16 py-6 lg:py-1">
       <div class="flex text-xl md:text-2xl text-transpurple mb-6">
         <ArchiveIcon class="md:mt-1 mr-2" /> <strong>Frequently Asked Questions</strong>
-        <!-- <span class="pl-2"><small> - Download</small> </span> -->
       </div>
       <hr class="my-8" />
+      <vsa-list>
+        <template v-for="(faq, index) in faqs">
+          <vsa-item :key="index">
+            <vsa-heading>
+              {{ faq.question }}
+            </vsa-heading>
+
+            <vsa-content>
+              {{ faq.answer }}
+            </vsa-content>
+          </vsa-item>
+        </template>
+      </vsa-list>
     </div>
     <Footer className="bg-hero" />
   </section>
@@ -13,125 +25,67 @@
 
 <script>
 import Footer from "../components/partials/Footer";
-import axios from "axios";
+import {
+  VsaList,
+  VsaItem,
+  VsaHeading,
+  VsaContent
+} from 'vue-simple-accordion';
+import 'vue-simple-accordion/dist/vue-simple-accordion.css';
 
 export default {
   components: {
-    Footer
+    Footer,
+    VsaList,
+    VsaItem,
+    VsaHeading,
+    VsaContent
   },
   data() {
     return {
-      acjafiles: [],
-      judgements: [],
-      filterAcja: "",
-      filterJudg: "",
-      current_page_acja: 1,
-      current_page_judg: 1,
-      page_size: 5,
-      host: `${window.host}`
-    };
-  },
-  mounted() {
-    this.getFiles();
-  },
-  computed: {
-    sortedAcja() {
-      let array = this.acjafiles;
-      if (this.filterAcja == "")
-        array = this.acjafiles;
-      if (this.filterAcja != "") {
-        array = array.filter((acja) => {
-          let q = this.filterAcja.trim().toLowerCase();
-          return acja.filename.toLowerCase().includes(q);
-        });
-      }
-      return array;
-    },
-    filteredAcja() {
-      return this.sortedAcja.filter((row, index) => {
-        let start = (this.current_page_acja - 1) * this.page_size;
-        let end = this.current_page_acja * this.page_size;
-        if(index >= start && index < end) return true;
-      });
-    },
-    totalAcjaPages() {
-      return Math.ceil(this.acjafiles.length / this.page_size) ?? 0;
-    },
-    sortedJudg() {
-      let array = this.judgements;
-      if (this.filterJudg == "")
-        array = this.judgements;
-      if (this.filterJudg != "") {
-        array = array.filter((judg) => {
-          let q = this.filterJudg.trim().toLowerCase();
-          return judg.filename.toLowerCase().includes(q);
-        });
-      }
-      return array;
-    },
-    filteredJudg() {
-      return this.sortedJudg.filter((row, index) => {
-        let start = (this.current_page_judg - 1) * this.page_size;
-        let end = this.current_page_judg * this.page_size;
-        if(index >= start && index < end) return true;
-      });
-    },
-    totalJudgPages() {
-      return Math.ceil(this.judgements.length / this.page_size) ?? 0;
-    }
-  },
-  methods: {
-    getFiles() {
-      axios.get(`${window.host}/api/resources`).then(response => {
-        if (response.data) {
-          this.acjafiles = response.data.acjaFiles;
-          this.judgements = response.data.judgementFiles;
+      host: `${window.host}`,
+      faqs: [
+        {
+          question: "What is press monitor?",
+          answer: "The press monitor is an independent project supported by the American Bar Association's Center for Human Rights, which tracks the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. The project aims to provide insights into any attacks, arrests, detentions, and trials of journalists or citizen bloggers before, during, and after the election, to protect journos and promote just and fair trials."
+        },
+        {
+          question: "What incidents does the project track?",
+          answer: "The project tracks various incidents related to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. These include arrests, assaults, attacks, seizures of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers in Nigeria."
+        },
+        {
+          question: "Who is referred to as a journalist or citizen blogger under the project?",
+          answer: "A journalist is a trained professional who collects, investigates, and reports news and events of Nigeria’s 2023 elections through traditional media outlets such as newspapers, magazines, radio, or television, as well as online media outlets, while a citizen-blogger is someone who engages in online posting or reporting on social media platforms, blogs, or personal websites to share perspectives, opinions, and experiences with a larger audience on the elections."
+        },
+        {
+          question: "What is the process of tracking the incidents?",
+          answer: "TransparencIT identifies incidents related to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections through its sentinels and collects field-based data on the incidents using a monitoring template. The organization collaborates with the media and legal practitioners and conducts desk research to identify and follow past incidents to report and document them. All data collected is thoroughly verified before being uploaded onto the project's database to ensure its accuracy and reliability. The database serves as a centralized source of information on incidents of arrests, assaults, attacks, seizures of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers in Nigeria."
+        },
+        {
+          question: "How can I use the press monitor database?",
+          answer: "The database helps you to stay informed about any threats to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. It provides a centralized source of information on incidents of arrest, assault, attack, seizure of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers. This information can be used to advocate for greater press freedom and protections for journalists. It can also be used to hold government officials and law enforcement agencies accountable for any violations of press freedom or human rights. Additionally, the project database can serve as a resource for researchers, policymakers, and civil society organizations seeking to understand and address issues related to press freedom and the electoral process."
+        },
+        {
+          question: "Who funds the project?",
+          answer: "The project is primarily funded by the American Bar Association's Center for Human Rights."
+        },
+        {
+          question: "Can I site information from the database?",
+          answer: "Yes, the information in the database can be used for the purposes of research or reporting on journalism in Nigeria, provided that the information is properly attributed to the source."
         }
-      });
-    },
-    gotoPageAcja(index) {
-      if (this.current_page_acja == index || index == "...") return;
-
-      this.current_page_acja = index;
-    },
-    nextPageAcja() {
-      if (this.current_page_acja < this.totalAcjaPages) {
-        this.current_page_acja++;
-      }
-    },
-    prevPageAcja() {
-      if (this.current_page_acja > 1) {
-        this.current_page_acja--;
-      }
-    },
-    gotoPageJudg(index) {
-      if (this.current_page_judg == index || index == "...") return;
-
-      this.current_page_judg = index;
-    },
-    nextPageJudg() {
-      if (this.current_page_judg < this.totalJudgPages) {
-        this.current_page_judg++;
-      }
-    },
-    prevPageJudg() {
-      if (this.current_page_judg > 1) {
-        this.current_page_judg--;
-      }
-    }
+      ]
+    };
   }
 };
 </script>
 
-<style lang="scss" scoped>
-.nav-btn {
-  @apply text-xs font-semibold flex w-8 h-8 mx-1 p-2 rounded-full items-center justify-center leading-tight relative border border-solid border-transpurple bg-white text-transpurple shadow-lg;
+<style lang="scss">
+.vsa-item__trigger:focus, .vsa-item__trigger:hover {
+  background-color: #070241 !important;
 }
-.active {
-  @apply bg-transpurple text-white;
-}
-.disabled {
-  @apply bg-light border-0 text-white;
-  cursor: initial;
+.vsa-list {
+  max-width: 100% !important;
+  width: 100% !important;
+  border: none;
 }
 </style>

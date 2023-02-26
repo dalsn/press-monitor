@@ -3,7 +3,7 @@
     <div class="pb-5 mb-2 md:mb-16 mx-auto py-6 lg:py-1 px-2 md:px-10 xl:px-16">
       <p class="flex text-xl md:text-2xl text-transpurple mb-2 md:mb-4">
         <CalendarIcon class="md:mt-1 mr-2" />
-        <span>Upcoming Corruption Cases</span>
+        <span>Incidents</span>
       </p>
       <div class="pt-5 pb-2">
         <div class="mx-auto">
@@ -59,10 +59,10 @@
                   id="search-dropdown"
                   class="h-12 w-full mx-2 focus:outline-none"
                   placeholder="Filter by state"
-                  v-model="agency"
+                  v-model="arresting_agency"
                   @change="filter('agency')"
                 >
-                  <option value="">Filter by agency</option>
+                  <option value="">Filter by arresting agency</option>
                   <option
                     :value="agency.shortname"
                     v-for="(agency, key) in agencies"
@@ -89,68 +89,12 @@
               </label>
             </div>
           </div>
-          <!-- <div class="h-full flex bg-white rounded-lg justify-between items-center shadow-md">
-                        <label
-                            for="search-text"
-                            class="flex w-full items-center mx-2 px-2"
-                        >
-                            <input
-                                id="search-text"
-                                class="h-12 focus:outline-none w-full"
-                                type="text"
-                                placeholder="Filter by name"
-                            />
-                        </label>
-                    </div> -->
         </div>
       </div>
-      <div class="pt-3" v-show="temp_list.length > 0 && !isLoading">
-        <div class="w-full">
-          <table class="table w-full">
-            <thead class="bg-light">
-              <tr class="text-left">
-                <th width="33%">Accused Person(s)/Defendant(s)</th>
-                <th width="15%">Alleged Offence</th>
-                <th width="28%">Presiding Judge and Designated Court</th>
-                <th width="9%">Prosecuting Agency</th>
-                <th width="15%">Date of Sitting</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="text-md" v-for="(c, key) in temp_list" :key="key">
-                <td class="bg-hero lg:hidden p-4 text-md">
-                  {{ c.lead_defendant.name }}
-                  <span v-show="c.lead_defendant.designation"
-                    >({{ c.lead_defendant.designation }})</span
-                  >
-                  {{ c.defendants_desc }}
-                </td>
-                <td class="hidden lg:table-cell">
-                  {{ c.lead_defendant.name }}
-                  <span v-show="c.lead_defendant.designation"
-                    >({{ c.lead_defendant.designation }})</span
-                  >
-                  {{ c.defendants_desc }}
-                </td>
-                <td data-th="Alleged Offence">
-                  {{ c.amount }}
-                  <br v-if="c.amount" />
-                  {{ c.type }}
-                </td>
-                <td data-th="Presiding Judge and Designated Court">
-                  {{ c.judge.name }}, {{ c.court.name }},
-                  {{ c.court.state.name }}
-                </td>
-                <td data-th="Prosecuting Agency">{{ c.agency.shortname }}</td>
-                <td data-th="Date of Sitting">{{ c.update.next_sitting }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <IncidentsList :list="temp_list" />
       <div
         class="h-64 flex items-center justify-center"
-        v-if="temp_list.length < 1 || isLoading"
+        v-if="isLoading"
       >
         <h4 class="text-2xl">{{ message }}</h4>
       </div>
@@ -168,15 +112,17 @@
 
 <script>
 import Footer from "../components/partials/Footer";
+import IncidentsList from "../components/IncidentsList";
 import axios from "axios";
 
 export default {
   components: {
-    Footer
+    Footer,
+    IncidentsList,
   },
   data() {
     return {
-      cause_list: [],
+      incidents: [],
       temp_list: [],
       isLoading: true,
       fullPage: false,
@@ -184,7 +130,7 @@ export default {
       q: "",
       filterQuery: "",
       date: "",
-      agency: "",
+      arresting_agency: "",
       state: "",
       states: [],
       agencies: [],
@@ -209,14 +155,15 @@ export default {
       this.isLoading = true;
       this.message = "Loading...";
       axios
-        .get(window.host + "/api/cause-list")
+        .get(window.host + "/api/press-monitor/incidents")
         .then(response => {
           if (response.data) {
-            this.cause_list = response.data;
+            this.incidents = response.data.arrests;
           }
-          this.temp_list = this.cause_list;
+          console.log("Incidents: ", this.incidents)
+          this.temp_list = this.incidents;
           if (this.temp_list.length < 1)
-            this.message = "No upcoming cases recorded";
+            this.message = "No incidents recorded";
           this.isLoading = false;
           this.searchAction = false;
         })
@@ -237,15 +184,15 @@ export default {
       this.message = "Loading...";
       this.isLoading = true;
       axios
-        .get(window.host + "/api/cause-list/search?q=" + this.q)
+        .get(window.host + "/api/press-monitor/incidents/search?q=" + this.q)
         .then(response => {
-          this.cause_list = [];
-          if (response.data) this.cause_list = response.data;
-          this.temp_list = this.cause_list;
+          this.incidents = [];
+          if (response.data) this.incidents = response.data.arrests;
+          this.temp_list = this.incidents;
           this.isLoading = false;
           this.searchAction = true;
 
-          this.message = "No cases found!";
+          this.message = "No incidents found!";
         })
         .catch(e => {
           console.error(e);
@@ -260,40 +207,38 @@ export default {
       switch (field) {
         case "state":
           q = vm.state.trim().toLowerCase();
-          this.temp_list = this.cause_list.filter(function(item) {
-            return item.court.state.name.toLowerCase().includes(q);
+          this.temp_list = this.incidents.filter(function(item) {
+            return item.state.name.toLowerCase().includes(q);
           });
           break;
         case "agency":
-          q = vm.agency.trim().toLowerCase();
-          this.temp_list = this.cause_list.filter(function(item) {
+          q = vm.arresting_agency.trim().toLowerCase();
+          this.temp_list = this.incidents.filter(function(item) {
             return (
-              item.agency.shortname.toLowerCase().includes(q) ||
-              item.agency.name.toLowerCase().includes(q)
+              item.arresting_agency.shortname.toLowerCase().includes(q) ||
+              item.arresting_agency.name.toLowerCase().includes(q)
             );
           });
           break;
         case "date":
           q = vm.date.trim().toLowerCase();
-          this.temp_list = this.cause_list.filter(function(item) {
-            return item.update.next_sitting.toLowerCase().includes(q);
+          this.temp_list = this.incidents.filter(function(item) {
+            return item.date_of_arrest.toLowerCase().includes(q);
           });
           break;
         default:
           q = vm.filterQuery.trim().toLowerCase();
-          this.temp_list = this.cause_list.filter(function(item) {
+          this.temp_list = this.incidents.filter(function(item) {
             return (
-              item.update.next_sitting.toLowerCase().includes(q) ||
-              item.agency.shortname.toLowerCase().includes(q) ||
-              item.agency.name.toLowerCase().includes(q) ||
-              item.court.state.name.toLowerCase().includes(q) ||
-              item.lead_defendant.name.toLowerCase().includes(q) ||
-              item.judge.name.toLowerCase().includes(q) ||
-              item.type.toLowerCase().includes(q)
+              item.date_of_arrest.toLowerCase().includes(q) ||
+              item.arresting_agency.shortname.toLowerCase().includes(q) ||
+              item.arresting_agency.name.toLowerCase().includes(q) ||
+              item.state.name.toLowerCase().includes(q) ||
+              item.party.name.toLowerCase().includes(q)
             );
           });
       }
-      if (this.temp_list.length < 1) this.message = "No record found!";
+      if (this.temp_list.length < 1) this.message = "No incidents found!";
     },
 
     getStates() {
@@ -311,7 +256,7 @@ export default {
 
     getAgencies() {
       axios
-        .get(window.host + "/api/agencies")
+        .get(window.host + "/api/press-monitor/arresting-agencies")
         .then(response => {
           if (response.data) {
             this.agencies = response.data;
@@ -323,13 +268,13 @@ export default {
     },
 
     reset() {
-      this.cause_list = [];
+      this.incidents = [];
       this.temp_list = [];
     },
 
     clearFilters() {
       this.state = "";
-      this.agency = "";
+      this.arresting_agency = "";
       this.date = "";
     }
   }

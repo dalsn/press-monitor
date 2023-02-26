@@ -2,7 +2,7 @@
   <section class="h-auto font-serif px-2 py-12 md:px-10 xl:px-16">
     <div class="overflow-y-hidden">
       <div>
-        <h2 class="text-lg font-medium truncate mr-3">Incidents Location</h2>
+        <h2 class="text-3xl font-medium truncate mr-3">Incidents Location</h2>
         <div class="box mt-3">
           <div>
             Click the marker to see location details.

@@ -23,10 +23,10 @@ const routes = [
       import(/* webpackChunkName: "explore" */ "../views/CaseList")
   },
   {
-    path: "/cause-list",
-    name: "CauseList",
+    path: "/incidents",
+    name: "Incidents",
     component: () =>
-      import(/* webpackChunkName: "explore" */ "../views/CauseList")
+      import(/* webpackChunkName: "explore" */ "../views/Incidents")
   },
   {
     path: "/resources",
