@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f185c43407bda8036fa0db09f8649aad.js"
+  "/precache-manifest.cc5463d2f286ed9afe5359b5ce95670b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "TransparencIT-Press-Monitor"});

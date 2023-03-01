@@ -7,44 +7,44 @@
             <h1
               class="text-3xl mb-6 text-transpurple font-semibold"
             >
-              We monitor the incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around the Nigeria’s 2023 elections.
+              About
             </h1>
             <p class="text-xl text-justify mb-4">
-              The Press Monitoring project tracks incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria’s 2023 elections to provide insights into the violations of rights and criminalization of journalism; offer data to use for evidence-based reporting of abuse of journalists during, before and after the election; and ensure a fair trial for arrested journos.
+              The Press Monitor project tracks incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria’s 2023 elections to provide insights into the violations of rights and criminalization of journalism; offer data to use for evidence-based reporting of abuse of journalists during, before and after the election; and ensure a fair trial for arrested journos.
             </p>
           </div>
-          <div class="px-12 text-right">
+          <div class="pl-12 text-right">
             <!-- <img
               alt="Scales of justice"
               class="justice" style="height: 40rem;"
               src="@/assets/images/vectors/press_freedom.svg"
             /> -->
-            <h1 class="text-xl md:text-4xl font-semibold text-transpurple mb-6"><u>Contact Us</u></h1>
+            <h1 class="text-xl md:text-3xl font-semibold text-transpurple mb-6"><u>Contact Us</u></h1>
             <ul>
               <li class="mb-4 md:text-2xl">tips@transparencit.com</li>
               <li class="mb-4 md:text-2xl">info@transparencit.com</li>
             </ul>
+            <div class="pt-4">
+              <h1 class="text-xl md:text-3xl font-semibold text-transpurple mb-4"><u>Partners</u></h1>
+              <div class="text-xl pb-8 mb-4 md:mb-0">
+                <p class="text-right">American Bar Association Center for Human Rights</p>
+              </div>
+              <!-- <div class="py-8">
+                <img
+                  alt="TrustAfrica logo"
+                  class="object-scale-down h-16 mx-auto lg:mx-0"
+                  src="@/assets/images/trustafrica.png"
+                />
+              </div>
+              <div class="py-8">
+                <img
+                  alt="DFID logo"
+                  class="object-scale-down h-16 mx-auto lg:mx-0"
+                  src="@/assets/images/dfid.png"
+                />
+              </div> -->
+            </div>
           </div>
-        </div>
-        <div class="pt-12">
-          <h1 class="text-center text-xl md:text-4xl font-semibold text-transpurple mb-6">Partners</h1>
-          <div class="text-xl flex justify-center pb-8 mb-4 md:mb-0">
-            <p>American Bar Association Center for Human Rights</p>
-          </div>
-          <!-- <div class="py-8">
-            <img
-              alt="TrustAfrica logo"
-              class="object-scale-down h-16 mx-auto lg:mx-0"
-              src="@/assets/images/trustafrica.png"
-            />
-          </div>
-          <div class="py-8">
-            <img
-              alt="DFID logo"
-              class="object-scale-down h-16 mx-auto lg:mx-0"
-              src="@/assets/images/dfid.png"
-            />
-          </div> -->
         </div>
       </div>
     </div>

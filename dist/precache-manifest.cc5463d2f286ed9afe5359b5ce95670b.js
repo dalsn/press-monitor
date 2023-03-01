@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "24b126b9728c65ae0b84",
-    "url": "/css/app.6320994b.css"
+    "revision": "ba53bf430632bea0fb29",
+    "url": "/css/app.9edcc0b2.css"
   },
   {
-    "revision": "0568e8cc8cefdb336e82",
-    "url": "/css/chunk-214343c4.f5dadd15.css"
+    "revision": "15ec7c0194c4e8eadc6b",
+    "url": "/css/chunk-45d54e79.f5dadd15.css"
   },
   {
-    "revision": "0a6d0f82cffea9828fa5",
-    "url": "/css/explore.17769b81.css"
+    "revision": "f96bdaba5a60692b49c4",
+    "url": "/css/explore.04782471.css"
   },
   {
-    "revision": "703df44e28d791d0e4f8",
-    "url": "/css/index.02b15712.css"
+    "revision": "dcdfb08dc46f7ab6a760",
+    "url": "/css/index.183f1096.css"
   },
   {
-    "revision": "8ae784fa462198244264",
-    "url": "/css/state.5f92d0fa.css"
+    "revision": "040df912a795d4a63b44",
+    "url": "/css/state.39fb2a43.css"
   },
   {
     "revision": "869edc625a2021ae16ad511b6af7d971",
@@ -84,56 +84,56 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/topic.47ad2cec.svg"
   },
   {
-    "revision": "17ba2fb32f78a92d5ce26212c5c61454",
+    "revision": "30e1c83cad9c3842087cf2291a6d6264",
     "url": "/index.html"
   },
   {
-    "revision": "2b6fa36ff4834949501f",
-    "url": "/js/about.4134a2fb.js"
+    "revision": "4f6bf5c088852d6722e5",
+    "url": "/js/about.724bbddd.js"
   },
   {
-    "revision": "24b126b9728c65ae0b84",
-    "url": "/js/app.a972565c.js"
+    "revision": "ba53bf430632bea0fb29",
+    "url": "/js/app.29c7e7a4.js"
   },
   {
-    "revision": "0568e8cc8cefdb336e82",
-    "url": "/js/chunk-214343c4.3c8e3812.js"
+    "revision": "15ec7c0194c4e8eadc6b",
+    "url": "/js/chunk-45d54e79.e5ea674a.js"
   },
   {
-    "revision": "15f214c1e7da24cfdf71",
-    "url": "/js/chunk-558bf1b3.2300c12a.js"
+    "revision": "02f4cd3450cc7ee6f6a2",
+    "url": "/js/chunk-47a798a2.b72028a7.js"
   },
   {
-    "revision": "b6bd5b6209ea8b34e40c",
-    "url": "/js/chunk-vendors.44e85e14.js"
+    "revision": "9e0bad9557f3ad8c820d",
+    "url": "/js/chunk-vendors.30c67c83.js"
   },
   {
     "revision": "5205efcb2d4199606b23811f0ad8446e",
     "url": "/js/countrymap.dev.js"
   },
   {
-    "revision": "c251e5baa2cf77c946f6",
-    "url": "/js/datapoint.ff85ae5b.js"
+    "revision": "18c23d3bb8e57f4d5f9f",
+    "url": "/js/datapoint.a3aa3c88.js"
   },
   {
-    "revision": "ad1c93d7b709d8490f5a",
-    "url": "/js/datapoint~explore~index.60256d8a.js"
+    "revision": "0ae4dc4b3069cd80c952",
+    "url": "/js/datapoint~explore~index.37b23fee.js"
   },
   {
-    "revision": "0a6d0f82cffea9828fa5",
-    "url": "/js/explore.2ecbff92.js"
+    "revision": "f96bdaba5a60692b49c4",
+    "url": "/js/explore.e5e2a080.js"
   },
   {
-    "revision": "703df44e28d791d0e4f8",
-    "url": "/js/index.0c191a10.js"
+    "revision": "dcdfb08dc46f7ab6a760",
+    "url": "/js/index.cbc31297.js"
   },
   {
     "revision": "12de231bf5baa9ca71d8752680413824",
     "url": "/js/mapdata.nig.js"
   },
   {
-    "revision": "8ae784fa462198244264",
-    "url": "/js/state.b4cbc628.js"
+    "revision": "040df912a795d4a63b44",
+    "url": "/js/state.dc773a7b.js"
   },
   {
     "revision": "869edc625a2021ae16ad511b6af7d971",

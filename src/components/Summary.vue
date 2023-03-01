@@ -1,13 +1,13 @@
 <template>
   <section class="h-auto font-serif px-2 py-12 md:px-10 xl:px-16">
-    <div class="overflow-y-hidden xl:grid xl:grid-cols-2 xl:gap-x-4 flex items-stretch">
+    <div class="overflow-y-hidden xl:grid xl:grid-cols-2 xl:gap-x-4 flex">
       <!-- <div
         class="py-4 px-6 h-auto border rounded-lg flex flex-col items-center my-4 shadow-md lg:grid lg:grid-cols-6 lg:gap-x-12 lg:items-center"
       > -->
       <div
-        class="px-6 h-auto flex flex-col my-4 lg:col-span-1"
+        class="h-auto px-6 flex flex-col my-4 lg:col-span-1"
       >
-        <div>
+        <div class="flex-1">
           <h2 class="text-2xl font-medium truncate mr-3">Incidents Location</h2>
           <div class="box mt-3">
             <!-- <div>
@@ -20,13 +20,11 @@
       <div
         class="chart px-6 h-auto flex flex-col my-4 lg:col-span-1"
       >
-        <div class="overflow-y-hidden">
-          <div>
-            <h2 class="text-2xl font-medium truncate mr-3">Top 5 Location</h2>
-            <div class="box mt-3">
-              <div class="chart-wrapper mt-5">
-                <BarChart :chartdata="chartdata" :options="options" />
-              </div>
+        <div class="flex-1">
+          <h2 class="text-2xl font-medium truncate mr-3">Top 5 Location</h2>
+          <div class="box mt-3">
+            <div class="chart-wrapper mt-5">
+              <BarChart :chartdata="chartdata" :options="options" :style="{height: `100%`, position: `relative`}"/>
             </div>
           </div>
         </div>
@@ -85,11 +83,11 @@ export default {
             label: "Incidents by State",
             backgroundColor: [
               "#070241",
-              "#58B72B",
-              "#F2994A",
-              "#66C9E8",
-              "#35D3B7",
-              "#BCC924"
+              "#070241",
+              "#070241",
+              "#070241",
+              "#070241",
+              "#070241"
             ],
             pointBackgroundColor: "white",
             borderWidth: 1,
@@ -157,5 +155,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
 </style>

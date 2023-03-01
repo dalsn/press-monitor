@@ -38,7 +38,7 @@
         class="h-64 flex items-center justify-center"
         v-else
       >
-        <h4 class="text-2xl">The are no incidents found!</h4>
+        <h4 class="text-2xl">There are no incidents recorded!</h4>
       </div>
     </div>
   </div>

@@ -5,9 +5,9 @@
     >
       <div class="text pt-10 md:pt-8 lg:pt-5 lg:mb-24 text-left">
         <h1
-          class="font-semibold md:leading-58 text-transpurple text-4xl md:text-6xl"
+          class="font-semibold md:leading-58 text-transpurple text-4xl"
         >
-          PRESS MONITOR
+          Monitoring the Criminalization <br>of Press Freedom in Nigeria
         </h1>
         <p class="text-xl md:text-2xl text-transgray200 pt-5">
           The database monitors the incidents of attack, arrest, detention and trial
