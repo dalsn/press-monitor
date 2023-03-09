@@ -19,7 +19,6 @@ export default {
 				this.simplemaps_countrymap.mapdata.locations = newVal;
 	            this.simplemaps_countrymap.refresh();
 			},
-			immediate: true,
 			deep: true
 		}
 	}

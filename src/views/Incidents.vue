@@ -94,7 +94,7 @@
       <div v-if="!isLoading">
         <IncidentsList :list="temp_list" />
         <button
-          class="flex justify-center btn mx-4 md:mx-auto mt-8 border border-transpurple xl:w-1/6 md:w-1/3 p-3 rounded-full hover:shadow-lg disabled:opacity-75"
+          class="flex justify-center btn sm:mx-auto mt-8 border border-transpurple xl:w-1/4 sm:w-1/3 w-full p-3 rounded-full hover:shadow-lg disabled:opacity-75"
           @click="getAll()"
           :disabled="disabled"
           v-show="!isLoading && temp_list.length > 0"

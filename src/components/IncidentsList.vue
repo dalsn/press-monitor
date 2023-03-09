@@ -12,23 +12,25 @@
         <tbody class="bg-white">
           <tr class="text-md" v-for="(c, key) in list" :key="key">
             <td class="bg-light lg:hidden p-4 text-md">
-              {{ c.title }}
+              <router-link :to="'incidents/' + c.slug"><u class="title">{{ c.title }}</u></router-link>
             </td>
             <td class="hidden lg:table-cell">
-              {{ c.title }}
+              <router-link :to="'incidents/' + c.slug"><u class="title">{{ c.title }}</u></router-link>
             </td>
             <td data-th="">
-              <ul><li v-for="(offence, index) in c.offences" :key="index">- {{ offence.name }}</li></ul>
-              <p><strong>Target:</strong> {{ c.party.name }}</p>
-              <p><strong>Date of Incident:</strong> {{ c.date_of_arrest }}</p>
-              <p><strong>State:</strong> {{ c.state.name }}</p>
+              <p v-if="c.party"><strong>Target(s):</strong> {{ c.party.name }}</p>
+              <p v-if="c.date_of_arrest"><strong>Date of Incident:</strong> {{ c.date_of_arrest }}</p>
+              <p v-if="c.address"><strong>Location:</strong> {{ c.address }}</p>
+              <p v-if="c.state"><strong>State:</strong> {{ c.state.name }}</p>
             </td>
             <td data-th="">
-              <p v-if="c.reason"><strong>Reason:</strong> {{ c.reason }}</p>
-              <p v-if="c.circumstance"><strong>Circumstance:</strong> {{ c.circumstance }}</p>
-              <p><strong>Were they briefed?:</strong> {{ c.briefed_on_arrest ? 'Yes' : 'No' }}</p>
+              <!-- <ul><li v-for="(offence, index) in c.offences" :key="index">- {{ offence.name }}</li></ul> -->
+              <p v-if="c.offence"><strong>Incident Type:</strong> {{ c.offence.name }}</p>
+              <p v-if="c.arresting_agency"><strong>Arresting Agency:</strong> {{ c.arresting_agency.name }}</p>
+              <p v-if="c.update"><strong>Incident Status:</strong> {{ c.update }}</p>
+              <!-- <p><strong>Were they briefed?:</strong> {{ c.briefed_on_arrest ? 'Yes' : 'No' }}</p>
               <p><strong>Was there a warrant?:</strong> {{ c.warrant ? 'Yes' : 'No' }}</p>
-              <p><strong>Have they been charged?:</strong> {{ c.charged ? 'Yes' : 'No' }}</p>
+              <p><strong>Have they been charged?:</strong> {{ c.charged ? 'Yes' : 'No' }}</p> -->
               <!-- <p><strong>Were they tortured?:</strong> {{ c.tortured ? 'Yes' : 'No' }}</p> -->
             </td>
           </tr>
@@ -64,6 +66,11 @@ export default {
   td:not(:first-of-type) {
     padding-left: 15px;
     padding-bottom: 10px;
+  }
+}
+.title {
+  &:hover {
+    color: #1806e4;
   }
 }
 </style>

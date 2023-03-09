@@ -30,8 +30,8 @@ export default {
       host: `${window.host}`,
       faqs: [
         {
-          title: "What is press monitor?",
-          value: "The press monitor is an independent project supported by the American Bar Association's Center for Human Rights, which tracks the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. The project aims to provide insights into any attacks, arrests, detentions, and trials of journalists or citizen bloggers before, during, and after the election, to protect journos and promote just and fair trials."
+          title: "What is press freedom monitor?",
+          value: "The press freedom monitor is an independent project supported by the American Bar Association's Center for Human Rights, which tracks the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. The project aims to provide insights into any attacks, arrests, detentions, and trials of journalists or citizen bloggers before, during, and after the election, to protect journos and promote just and fair trials."
         },
         {
           title: "What incidents does the project track?",
@@ -46,7 +46,7 @@ export default {
           value: "TransparencIT identifies incidents related to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections through its sentinels and collects field-based data on the incidents using a monitoring template. The organization collaborates with the media and legal practitioners and conducts desk research to identify and follow past incidents to report and document them. All data collected is thoroughly verified before being uploaded onto the project's database to ensure its accuracy and reliability. The database serves as a centralized source of information on incidents of arrests, assaults, attacks, seizures of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers in Nigeria."
         },
         {
-          title: "How can I use the press monitor database?",
+          title: "How can I use the press freedom monitor database?",
           value: "The database helps you to stay informed about any threats to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. It provides a centralized source of information on incidents of arrest, assault, attack, seizure of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers. This information can be used to advocate for greater press freedom and protections for journalists. It can also be used to hold government officials and law enforcement agencies accountable for any violations of press freedom or human rights. Additionally, the project database can serve as a resource for researchers, policymakers, and civil society organizations seeking to understand and address issues related to press freedom and the electoral process."
         },
         {

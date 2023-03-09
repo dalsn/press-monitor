@@ -7,10 +7,10 @@
             <h1
               class="text-3xl mb-6 text-transpurple font-semibold"
             >
-              About
+              <u>About</u>
             </h1>
             <p class="text-xl text-justify mb-4">
-              The Press Monitor project tracks incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria’s 2023 elections to provide insights into the violations of rights and criminalization of journalism; offer data to use for evidence-based reporting of abuse of journalists during, before and after the election; and ensure a fair trial for arrested journos.
+              The Press Freedom Monitor project tracks incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria’s 2023 elections to provide insights into the violations of rights and criminalization of journalism; offer data to use for evidence-based reporting of abuse of journalists during, before and after the election; and ensure a fair trial for arrested journos.
             </p>
           </div>
           <div class="pl-12 text-right">
@@ -29,20 +29,6 @@
               <div class="text-xl pb-8 mb-4 md:mb-0">
                 <p class="text-right">American Bar Association Center for Human Rights</p>
               </div>
-              <!-- <div class="py-8">
-                <img
-                  alt="TrustAfrica logo"
-                  class="object-scale-down h-16 mx-auto lg:mx-0"
-                  src="@/assets/images/trustafrica.png"
-                />
-              </div>
-              <div class="py-8">
-                <img
-                  alt="DFID logo"
-                  class="object-scale-down h-16 mx-auto lg:mx-0"
-                  src="@/assets/images/dfid.png"
-                />
-              </div> -->
             </div>
           </div>
         </div>

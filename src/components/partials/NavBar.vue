@@ -8,8 +8,8 @@
           <router-link to="/">
             <img
               class="h-10 md:h-12"
-              src="../../assets/images/pm-logo-white.png"
-              alt="Press Monitor logo"
+              src="../../assets/images/pfm-logo-white.png"
+              alt="Press Freedom Monitor logo"
             />
           </router-link>
         </div>

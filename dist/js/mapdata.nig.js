@@ -4,27 +4,27 @@ var simplemaps_countrymap_mapdata={
     width: "responsive", //'700' or 'responsive'
     background_color: "#FFFFFF",
     background_transparent: "yes",
-    border_color: "#ffffff",
+    border_color: "#808080",
     
     //State defaults
     state_description: "",
-    state_color: "#88A4BC",
-    state_hover_color: "#3B729F",
+    state_color: "#F5F5F6",
+    state_hover_color: "#676767",
     state_url: "",
     border_size: 1.5,
     all_states_inactive: "no",
-    all_states_zoomable: "yes",
+    all_states_zoomable: "no",
     
     //Location defaults
     location_description: "",
     location_url: "",
     location_color: "#FF0067",
-    location_opacity: 0.8,
+    location_opacity: 0.9,
     location_hover_opacity: 1,
-    location_size: 25,
-    location_type: "square",
+    location_size: 20,
+    location_type: "circle",
     location_image_source: "frog.png",
-    location_border_color: "#FFFFFF",
+    location_border_color: "#000000",
     location_border: 2,
     location_hover_border: 2.5,
     all_locations_inactive: "no",
@@ -33,14 +33,14 @@ var simplemaps_countrymap_mapdata={
     //Label defaults
     label_color: "#d5ddec",
     label_hover_color: "#d5ddec",
-    label_size: 22,
-    label_font: "Arial",
+    label_size: 25,
+    label_font: "Work Sans",
     hide_labels: "no",
     hide_eastern_labels: "no",
    
     //Zoom settings
     zoom: "yes",
-    manual_zoom: "yes",
+    manual_zoom: "no",
     back_image: "no",
     initial_back: "no",
     initial_zoom: "-1",
@@ -56,7 +56,7 @@ var simplemaps_countrymap_mapdata={
     popup_opacity: 0.9,
     popup_shadow: 1,
     popup_corners: 5,
-    popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
+    popup_font: "12px/1.5 Work Sans, Verdana, Arial, Helvetica, sans-serif",
     popup_nocss: "no",
     
     //Advanced settings

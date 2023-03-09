@@ -65,9 +65,9 @@ const routes = [
     //     )
   },
   {
-    path: "/cases/:slug",
-    name: "Case Details",
-    component: () => import("../views/Case.vue")
+    path: "/incidents/:slug",
+    name: "Incident Details",
+    component: () => import("../views/Incident.vue")
   }
 ];
 

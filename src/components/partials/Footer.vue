@@ -4,13 +4,13 @@
       class="pt-8 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
     >
       <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-xl md:text-2xl mb-2">Press Monitor</p>
+        <p class="text-xl md:text-2xl mb-2">Press Freedom Monitor</p>
         <!-- <div class="logo mb-2">
           <router-link to="/">
             <img
               class="h-10 md:h-12"
-              src="../../assets/images/pm-logo.png"
-              alt="Press Monitor logo"
+              src="../../assets/images/pfm-logo.png"
+              alt="Press Freedom Monitor logo"
             />
           </router-link>
         </div> -->
@@ -23,11 +23,11 @@
             rel="noreferrer noopener"
             >TransparencIT</a
           >
-          that monitors the incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
+          that monitors and documents incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria's 2023 elections
         </p>
       </div>
-      <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-sm">Newsletter Signup</p>
+      <div class="w-full md:pl-16 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
+        <p class="text-sm mb-2">Get more information on press freedom in Nigeria</p>
         <form action="#" method="POST" @submit.prevent="subscribe">
           <div
             class="h-full flex bg-white rounded-lg justify-between items-center shadow-md"
@@ -38,7 +38,7 @@
                 id="search-text"
                 class="h-12 focus:outline-none pl-1 w-full"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Sign up with your email"
                 required
               />
             </label>
@@ -54,7 +54,7 @@
           </div>
         </form>
       </div>
-      <div class="w-full lg:w-1/3 lg:pl-8">
+      <div class="w-full lg:w-1/3 lg:pl-16">
         <h4 class="text-2xl mb-2">Contact</h4>
         <div class="flex flex-row mb-3">
           <a

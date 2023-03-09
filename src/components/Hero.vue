@@ -7,10 +7,10 @@
         <h1
           class="font-semibold md:leading-58 text-transpurple text-4xl"
         >
-          Monitoring the Criminalization <br>of Press Freedom in Nigeria
+          Monitoring Press Freedom in Nigeria
         </h1>
         <p class="text-xl md:text-2xl text-transgray200 pt-5">
-          The database monitors the incidents of attack, arrest, detention and trial
+          The database monitors and documents incidents of attack, arrest, detention and trial
           <br class="hidden md:block" />
           of journalists or citizen bloggers reporting
           <!-- <br class="hidden md:block" /> -->
