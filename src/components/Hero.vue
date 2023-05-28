@@ -10,11 +10,10 @@
           Monitoring Press Freedom in Nigeria
         </h1>
         <p class="text-xl md:text-2xl text-transgray200 pt-5">
-          The database monitors and documents incidents of attack, arrest, detention and trial
-          <br class="hidden md:block" />
-          of journalists or citizen bloggers reporting
+          The database monitors and documents incidents of attack, arrest, detention and <br class="hidden md:block" />trial
+          of journalists or citizen bloggers in
           <!-- <br class="hidden md:block" /> -->
-          around Nigeria's 2023 elections.
+          Nigeria.
         </p>
       </div>
       <div class="form-group h-50 rounded-lg mt-10 md:mt-66">

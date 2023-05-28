@@ -87,12 +87,11 @@ export default {
           {
             label: "Incidents by Type",
             backgroundColor: [
-              "#669599",
-              "#E07A5F",
-              "#7EBBC8",
-              "#B0829D",
-              "#63729A",
-              "#98C9CD"
+              "#0047AB",
+              "#B10DC9",
+              "#FF2400",
+              "#FFD700",
+              "#00FF00"
             ],
             pointBackgroundColor: "white",
             borderWidth: 1,

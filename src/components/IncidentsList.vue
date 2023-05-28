@@ -26,7 +26,7 @@
             <td data-th="">
               <!-- <ul><li v-for="(offence, index) in c.offences" :key="index">- {{ offence.name }}</li></ul> -->
               <p v-if="c.offence"><strong>Incident Type:</strong> {{ c.offence.name }}</p>
-              <p v-if="c.arresting_agency"><strong>Arresting Agency:</strong> {{ c.arresting_agency.name }}</p>
+              <p v-if="c.arresting_agency"><strong>Assailant:</strong> {{ c.arresting_agency.name }}</p>
               <p v-if="c.update"><strong>Incident Status:</strong> {{ c.update }}</p>
               <!-- <p><strong>Were they briefed?:</strong> {{ c.briefed_on_arrest ? 'Yes' : 'No' }}</p>
               <p><strong>Was there a warrant?:</strong> {{ c.warrant ? 'Yes' : 'No' }}</p>
