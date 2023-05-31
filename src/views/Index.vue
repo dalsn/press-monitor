@@ -12,7 +12,7 @@
           to="/incidents"
           class="flex justify-center btn sm:mx-auto mt-8 border border-transpurple xl:w-1/4 sm:w-1/3 w-full p-3 rounded-full hover:shadow-lg disabled:opacity-75"
         >
-          View More
+          View All Incidents
         </router-link>
       </div>
     </section>
