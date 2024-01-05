@@ -1,26 +1,34 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79d2d0fb014d29c7e5ba",
-    "url": "/css/app.19461652.css"
+    "revision": "8c053749bde3a910078b",
+    "url": "/css/app.46ebe2ab.css"
   },
   {
     "revision": "4f56e2ffbfd6bc844bef",
     "url": "/css/chunk-9d0bdc28.f5dadd15.css"
   },
   {
-    "revision": "b2c6041b242617a38bb0",
-    "url": "/css/explore.f2cc5c00.css"
+    "revision": "d4dcf4e2339e50782da0",
+    "url": "/css/explore.c74c5f5c.css"
   },
   {
-    "revision": "a47ab171fe22baebdc9b",
-    "url": "/css/index.71232a25.css"
+    "revision": "e036e33161dfad9f2e44",
+    "url": "/css/index.9cc22980.css"
   },
   {
     "revision": "e6d4efd730e5b961a23c",
     "url": "/css/state.39fb2a43.css"
   },
   {
-    "revision": "07db766297769563df01b5e4d304fa10",
+    "revision": "0536802f9031003a6b5489fe2cc74b4c",
+    "url": "/csw-favicon.png"
+  },
+  {
+    "revision": "fa47652f8ab735898c044126dfd81e7f",
+    "url": "/csw-logo.png"
+  },
+  {
+    "revision": "3a829032d4530598b4aef0fa57fc9dcb",
     "url": "/favicon.png"
   },
   {
@@ -36,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/courtcases.461c1ff5.svg"
   },
   {
-    "revision": "daf04b94d89485aa56d9a500203b0c39",
-    "url": "/img/pfm-logo-white.daf04b94.png"
+    "revision": "e0dda1d7003c7dbeb35e41578563c5cb",
+    "url": "/img/csw-logo-white.e0dda1d7.png"
   },
   {
     "revision": "d0e7be1353ae8a7a56ab7062f9aae9b3",
@@ -52,20 +60,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/topic.47ad2cec.svg"
   },
   {
-    "revision": "34609e18f4d702ef112009693fb228a5",
+    "revision": "7e8b8269ad928ef7c9a169f5e31c0790",
     "url": "/index.html"
   },
   {
-    "revision": "c6ce47f0121283a3d49f",
-    "url": "/js/about.01d4a880.js"
+    "revision": "d8e66123f3d290f8e6f4",
+    "url": "/js/about.7fca725e.js"
   },
   {
-    "revision": "79d2d0fb014d29c7e5ba",
-    "url": "/js/app.128a9afb.js"
+    "revision": "8c053749bde3a910078b",
+    "url": "/js/app.60e9cdda.js"
   },
   {
-    "revision": "ecb3932de03bc3774b45",
-    "url": "/js/chunk-54b95a4c.b6ae4ecc.js"
+    "revision": "34a081512d70efa8fba5",
+    "url": "/js/chunk-54b95a4c.6a21400a.js"
   },
   {
     "revision": "4f56e2ffbfd6bc844bef",
@@ -88,12 +96,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/datapoint~explore~index.37b23fee.js"
   },
   {
-    "revision": "b2c6041b242617a38bb0",
-    "url": "/js/explore.6b46b1de.js"
+    "revision": "d4dcf4e2339e50782da0",
+    "url": "/js/explore.8d728b09.js"
   },
   {
-    "revision": "a47ab171fe22baebdc9b",
-    "url": "/js/index.b93dd3a1.js"
+    "revision": "e036e33161dfad9f2e44",
+    "url": "/js/index.6c35e971.js"
   },
   {
     "revision": "95bec3cf40c9b485c259e60b740e1f07",
@@ -110,6 +118,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "01ac19ce9c7e42f4db216b96773b4f33",
     "url": "/manifest.json"
+  },
+  {
+    "revision": "07db766297769563df01b5e4d304fa10",
+    "url": "/pfm-favicon.png"
   },
   {
     "revision": "735ab4f94fbcd57074377afca324c813",
