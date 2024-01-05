@@ -10,7 +10,7 @@
               <u>About</u>
             </h1>
             <p class="text-xl text-justify mb-4">
-              The Press Freedom Monitor project tracks incidents of attack, arrest, detention and trial of journalists or citizen bloggers reporting around Nigeria’s 2023 elections to provide insights into the violations of rights and criminalization of journalism; offer data to use for evidence-based reporting of abuse of journalists during, before and after the election; and ensure a fair trial for arrested journos.
+              The Civic Space Watch project tracks incidents of violations and criminalization of freedoms and rights of activists, journalists, and citizens to promote and safeguard civil liberties and democratic values in Nigeria. The project initially monitors the attack, arrest, detention, and trial of journalists/citizen bloggers reporting around Nigeria’s 2023 elections, and it has now expanded to cover other components of the civic space to offer better insights and data to use for evidence-based reporting, research and advocacy against the shrinking civic space.
             </p>
           </div>
           <div class="pl-12 text-right">

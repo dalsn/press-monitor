@@ -4,7 +4,7 @@
       class="pt-8 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
     >
       <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-xl md:text-2xl mb-2">Press Freedom Monitor</p>
+        <p class="text-xl md:text-2xl mb-2">Civic Space Watch</p>
         <!-- <div class="logo mb-2">
           <router-link to="/">
             <img
@@ -23,11 +23,11 @@
             rel="noreferrer noopener"
             >TransparencIT</a
           >
-          that monitors and documents incidents of attack, arrest, detention and trial of journalists or citizen bloggers in Nigeria
+          that monitors and documents incidents of violations of freedoms and rights of activists, journalists, and citizens to amplify voices, provide insights, and mobilize against the shrinking civic space in Nigeria.
         </p>
       </div>
       <div class="w-full md:pl-16 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-sm mb-2">Get more information on media rights in Nigeria</p>
+        <p class="text-sm mb-2">Stay up-to-date with information on the civic space in Nigeria.</p>
         <form action="#" method="POST" @submit.prevent="subscribe">
           <div
             class="h-full flex bg-white rounded-lg justify-between items-center shadow-md"

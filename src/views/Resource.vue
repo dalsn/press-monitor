@@ -6,10 +6,10 @@
       </div>
       <hr class="my-8" />
       <VueFaqAccordion
-        active-color="#5E72E4"
-        border-color="#070241"
-        font-color="#070241"
-        :items="faqs"
+      active-color="#5E72E4"
+      border-color="#070241"
+      font-color="#070241"
+      :items="faqs"
       />
     </div>
     <Footer className="bg-hero" />
@@ -30,32 +30,32 @@ export default {
       host: `${window.host}`,
       faqs: [
         {
-          title: "What is press freedom monitor?",
-          value: "The press freedom monitor is an independent project supported by the American Bar Association's Center for Human Rights, which tracks the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. The project aims to provide insights into any attacks, arrests, detentions, and trials of journalists or citizen bloggers before, during, and after the election, to protect journos and promote just and fair trials."
+          title: "What is Civic Space Watch?",
+          value: "The Civic Space Watch is an independent project supported by the American Bar Association Center for Human Rights, which tracks incidents of violations and criminalization of freedoms and rights of activists, journalists, and citizens to promote and safeguard civil liberties and democratic values in Nigeria. The project aims to provide insights and data for evidence-based reporting, research and advocacy against the shrinking civic space."
         },
         {
           title: "What incidents does the project track?",
-          value: "The project tracks various incidents related to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. These include arrests, assaults, attacks, seizures of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers in Nigeria."
+          value: "The project tracks various incidents related to the violations of freedoms and rights of activists, journalists, and citizens in Nigeria. These include the right to freedom from arbitrary arrest, right to freedom from forced disappearance, right to freedom from the death penalty, right to freedom from extrajudicial execution, right to freedom from torture and ill-treatment, right to assembly and association, right to opinion and expression, right to participate in government, and right to freedom of religion and belief."
         },
         {
-          title: "Who is referred to as a journalist or citizen blogger under the project?",
-          value: "A journalist is a trained professional who collects, investigates, and reports news and events of Nigeria’s 2023 elections through traditional media outlets such as newspapers, magazines, radio, or television, as well as online media outlets, while a citizen-blogger is someone who engages in online posting or reporting on social media platforms, blogs, or personal websites to share perspectives, opinions, and experiences with a larger audience on the elections."
+          title: "Who is referred to as an activist or journalist under the project?",
+          value: "An activist is a person who campaigns to bring about social and developmental change in communities, whilst a journalist is a trained professional or citizen-blogger who collects, investigates, and reports news and events in Nigeria through traditional media outlets such as newspapers, magazines, radio, television, as well as online media outlets, or by online posting/reporting on social media platforms, blogs, or personal websites to share perspectives, opinions, and experiences that safeguard democratic values and civil liberties."
         },
         {
           title: "What is the process of tracking the incidents?",
-          value: "TransparencIT identifies incidents related to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections through its sentinels and collects field-based data on the incidents using a monitoring template. The organization collaborates with the media and legal practitioners and conducts desk research to identify and follow past incidents to report and document them. All data collected is thoroughly verified before being uploaded onto the project's database to ensure its accuracy and reliability. The database serves as a centralized source of information on incidents of arrests, assaults, attacks, seizures of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers in Nigeria."
+          value: "TransparencIT identifies incidents related to the freedoms and rights of activists, journalists and citizens through its sentinels and reportage and collects field-based data on the incidents using a monitoring template. All data collected is thoroughly reviewed and uploaded onto the project dashboard, which serves as a hub of information on the country’s state of civic space."
         },
         {
-          title: "How can I use the press freedom monitor database?",
-          value: "The database helps you to stay informed about any threats to the freedom of journalists and citizen bloggers reporting on Nigeria's 2023 elections. It provides a centralized source of information on incidents of arrest, assault, attack, seizure of equipment, restrictions on coverage, denial of access, and criminal charges against journalists or citizen bloggers. This information can be used to advocate for greater press freedom and protections for journalists. It can also be used to hold government officials and law enforcement agencies accountable for any violations of press freedom or human rights. Additionally, the project database can serve as a resource for researchers, policymakers, and civil society organizations seeking to understand and address issues related to press freedom and the electoral process."
+          title: "How can I use the Civic Space Watch dashboard?",
+          value: "The dashboard helps you to stay informed about the state of civic space in Nigeria. It provides a centralized source of information on incidents of violations of the rights and freedoms of activists, journalists and citizens. This information can be used to advocate against the shrinking civic space, facilitate research and policy reforms, and build the capacities of civic space actors. It can also be used to hold government officials and law enforcement agencies accountable for any violations."
         },
         {
           title: "Who funds the project?",
           value: "The project is primarily funded by the American Bar Association's Center for Human Rights."
         },
         {
-          title: "Can I site information from the database?",
-          value: "Yes, the information in the database can be used for the purposes of research or reporting on journalism in Nigeria, provided that the information is properly attributed to the source."
+          title: "Can I cite information from the dashboard?",
+          value: "Yes, the information in the dashboard can be used for advocacy, research or reporting on the civic space in Nigeria, provided that the information is properly attributed to the source."
         }
       ]
     };

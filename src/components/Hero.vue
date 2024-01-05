@@ -7,13 +7,10 @@
         <h1
           class="font-semibold md:leading-58 text-transpurple text-4xl"
         >
-          Monitoring Press Freedom in Nigeria
+          Fostering Vibrant Civic Space in Nigeria
         </h1>
         <p class="text-xl md:text-2xl text-transgray200 pt-5">
-          The database monitors and documents incidents of attack, arrest, detention and <br class="hidden md:block" />trial
-          of journalists or citizen bloggers in
-          <!-- <br class="hidden md:block" /> -->
-          Nigeria.
+          The dashboard monitors and documents incidents of violations of freedoms and<br class="hidden md:block" /> rights of activists, journalists, and citizens to amplify voices, provide insights,<br class="hidden md:block" /> and mobilize against the shrinking civic space.
         </p>
       </div>
       <div class="form-group h-50 rounded-lg mt-10 md:mt-66">

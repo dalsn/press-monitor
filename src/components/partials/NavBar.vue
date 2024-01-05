@@ -7,8 +7,8 @@
         <div class="logo">
           <router-link to="/">
             <img
-              class="h-10 md:h-12"
-              src="../../assets/images/pfm-logo-white.png"
+              class="h-12 md:h-16"
+              src="../../assets/images/csw-logo-white.png"
               alt="Press Freedom Monitor logo"
             />
           </router-link>
