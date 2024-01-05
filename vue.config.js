@@ -1,7 +1,7 @@
 module.exports = {
 	pwa: {
 		themeColor: "#070241",
-		name: "Corruption Cases Database",
+		name: "Press Freedom Monitor",
 		msTileColor: "#000000"
 	}
 }

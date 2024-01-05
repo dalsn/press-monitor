@@ -18,7 +18,7 @@ export default {
       handler: function(val) {
         this.renderChart(val, this.options);
       },
-      immediate: true,
+      immediate: false,
       deep: true
     }
   },

@@ -23,10 +23,10 @@ const routes = [
       import(/* webpackChunkName: "explore" */ "../views/CaseList")
   },
   {
-    path: "/cause-list",
-    name: "CauseList",
+    path: "/incidents",
+    name: "Incidents",
     component: () =>
-      import(/* webpackChunkName: "explore" */ "../views/CauseList")
+      import(/* webpackChunkName: "explore" */ "../views/Incidents")
   },
   {
     path: "/resources",
@@ -65,9 +65,9 @@ const routes = [
     //     )
   },
   {
-    path: "/cases/:slug",
-    name: "Case Details",
-    component: () => import("../views/Case.vue")
+    path: "/incidents/:slug",
+    name: "Incident Details",
+    component: () => import("../views/Incident.vue")
   }
 ];
 

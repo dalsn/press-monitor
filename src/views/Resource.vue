@@ -1,192 +1,16 @@
 <template>
   <section class="pt-4 lg:pt-12">
-    <div class="pb-5 mb-2 md:mb-16 mx-auto px-2 md:px-10 xl:px-16 py-6 lg:py-1">
+    <div class="pb-5 mb-2 md:mb-32 mx-auto px-2 md:px-10 xl:px-16 py-6 lg:py-1">
       <div class="flex text-xl md:text-2xl text-transpurple mb-6">
-        <ArchiveIcon class="md:mt-1 mr-2" /> <strong>Archives</strong>
-        <span class="pl-2"><small> - Download</small> </span>
-      </div>
-      <div class="py-2">
-        <p class="text-lg mb-8"><strong>Corruption Cases Database</strong></p>
-        <a
-          class="py-3 px-8 shadow-md rounded-lg hover:shadow-lg hover:bg-white hover:text-transpurple bg-transpurple text-white"
-          :href="host + '/resources/database'"
-          >Download CSV</a
-        >
+        <ArchiveIcon class="md:mt-1 mr-2" /> <strong>Frequently Asked Questions</strong>
       </div>
       <hr class="my-8" />
-      <div class="py-2" id="acja-table">
-        <p class="text-lg text-transpurple font-semibold pb-2">
-          <strong>Administration of Criminal Justice Act/Laws</strong>
-        </p>
-        <div v-if="acjafiles.length > 0">
-          <div class="pt-5 pb-2">
-            <div class="mx-auto">
-              <div class="flex flex-col mb-4">
-                <label>Search</label>
-                <div
-                  class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3"
-                >
-                  <label
-                    for="filterAcja"
-                    class="flex w-full items-center mx-2 px-2"
-                  >
-                    <input
-                      v-model="filterAcja"
-                      id="filterAcja"
-                      class="h-12 focus:outline-none w-full"
-                      type="text"
-                      placeholder="Filter list"
-                      @input="current_page_acja = 1"
-                    />
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <table class="table w-full" id="acja">
-            <thead class="bg-light">
-              <tr class="text-left">
-                <th>Document</th>
-                <th width="20%">File size</th>
-                <th width="20%"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(doc, key) in filteredAcja" :key="key">
-                <td class="bg-hero">{{ doc.filename }}</td>
-                <td data-th="File size">{{ doc.size }}</td>
-                <td data-th="Action">
-                  <a
-                    class="flex flex-row"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    :href="doc.url"
-                    download
-                  >
-                    <DownloadCloudIcon class="mr-3" /> Download
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- <div id="pagination"></div> -->
-          <div v-show="totalAcjaPages > 1" class="py-6">
-            <nav class="block">
-              <ul class="flex justify-end pl-0 list-none flex-wrap">
-                <li>
-                  <button @click="prevPageAcja" class="first:ml-0 nav-btn" :class="{'disabled': current_page_acja == 1}">
-                    Prev
-                  </button>
-                </li>
-                <!-- <li v-for="(index) in totalAcjaPages" :key="index">
-                  <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_acja == index}">
-                    {{ index }}
-                  </button>
-                </li> -->
-                <li v-for="(index) in paginate(current_page_acja, totalAcjaPages)" :key="index">
-                  <button @click="gotoPageAcja(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_acja == index, 'disabled': index == '...'}">
-                    {{ index }}
-                  </button>
-                </li>
-                <li>
-                  <button @click="nextPageAcja" class="first:ml-0 nav-btn" :class="{'disabled': current_page_acja >= totalAcjaPages}">
-                    Next
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div v-else class="">
-          <h6>No files available for download</h6>
-        </div>
-      </div>
-      <!-- <div class="section pt-3 no-records">
-                <h4>No records Available</h4>
-            </div> -->
-      <hr class="my-8" />
-      <div class="py-2" id="judg-table">
-        <p class="text-lg text-transpurple font-semibold pb-2">
-          <strong>Corruption Cases Judgements</strong>
-        </p>
-        <div v-if="judgements.length > 0">
-          <div class="pt-5 pb-2">
-            <div class="mx-auto">
-              <div class="flex flex-col mb-4">
-                <label>Search</label>
-                <div
-                  class="h-full flex bg-white rounded-lg justify-between items-center shadow-md lg:w-1/3"
-                >
-                  <label
-                    for="filterJudg"
-                    class="flex w-full items-center mx-2 px-2"
-                  >
-                    <input
-                      v-model="filterJudg"
-                      id="filterJudg"
-                      class="h-12 focus:outline-none w-full"
-                      type="text"
-                      placeholder="Filter list"
-                      @input="current_page_judg = 1"
-                    />
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <table class="table w-full" id="judg">
-            <thead class="bg-light">
-              <tr class="text-left">
-                <th>Document</th>
-                <th width="20%">File size</th>
-                <th width="20%"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(doc, key) in filteredJudg" :key="key">
-                <td class="bg-hero">{{ doc.filename }}</td>
-                <td data-th="File size">{{ doc.size }}</td>
-                <td data-th="Action">
-                  <a
-                    class="flex flex-row"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    :href="doc.url"
-                    download
-                  >
-                    <DownloadCloudIcon class="mr-3" /> Download
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- <div id="pagination"></div> -->
-          <div v-show="totalJudgPages > 1" class="py-6">
-            <nav class="block">
-              <ul class="flex justify-end pl-0 list-none flex-wrap">
-                <li>
-                  <button @click="prevPageJudg" class="first:ml-0 nav-btn" :class="{'disabled': current_page_judg == 1}">
-                    Prev
-                  </button>
-                </li>
-                <li v-for="(index) in paginate(current_page_judg, totalJudgPages)" :key="index">
-                  <button @click="gotoPageJudg(index)" class="first:ml-0 nav-btn" :class="{'active': current_page_judg == index, 'disabled': index == '...'}">
-                    {{ index }}
-                  </button>
-                </li>
-                <li>
-                  <button @click="nextPageJudg" class="first:ml-0 nav-btn" :class="{'disabled': current_page_judg >= totalJudgPages}">
-                    Next
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div v-else class="">
-          <h6>No files available for download</h6>
-        </div>
-      </div>
+      <VueFaqAccordion
+      active-color="#5E72E4"
+      border-color="#070241"
+      font-color="#070241"
+      :items="faqs"
+      />
     </div>
     <Footer className="bg-hero" />
   </section>
@@ -194,125 +18,54 @@
 
 <script>
 import Footer from "../components/partials/Footer";
-import axios from "axios";
+import VueFaqAccordion from 'vue-faq-accordion';
 
 export default {
   components: {
-    Footer
+    Footer,
+    VueFaqAccordion
   },
   data() {
     return {
-      acjafiles: [],
-      judgements: [],
-      filterAcja: "",
-      filterJudg: "",
-      current_page_acja: 1,
-      current_page_judg: 1,
-      page_size: 5,
-      host: `${window.host}`
-    };
-  },
-  mounted() {
-    this.getFiles();
-  },
-  computed: {
-    sortedAcja() {
-      let array = this.acjafiles;
-      if (this.filterAcja == "")
-        array = this.acjafiles;
-      if (this.filterAcja != "") {
-        array = array.filter((acja) => {
-          let q = this.filterAcja.trim().toLowerCase();
-          return acja.filename.toLowerCase().includes(q);
-        });
-      }
-      return array;
-    },
-    filteredAcja() {
-      return this.sortedAcja.filter((row, index) => {
-        let start = (this.current_page_acja - 1) * this.page_size;
-        let end = this.current_page_acja * this.page_size;
-        if(index >= start && index < end) return true;
-      });
-    },
-    totalAcjaPages() {
-      return Math.ceil(this.acjafiles.length / this.page_size) ?? 0;
-    },
-    sortedJudg() {
-      let array = this.judgements;
-      if (this.filterJudg == "")
-        array = this.judgements;
-      if (this.filterJudg != "") {
-        array = array.filter((judg) => {
-          let q = this.filterJudg.trim().toLowerCase();
-          return judg.filename.toLowerCase().includes(q);
-        });
-      }
-      return array;
-    },
-    filteredJudg() {
-      return this.sortedJudg.filter((row, index) => {
-        let start = (this.current_page_judg - 1) * this.page_size;
-        let end = this.current_page_judg * this.page_size;
-        if(index >= start && index < end) return true;
-      });
-    },
-    totalJudgPages() {
-      return Math.ceil(this.judgements.length / this.page_size) ?? 0;
-    }
-  },
-  methods: {
-    getFiles() {
-      axios.get(`${window.host}/api/resources`).then(response => {
-        if (response.data) {
-          this.acjafiles = response.data.acjaFiles;
-          this.judgements = response.data.judgementFiles;
+      host: `${window.host}`,
+      faqs: [
+        {
+          title: "What is Civic Space Watch?",
+          value: "The Civic Space Watch is an independent project supported by the American Bar Association Center for Human Rights, which tracks incidents of violations and criminalization of freedoms and rights of activists, journalists, and citizens to promote and safeguard civil liberties and democratic values in Nigeria. The project aims to provide insights and data for evidence-based reporting, research and advocacy against the shrinking civic space."
+        },
+        {
+          title: "What incidents does the project track?",
+          value: "The project tracks various incidents related to the violations of freedoms and rights of activists, journalists, and citizens in Nigeria. These include the right to freedom from arbitrary arrest, right to freedom from forced disappearance, right to freedom from the death penalty, right to freedom from extrajudicial execution, right to freedom from torture and ill-treatment, right to assembly and association, right to opinion and expression, right to participate in government, and right to freedom of religion and belief."
+        },
+        {
+          title: "Who is referred to as an activist or journalist under the project?",
+          value: "An activist is a person who campaigns to bring about social and developmental change in communities, whilst a journalist is a trained professional or citizen-blogger who collects, investigates, and reports news and events in Nigeria through traditional media outlets such as newspapers, magazines, radio, television, as well as online media outlets, or by online posting/reporting on social media platforms, blogs, or personal websites to share perspectives, opinions, and experiences that safeguard democratic values and civil liberties."
+        },
+        {
+          title: "What is the process of tracking the incidents?",
+          value: "TransparencIT identifies incidents related to the freedoms and rights of activists, journalists and citizens through its sentinels and reportage and collects field-based data on the incidents using a monitoring template. All data collected is thoroughly reviewed and uploaded onto the project dashboard, which serves as a hub of information on the country’s state of civic space."
+        },
+        {
+          title: "How can I use the Civic Space Watch dashboard?",
+          value: "The dashboard helps you to stay informed about the state of civic space in Nigeria. It provides a centralized source of information on incidents of violations of the rights and freedoms of activists, journalists and citizens. This information can be used to advocate against the shrinking civic space, facilitate research and policy reforms, and build the capacities of civic space actors. It can also be used to hold government officials and law enforcement agencies accountable for any violations."
+        },
+        {
+          title: "Who funds the project?",
+          value: "The project is primarily funded by the American Bar Association's Center for Human Rights."
+        },
+        {
+          title: "Can I cite information from the dashboard?",
+          value: "Yes, the information in the dashboard can be used for advocacy, research or reporting on the civic space in Nigeria, provided that the information is properly attributed to the source."
         }
-      });
-    },
-    gotoPageAcja(index) {
-      if (this.current_page_acja == index || index == "...") return;
-
-      this.current_page_acja = index;
-    },
-    nextPageAcja() {
-      if (this.current_page_acja < this.totalAcjaPages) {
-        this.current_page_acja++;
-      }
-    },
-    prevPageAcja() {
-      if (this.current_page_acja > 1) {
-        this.current_page_acja--;
-      }
-    },
-    gotoPageJudg(index) {
-      if (this.current_page_judg == index || index == "...") return;
-
-      this.current_page_judg = index;
-    },
-    nextPageJudg() {
-      if (this.current_page_judg < this.totalJudgPages) {
-        this.current_page_judg++;
-      }
-    },
-    prevPageJudg() {
-      if (this.current_page_judg > 1) {
-        this.current_page_judg--;
-      }
-    }
+      ]
+    };
   }
 };
 </script>
 
-<style lang="scss" scoped>
-.nav-btn {
-  @apply text-xs font-semibold flex w-8 h-8 mx-1 p-2 rounded-full items-center justify-center leading-tight relative border border-solid border-transpurple bg-white text-transpurple shadow-lg;
-}
-.active {
-  @apply bg-transpurple text-white;
-}
-.disabled {
-  @apply bg-light border-0 text-white;
-  cursor: initial;
+<style lang="scss">
+.faq-wrapper {
+  max-width: 100% !important;
+  width: 100% !important;
 }
 </style>

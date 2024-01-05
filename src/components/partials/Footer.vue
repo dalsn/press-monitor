@@ -1,10 +1,19 @@
 <template>
   <footer class="" :class="className">
     <div
-      class="pt-16 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
+      class="pt-8 pb-8 px-2 flex flex-row flex-wrap md:px-10 xl:px-16 justify-between"
     >
       <div class="w-full mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-xl md:text-2xl mb-2">Corruption Cases Database</p>
+        <p class="text-xl md:text-2xl mb-2">Civic Space Watch</p>
+        <!-- <div class="logo mb-2">
+          <router-link to="/">
+            <img
+              class="h-10 md:h-12"
+              src="../../assets/images/pfm-logo.png"
+              alt="Press Freedom Monitor logo"
+            />
+          </router-link>
+        </div> -->
         <p class="text-sm text-justify">
           This is a project of
           <a
@@ -14,28 +23,11 @@
             rel="noreferrer noopener"
             >TransparencIT</a
           >
-          funded and supported by
-          <a
-            class="text-link"
-            href="//trustafrica.org"
-            target="_blank"
-            rel="noreferrer noopener"
-            >TrustAfrica</a
-          >
-          and
-          <a
-            class="text-link"
-            href="//www.gov.uk/government/organisations/department-for-international-development"
-            target="_blank"
-            rel="noreferrer noopener"
-            >UK Department for International Development</a
-          >
-          to monitor corruption cases in Nigeria to ensure compliance, reduce
-          delays, improve efficiency and achieve speedy conclusion of trials.
+          that monitors and documents incidents of violations of freedoms and rights of activists, journalists, and citizens to amplify voices, provide insights, and mobilize against the shrinking civic space in Nigeria.
         </p>
       </div>
-      <div class="w-full md:pl-8 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
-        <p class="text-sm">Newsletter Signup</p>
+      <div class="w-full md:pl-16 md:mt-1 mb-8 md:w-1/2 lg:w-1/3">
+        <p class="text-sm mb-2">Stay up-to-date with information on the civic space in Nigeria.</p>
         <form action="#" method="POST" @submit.prevent="subscribe">
           <div
             class="h-full flex bg-white rounded-lg justify-between items-center shadow-md"
@@ -46,7 +38,7 @@
                 id="search-text"
                 class="h-12 focus:outline-none pl-1 w-full"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Sign up with your email"
                 required
               />
             </label>
@@ -62,7 +54,7 @@
           </div>
         </form>
       </div>
-      <div class="w-full lg:w-1/3 lg:pl-8">
+      <div class="w-full lg:w-1/3 lg:pl-16">
         <h4 class="text-2xl mb-2">Contact</h4>
         <div class="flex flex-row mb-3">
           <a
@@ -106,7 +98,7 @@
           </div>
           <div class="w-full">
             <p class="">
-              info@corruptioncases.ng<br />
+              info@transparencit.com<br />
               +234 (0) 704 141 0707
             </p>
           </div>

@@ -3,22 +3,17 @@
     <div
       class="md:pb-12 md:pt-59 px-2 md:px-10 xl:px-16 bg-hero relative overflow-y-hidden"
     >
-      <div class="text pt-10 md:pt-8 lg:pt-5 text-left">
+      <div class="text pt-10 md:pt-8 lg:pt-5 lg:mb-24 text-left">
         <h1
-          class="font-bold md:leading-58 text-transpurple text-2xl md:text-5xl"
+          class="font-semibold md:leading-58 text-transpurple text-4xl"
         >
-          Find Information on <br />
-          Corruption Cases in Nigeria
+          Fostering Vibrant Civic Space in Nigeria
         </h1>
-        <p class="text-17 leading-28  text-transgray200 pt-5">
-          This is a central database to find details of ongoing
-          <br class="hidden md:block" />
-          and decided corruption cases in the country with
-          <br class="hidden md:block" />
-          simplified infographics.
+        <p class="text-xl md:text-2xl text-transgray200 pt-5">
+          The dashboard monitors and documents incidents of violations of freedoms and<br class="hidden md:block" /> rights of activists, journalists, and citizens to amplify voices, provide insights,<br class="hidden md:block" /> and mobilize against the shrinking civic space.
         </p>
       </div>
-      <div class="form-group md:w-3/4 lg:w-2/3 h-50 rounded-lg mt-10 md:mt-66">
+      <div class="form-group h-50 rounded-lg mt-10 md:mt-66">
         <form @submit.prevent="search">
           <div class="h-full flex bg-white rounded-lg shadow-md">
             <label
@@ -43,7 +38,7 @@
                 v-model="q"
                 class="h-12 focus:outline-none pl-1 md:pl-3 w-full"
                 type="text"
-                placeholder="Search by case name, crime etc"
+                placeholder="Search incidents database"
               />
             </label>
             <label for="search-dropdown" class="flex w-1/2 items-center ml-2">
@@ -95,11 +90,11 @@
         </form>
       </div>
       <!-- <div class="svg-container"> -->
-      <img
+      <!-- <img
         class="z-0 hidden md:block absolute md:w-2/5 right-0 bottom-0"
         src="@/assets/svg/heroill.svg"
         alt=""
-      />
+      /> -->
       <!-- </div> -->
     </div>
   </header>
@@ -129,7 +124,7 @@ export default {
       });
     },
     search() {
-      this.$router.push(`/cases?state=${this.state}&q=${this.q}`);
+      this.$router.push(`/incidents?state=${this.state}&q=${this.q}`);
     }
   }
 };
