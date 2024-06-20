@@ -76,6 +76,12 @@
                   <div v-if="incident.update" class="info text-justify">
                     {{ incident.update }}
                   </div>
+                  <div v-if="incident.source" class="title bg-white">
+                    <strong>Source</strong>
+                  </div>
+                  <div v-if="incident.source" class="info text-justify">
+                    <a :href="incident.source">{{ incident.source }}</a>
+                  </div>
                 </div>
               </div>
             </div>

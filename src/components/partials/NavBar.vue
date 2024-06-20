@@ -9,7 +9,7 @@
             <img
               class="h-12 md:h-16"
               src="../../assets/images/csw-logo-white.png"
-              alt="Press Freedom Monitor logo"
+              alt="Civic Space Watch logo"
             />
           </router-link>
         </div>

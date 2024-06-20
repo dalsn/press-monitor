@@ -10,7 +10,7 @@
             <img
               class="h-10 md:h-12"
               src="../../assets/images/pfm-logo.png"
-              alt="Press Freedom Monitor logo"
+              alt="Civic Space Watch logo"
             />
           </router-link>
         </div> -->
