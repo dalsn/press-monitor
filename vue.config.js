@@ -1,7 +1,7 @@
 module.exports = {
 	pwa: {
 		themeColor: "#070241",
-		name: "Press Freedom Monitor",
+		name: "Civic Space Watch",
 		msTileColor: "#000000"
 	}
 }

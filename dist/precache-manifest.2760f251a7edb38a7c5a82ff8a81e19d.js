@@ -1,22 +1,22 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2ae075ecbd7f2ab6121a",
+    "revision": "6b14ad90821aa188989b",
     "url": "/css/app.9cc138a2.css"
   },
   {
-    "revision": "8d91457d445127dc8b35",
+    "revision": "175f3f0b5510f1eb8ff3",
     "url": "/css/chunk-20993958.f5dadd15.css"
   },
   {
-    "revision": "322b26fa7a48cdc6022d",
+    "revision": "914e14b12c23d35ed245",
     "url": "/css/explore.0bd3dcf7.css"
   },
   {
-    "revision": "52c69faeec8eab7b1052",
+    "revision": "c1141564df036fa2de58",
     "url": "/css/index.a4a528af.css"
   },
   {
-    "revision": "e6d4efd730e5b961a23c",
+    "revision": "f881d6873c9d3b788311",
     "url": "/css/state.39fb2a43.css"
   },
   {
@@ -60,24 +60,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/topic.47ad2cec.svg"
   },
   {
-    "revision": "cd0e23f524811fdc5dddb60eb02f6b5e",
+    "revision": "76598c02c456c087c80fd36fae3f5926",
     "url": "/index.html"
   },
   {
-    "revision": "d8e66123f3d290f8e6f4",
-    "url": "/js/about.7fca725e.js"
+    "revision": "1bed0470d2bf11896626",
+    "url": "/js/about.5b17f0db.js"
   },
   {
-    "revision": "2ae075ecbd7f2ab6121a",
-    "url": "/js/app.6c266222.js"
+    "revision": "6b14ad90821aa188989b",
+    "url": "/js/app.16fa9ea4.js"
   },
   {
-    "revision": "8d91457d445127dc8b35",
-    "url": "/js/chunk-20993958.6118e288.js"
+    "revision": "175f3f0b5510f1eb8ff3",
+    "url": "/js/chunk-20993958.cd08d776.js"
   },
   {
-    "revision": "65188df1531c650be000",
-    "url": "/js/chunk-54b95a4c.28791a5e.js"
+    "revision": "f0b589887325e1a876d6",
+    "url": "/js/chunk-54b95a4c.04e6b387.js"
   },
   {
     "revision": "9e0bad9557f3ad8c820d",
@@ -88,31 +88,31 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/countrymap.dev.js"
   },
   {
-    "revision": "8b97da424b3ba26ed31c",
-    "url": "/js/datapoint.894e5f06.js"
+    "revision": "fcd8039f486a90783a74",
+    "url": "/js/datapoint.8570e3fe.js"
   },
   {
     "revision": "0ae4dc4b3069cd80c952",
     "url": "/js/datapoint~explore~index.37b23fee.js"
   },
   {
-    "revision": "322b26fa7a48cdc6022d",
-    "url": "/js/explore.8221dcfe.js"
+    "revision": "914e14b12c23d35ed245",
+    "url": "/js/explore.9994661f.js"
   },
   {
-    "revision": "52c69faeec8eab7b1052",
-    "url": "/js/index.733c77e9.js"
+    "revision": "c1141564df036fa2de58",
+    "url": "/js/index.0ae3225f.js"
   },
   {
     "revision": "95bec3cf40c9b485c259e60b740e1f07",
     "url": "/js/mapdata.nig.js"
   },
   {
-    "revision": "e6d4efd730e5b961a23c",
-    "url": "/js/state.5d563a82.js"
+    "revision": "f881d6873c9d3b788311",
+    "url": "/js/state.570c1866.js"
   },
   {
-    "revision": "01ac19ce9c7e42f4db216b96773b4f33",
+    "revision": "a3a411c586edaa5a9487b482e8d5be5e",
     "url": "/manifest.json"
   },
   {

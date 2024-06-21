@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5ca52b593af9b6c96a3785020f59d146.js"
+  "/precache-manifest.2760f251a7edb38a7c5a82ff8a81e19d.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "Press-Freedom-Monitor"});
+workbox.core.setCacheNameDetails({prefix: "Civic-Space-Watch"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
