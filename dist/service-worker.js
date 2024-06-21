@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.281daffa8c3b503ea1db4a24ec7f4c13.js"
+  "/precache-manifest.5ca52b593af9b6c96a3785020f59d146.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "Press-Freedom-Monitor"});
