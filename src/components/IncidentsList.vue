@@ -69,6 +69,7 @@ export default {
   }
 }
 .title {
+  padding: 0 !important;
   &:hover {
     color: #1806e4;
   }
